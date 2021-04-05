@@ -2,4 +2,7 @@
 .env
 .hidden
 .idea
+.pytest_cache
+app.db
+app/test.db
 venv
