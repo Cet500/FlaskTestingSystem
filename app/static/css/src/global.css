@@ -1,0 +1,45 @@
+/* ------------------------------- global ------------------------------- */
+
+/* -------------------- base -------------------- */
+
+.global__body{
+	margin: 0;
+	padding: 0;
+
+	min-height: 100vh;
+}
+
+/* -------------------- header -------------------- */
+
+.global__header{
+
+}
+.global__header-title{
+	margin: 0;
+	padding: 10px 20px;
+
+	font-family: Arial, sans-serif;
+	font-weight: normal;
+
+	border-bottom: 10px solid #ffc107;
+}
+.global__header-title-prefix{
+	padding: 1px 3px;
+
+	font-weight: bold;
+
+	border: 1px solid #000000;
+	border-radius: 10px;
+}
+
+/* -------------------- main -------------------- */
+
+.global__main{
+	min-height: 80vh;
+}
+
+/* -------------------- footer -------------------- */
+
+.global__footer{
+	border-top: 10px solid #ffc107;
+}

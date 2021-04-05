@@ -1,9 +1,33 @@
-<html>
+<!doctype html>
+<html lang="ru">
     <head>
-        <title>{{ title }}</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>{{ title }} | ТеСи</title>
+
+		<link rel="icon" href="{{ url_for( 'static', filename = 'favicon.ico' ) }}" type="image/x-icon">
+
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/global.min.css' ) }}">
+
+		{% block links %}{% endblock %}
+
+		{{ moment.include_jquery() }}
+		{{ moment.include_moment() }}
+		{{ moment.locale( g.locale ) }}
     </head>
 
-    <body>
-        <h1>Hello, {{ username }}!</h1>
+    <body class="global__body">
+        <header class="global__header">
+			<h1 class="global__header-title"><span class="global__header-title-prefix">ТеСи</span> {{ title }}</h1>
+		</header>
+
+		<main class="global__main">
+			{% block content %}{% endblock %}
+		</main>
+
+		<footer class="global__footer">
+			FTS by SI, 2021
+		</footer>
     </body>
 </html>
