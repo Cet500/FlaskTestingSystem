@@ -9,6 +9,7 @@
 		<link rel="icon" href="{{ url_for( 'static', filename = 'favicon.ico' ) }}" type="image/x-icon">
 
 		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/global.min.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/parts.min.css' ) }}">
 
 		{% block links %}{% endblock %}
 
@@ -22,12 +23,24 @@
 			<h1 class="global__header-title"><span class="global__header-title-prefix">ТеСи</span> {{ title }}</h1>
 		</header>
 
+		<aside class="global__aside">
+			<div class="global__aside-sidebar">
+				<h2 class="global__aside-sidebar-title">
+					{{ menu }}
+				</h2>
+
+				<div class="global__aside-sidebar-data">
+ 					{% block menu %}{% endblock %}
+				</div>
+			</div>
+		</aside>
+
 		<main class="global__main">
 			{% block content %}{% endblock %}
 		</main>
 
 		<footer class="global__footer">
-			FTS by SI, 2021
+			<p class="global__footer-author">FTS by SI, 2021</p>
 		</footer>
     </body>
 </html>

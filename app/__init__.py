@@ -12,5 +12,6 @@ migrate = Migrate(app, db)
 moment = Moment(app)
 
 app.jinja_env.auto_reload = True
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 from app import routes, models

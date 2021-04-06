@@ -2,8 +2,23 @@ from app import db
 from datetime import datetime
 
 
+class Group(db.Model):
+	id           = db.Column( db.Integer, primary_key = True )
+	title        = db.Column( db.String(32), index = True, unique = True, nullable = False )
+	description  = db.Column( db.String(256) )
+	image        = db.Column( db.Integer )
+	datetime_add = db.Column( db.DateTime, default = datetime.utcnow(), index = True )
+	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
+
+	tests = db.relationship( 'Test', backref = "tests", lazy = "dynamic" )
+
+	def __repr__(self):
+		return f'<Group {self.title}>'
+
+
 class Test(db.Model):
 	id           = db.Column( db.Integer, primary_key = True )
+	id_group     = db.Column( db.Integer, db.ForeignKey( 'group.id' ), nullable = False )
 	name         = db.Column( db.String(32), index = True, unique = True, nullable = False )
 	description  = db.Column( db.String(256) )
 	datetime_add = db.Column( db.DateTime, default = datetime.utcnow(), index = True )

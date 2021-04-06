@@ -1,0 +1,18 @@
+<div class="parts__test">
+	<img class="parts__test-image"
+		 src="{{ url_for( 'static', filename = 'img/sys/tests.png' ) }}"
+		 alt="test section">
+
+	<h3 class="parts__test-title">
+		<a class="parts__test-title-link"
+		   href="{{ url_for( 'test', id = test.id ) }}">{{ test.name }}</a>
+	</h3>
+
+	<p class="parts__test-desc">
+		{{ test.description }}
+	</p>
+
+	<p class="parts__test-info">
+		Количество вопросов: {{ test.questions.count() }}
+	</p>
+</div>
