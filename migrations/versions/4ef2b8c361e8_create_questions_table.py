@@ -22,7 +22,6 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('id_test', sa.Integer(), nullable=False),
     sa.Column('text', sa.String(length=256), nullable=False),
-    sa.Column('is_true', sa.Boolean(), nullable=True),
     sa.ForeignKeyConstraint(['id_test'], ['test.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
