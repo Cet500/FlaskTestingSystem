@@ -15,7 +15,7 @@ def index():
 def test(id):
     test = Test.query.get(id)
 
-    return render_template( "test-base.html", title = f"Тесты / {test.name}", menu = "Вопросы", test = test )
+    return render_template( "test-base.html", title = f"Все тесты / {test.name}", test = test )
 
 
 @app.route('/add')

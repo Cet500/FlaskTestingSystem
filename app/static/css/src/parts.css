@@ -30,12 +30,28 @@
 .parts__test-desc{
 	padding: 0 10px;
 
-	overflow-wrap: anywhere;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -ms-line-clamp: 3;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    display: -webkit-box;
+    display: box;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
 }
 .parts__test-info{
+	margin-top: 0;
+	margin-bottom: 0.25em;
 	padding: 0 10px;
 
 	font-style: italic;
 
 	color: #333333;
+}
+.parts__test-info:last-child{
+    margin-bottom: 1em;
 }

@@ -2,3 +2,35 @@
 
 /* -------------------- section group -------------------- */
 
+.test-base__section-test{
+    margin: 20px;
+
+    border-radius: 10px;
+    border: 3px solid #ffc107;
+}
+.test-base__section-test-image{
+    width: 100%;
+
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.test-base__section-test-name{
+    padding: 0 20px;
+}
+.test-base__section-test-description{
+    padding: 0 20px;
+
+    overflow-wrap: anywhere;
+}
+.test-base__section-test-info{
+    margin-top: 0;
+	margin-bottom: 0.25em;
+    padding: 0 20px;
+
+    font-style: italic;
+
+	color: #333333;
+}
+.test-base__section-test-info:last-child{
+    margin-bottom: 1em;
+}

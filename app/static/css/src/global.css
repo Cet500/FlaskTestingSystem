@@ -84,6 +84,8 @@
 }
 .global__menu-item{
 	padding-bottom: 5px;
+
+	overflow-wrap: anywhere;
 }
 .global__menu-link{
 	text-decoration: none;

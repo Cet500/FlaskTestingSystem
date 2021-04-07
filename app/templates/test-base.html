@@ -3,28 +3,47 @@
 
 {% block links %}
 
-	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/test-base.min.css' ) }}">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/page/test-base.css' ) }}">
 
 {% endblock %}
 
 
-{% block menu %}
-
-	<ul class="global__menu global__menu-numbered">
-		{% for question in test.questions %}
-
-			<li class="global__menu-item">
-				{{ question.text }}
-			</li>
-
-		{% endfor %}
-	</ul>
-
-{% endblock %}
+{#{% block menu %}#}
+{##}
+{#	<ul class="global__menu global__menu-numbered">#}
+{#		{% for question in test.questions %}#}
+{##}
+{#			<li class="global__menu-item">#}
+{#				{{ question.text }}#}
+{#			</li>#}
+{##}
+{#		{% endfor %}#}
+{#	</ul>#}
+{##}
+{#{% endblock %}#}
 
 
 {% block content %}
 
+	<section class="test-base__section-test">
+		<img class="test-base__section-test-image"
+			 src="{{ url_for( 'static', filename = 'img/sys/tests.png' ) }}" alt="">
 
+		<h2 class="test-base__section-test-name">{{ test.name }}</h2>
+
+		<p class="test-base__section-test-description">{{ test.description }}</p>
+
+		<p class="test-base__section-test-info">
+            Количество вопросов: {{ test.questions.count() }}
+        </p>
+
+        <p class="test-base__section-test-info">
+            Количество прохождений: N/A
+        </p>
+
+        <p class="test-base__section-test-info">
+            Сложность: 5
+        </p>
+	</section>
 
 {% endblock %}

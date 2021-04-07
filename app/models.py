@@ -20,7 +20,8 @@ class Test(db.Model):
 	id           = db.Column( db.Integer, primary_key = True )
 	id_group     = db.Column( db.Integer, db.ForeignKey( 'group.id' ), nullable = False )
 	name         = db.Column( db.String(32), index = True, unique = True, nullable = False )
-	description  = db.Column( db.String(256) )
+	description  = db.Column( db.String(512) )
+
 	datetime_add = db.Column( db.DateTime, default = datetime.utcnow(), index = True )
 	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
 
@@ -49,3 +50,15 @@ class Answer(db.Model):
 
 	def __repr__(self):
 		return f'<Answer {self.text}>'
+
+
+class User(db.Model):
+	id           = db.Column( db.Integer, primary_key = True )
+	username     = db.Column( db.String(32), index = True, unique = True,nullable = False )
+	name         = db.Column( db.String(32), nullable = False )
+	lastname     = db.Column( db.String(32) )
+	group        = db.Column( db.String(16) )
+	pass_hash    = db.Column( db.String(128), nullable = False )
+	role         = db.Column( db.String(1) )
+	datetime_red = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
+	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
