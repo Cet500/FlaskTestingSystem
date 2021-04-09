@@ -20,8 +20,8 @@ class Test(db.Model):
 	id           = db.Column( db.Integer, primary_key = True )
 	id_group     = db.Column( db.Integer, db.ForeignKey( 'group.id' ), nullable = False )
 	name         = db.Column( db.String(32), index = True, unique = True, nullable = False )
+	annotation   = db.Column( db.String(128) )
 	description  = db.Column( db.String(512) )
-
 	datetime_add = db.Column( db.DateTime, default = datetime.utcnow(), index = True )
 	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
 
