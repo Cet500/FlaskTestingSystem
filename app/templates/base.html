@@ -8,8 +8,9 @@
 
 		<link rel="icon" href="{{ url_for( 'static', filename = 'favicon.ico' ) }}" type="image/x-icon">
 
-		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/src/global.css' ) }}">
-		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/src/parts.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/global.min.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/parts.min.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/buttons.min.css' ) }}">
 
 		{% block links %}{% endblock %}
 
@@ -20,7 +21,15 @@
 
     <body class="global__body">
         <header class="global__header">
-			<h1 class="global__header-title"><span class="global__header-title-prefix">ТеСи</span> {{ title }}</h1>
+			<h1 class="global__header-title">
+				<span class="global__header-title-prefix">ТеСи</span>
+
+				{% if path %}
+					{{ path|safe }}
+				{% else %}
+					{{ title }}
+				{% endif %}
+			</h1>
 		</header>
 
 		{% if menu %}

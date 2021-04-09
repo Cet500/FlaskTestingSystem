@@ -34,6 +34,11 @@
 
 	border-bottom: 10px solid #ffc107;
 }
+.global__header-title a{
+	color: #444444;
+
+	text-decoration: none;
+}
 .global__header-title-prefix{
 	padding: 1px 3px;
 
@@ -49,7 +54,7 @@
 .global__aside{
 	grid-area: aside;
 
-	width: 350px;
+	width: 320px;
 }
 .global__aside-sidebar{
 	margin: 30px 20px 20px 0;
@@ -77,11 +82,6 @@
 
 	list-style: none;
 }
-.global__menu-numbered{
-	padding: 25px;
-
-	list-style: decimal;
-}
 .global__menu-item{
 	padding-bottom: 5px;
 
@@ -94,7 +94,7 @@
 }
 
 .global__menu-submenu{
-	padding-left: 20px;
+	padding-left: 30px;
 }
 .global__menu-submenu-item{
 

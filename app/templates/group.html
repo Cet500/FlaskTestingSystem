@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block links %}
+
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/index.min.css' ) }}">
+
+{% endblock %}
+
+
+{% block menu %}
+
+	<ul class="global__menu global__menu-numbered">
+		{% for test in group.tests %}
+
+			<li class="global__menu-item">
+				{{ test.name }}
+			</li>
+
+		{% endfor %}
+	</ul>
+
+{% endblock %}
+
+
+{% block content %}
+
+	<section class="index__section-group">
+		<h2 class="index__section-group-title">
+			<a class="index__section-group-title-link"
+			   href="{{ url_for( 'group', id = group.id ) }}">{{ group.title }}</a>
+		</h2>
+
+		<p class="index__section-group-description">{{ group.description }}</p>
+
+		{% for test in group.tests %}
+
+			{% include 'parts/test.html' %}
+
+		{% endfor %}
+	</section>
+
+{% endblock %}

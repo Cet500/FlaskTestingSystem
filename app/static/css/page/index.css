@@ -24,6 +24,11 @@
 
 	font-family: Nunito, sans-serif;
 }
+.index__section-group-title-link{
+	text-decoration: none;
+
+	color: #333333;
+}
 .index__section-group-description{
 	width: 100%;
 
@@ -33,4 +38,14 @@
 	overflow-wrap: anywhere;
 
 	border-bottom: 3px solid #ffc107;
+}
+.index__section-group-btn{
+	width: 100%;
+
+	margin: 0;
+	padding: 25px 0;
+
+	text-align: center;
+
+	border-top: 1px solid #ffc107;
 }

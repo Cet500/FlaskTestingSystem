@@ -9,7 +9,7 @@
 	</h3>
 
 	<p class="parts__test-desc">
-		{{ test.description }}
+		{{ test.annotation }}
 	</p>
 
 	<p class="parts__test-info">
@@ -22,5 +22,17 @@
 
 	<p class="parts__test-info">
 		Сложность: 5
+	</p>
+
+	<p class="parts__test-info">
+		Рейтинг: 5
+	</p>
+
+	<p class="parts__test-btn">
+		<a class="btn btn-round btn-md btn-info"
+		   href="{{ url_for( 'test', id = test.id ) }}">Узнать</a>
+
+		<a class="btn btn-round btn-md btn-success"
+		   href="{{ url_for( 'test', id = test.id ) }}">Пройти</a>
 	</p>
 </div>

@@ -17,6 +17,8 @@
 
 	border-top-left-radius: 8px;
 	border-top-right-radius: 8px;
+
+	border-bottom: 2px solid #ffc107;
 }
 .parts__test-title{
 	padding: 0 10px;
@@ -25,23 +27,12 @@
 	overflow-wrap: anywhere;
 }
 .parts__test-title-link{
+	text-decoration: none;
+
 	color: #333333;
 }
 .parts__test-desc{
 	padding: 0 10px;
-
-    -ms-text-overflow: ellipsis;
-    -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -ms-line-clamp: 3;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    display: -webkit-box;
-    display: box;
-    word-wrap: break-word;
-    -webkit-box-orient: vertical;
-    box-orient: vertical;
 }
 .parts__test-info{
 	margin-top: 0;
@@ -54,4 +45,12 @@
 }
 .parts__test-info:last-child{
     margin-bottom: 1em;
+}
+.parts__test-btn{
+	margin: 10px 0 25px;
+	padding-top: 25px;
+
+	text-align: center;
+
+	border-top: 1px solid #ffc107;
 }
