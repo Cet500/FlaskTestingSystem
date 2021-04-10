@@ -5,6 +5,10 @@ load_dotenv()
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config(object):
+    # Hardcode values
+    TEMPLATES_AUTO_RELOAD = True
+    LANGUAGES = ['en', 'ru']
+
     # Forms config
     SECRET_KEY = os.environ.get('SECRET_KEY')
 

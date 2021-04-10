@@ -1,5 +1,7 @@
-from app import db
+from app import db, login
+from flask_login import UserMixin
 from datetime import datetime
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class Group(db.Model):
@@ -13,7 +15,7 @@ class Group(db.Model):
 	tests = db.relationship( 'Test', backref = "tests", lazy = "dynamic" )
 
 	def __repr__(self):
-		return f'<Group {self.title}>'
+		return f'<group {self.title}>'
 
 
 class Test(db.Model):
@@ -28,7 +30,7 @@ class Test(db.Model):
 	questions = db.relationship( 'Question', backref = "questions", lazy = "dynamic" )
 
 	def __repr__(self):
-		return f'<Test {self.name}>'
+		return f'<test {self.name}>'
 
 
 class Question(db.Model):
@@ -39,7 +41,7 @@ class Question(db.Model):
 	answers = db.relationship( 'Answer', backref = "answers", lazy = "dynamic" )
 
 	def __repr__(self):
-		return f'<Question {self.text}>'
+		return f'<question {self.text}>'
 
 
 class Answer(db.Model):
@@ -49,10 +51,10 @@ class Answer(db.Model):
 	is_true     = db.Column( db.Boolean, default = False )
 
 	def __repr__(self):
-		return f'<Answer {self.text}>'
+		return f'<answer {self.text}>'
 
 
-class User(db.Model):
+class User(UserMixin, db.Model):
 	id           = db.Column( db.Integer, primary_key = True )
 	username     = db.Column( db.String(32), index = True, unique = True,nullable = False )
 	name         = db.Column( db.String(32), nullable = False )
@@ -62,3 +64,17 @@ class User(db.Model):
 	role         = db.Column( db.String(1) )
 	datetime_red = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
 	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
+
+	def __repr__( self ):
+		return f'<user {self.username}>'
+
+	def set_password( self, password ):
+		self.pass_hash = generate_password_hash( password )
+
+	def check_password( self, password ):
+		return check_password_hash( self.pass_hash, password )
+
+
+@login.user_loader
+def load_user( id ):
+	return User.query.get( int( id ) )
