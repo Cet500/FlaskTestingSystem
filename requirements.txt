@@ -4,6 +4,7 @@ click==7.1.2
 coverage==5.5
 Flask==1.1.2
 Flask-Migrate==2.7.0
+Flask-Moment==0.11.0
 Flask-SQLAlchemy==2.5.1
 Flask-WTF==0.14.3
 greenlet==1.0.0
@@ -15,6 +16,7 @@ MarkupSafe==1.1.1
 packaging==20.9
 pluggy==0.13.1
 py==1.10.0
+PyMySQL==1.0.2
 pyparsing==2.4.7
 pytest==6.2.3
 python-dateutil==2.8.1
