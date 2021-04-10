@@ -1,0 +1,63 @@
+/* ------------------------------- forms ------------------------------- */
+
+/* -------------------- base -------------------- */
+
+.form{
+	width: max-content;
+
+	margin: 20px auto;
+
+
+	font-family: Roboto, Arial, sans-serif;
+
+	border: 3px solid #ffc107;
+	border-radius: 10px;
+}
+
+/* -------------------- header -------------------- */
+
+.form-header{
+	border-bottom: 2px solid #ffc107
+}
+.form-header-title{
+	padding: 0 20px;
+	margin: 10px 0;
+
+	font-family: Nunito, sans-serif;
+}
+
+/* -------------------- inputs -------------------- */
+
+.form-inputs{
+	padding: 5px 20px;
+}
+.form-input{
+	display: block;
+
+	padding: 5px;
+	margin: 5px 0;
+
+	font-size: 1em;
+	font-family: Roboto, Arial, sans-serif;
+
+	color: #000000;
+	background-color: #ffffff;
+	border: 1px solid #888888;
+	outline: none;
+
+	border-top-right-radius: 50px;
+	border-bottom-right-radius: 50px;
+}
+.form-input:focus{
+	border: 1px solid #c13b4b;
+}
+
+/* -------------------- buttons -------------------- */
+
+.form-buttons{
+	padding: 2px 12px;
+
+	text-align: right;
+
+	border-top: 2px solid #ffc107
+}

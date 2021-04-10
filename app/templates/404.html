@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+	<h2 class="error">{{ _("Error 404: Not Found") }}</h2>
+
+	<p>{{ _("Your url:") }} <code>{{ request.url }}</code></p>
+
+	<p>{{ _("You may have made a mistake somewhere. Try again or ") }}
+		<a href="{{ url_for('index') }}">{{ _("back to main page") }}</a>.
+	</p>
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+	<h2 class="error">{{ _("Error 500: Internal Server Error") }}</h2>
+
+	<p>{{ _("You may have made a mistake somewhere. Try again or ") }}
+		<a href="{{ url_for('index') }}">{{ _("back to main page") }}</a>.
+	</p>
+
+{% endblock %}
