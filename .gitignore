@@ -5,4 +5,6 @@
 .pytest_cache
 app.db
 app/test.db
+index.lokalize
+lokalize-scripts
 venv
