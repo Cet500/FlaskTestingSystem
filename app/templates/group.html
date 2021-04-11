@@ -14,7 +14,9 @@
 		{% for test in group.tests %}
 
 			<li class="global__menu-item">
-				{{ test.name }}
+				<a class="global__menu-link"
+				   href="{{ url_for('test', id = test.id) }}">
+					{{ test.name }}</a>
 			</li>
 
 		{% endfor %}

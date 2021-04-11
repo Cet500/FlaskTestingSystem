@@ -8,21 +8,6 @@
 {% endblock %}
 
 
-{% block menu %}
-
-	<ul class="global__menu global__menu-numbered">
-		{% for question in test.questions %}
-
-			<li class="global__menu-item">
-				{{ question.text }}
-			</li>
-
-		{% endfor %}
-	</ul>
-
-{% endblock %}
-
-
 {% block content %}
 
 	<section class="test-base__section-test">
@@ -52,7 +37,8 @@
         </p>
 
 		<p class="test-base__section-test-btn">
-			<a class="btn btn-rounded btn-lg btn-success" href="">Начать прохождение</a>
+			<a class="btn btn-rounded btn-lg btn-success"
+			   href="{{ url_for( "testing", id = test.id ) }}">Начать прохождение</a>
 		</p>
 	</section>
 

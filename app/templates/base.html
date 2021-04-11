@@ -23,15 +23,44 @@
 
     <body class="global__body">
         <header class="global__header">
-			<h1 class="global__header-title">
-				<span class="global__header-title-prefix">ТеСи</span>
+			<div class="global__header-inner">
+				<span class="global__header-logo">
+					<a class="global__header-logo-link"
+					   href="{{ url_for('index') }}">ТеСи</a>
+				</span>
 
-				{% if path %}
-					{{ path|safe }}
-				{% else %}
+				<div class="global__header-menu">
+					{% if current_user.is_authenticated %}
+						{{ current_user.username }}
+						<br>
+						<a href="{{ url_for('logout') }}">{{ _('logout') }}</a>
+
+						{% if current_user.role == "A" %}
+							<br>
+							<a href="{{ url_for('add_group') }}">{{ _('add group') }}</a>
+							<br>
+							<a href="{{ url_for('add_test') }}">{{ _('add test') }}</a>
+						{% endif %}
+
+					{% else %}
+						<a href="{{ url_for('login') }}">{{ _('login') }}</a>
+						<br>
+						<a href="{{ url_for('register') }}">{{ _('register') }}</a>
+					{% endif %}
+				</div>
+
+				<h1 class="global__header-title">
 					{{ title }}
-				{% endif %}
-			</h1>
+				</h1>
+
+				<span class="global__header-path">
+					{% if path %}
+						{{ path|safe }}
+					{% else %}
+						{{ title }}
+					{% endif %}
+				</span>
+			</div>
 		</header>
 
 		{% if menu %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+	<h2 class="error">{{ _("Error 405: Method Not Allowed") }}</h2>
+
+	<p>{{ _("Your url:") }} <code>{{ request.url }}</code></p>
+
+	<p>{{ _("You are accessing the server using the wrong method. But we'll fix it. Try again or ") }}
+		<a href="{{ url_for('index') }}">{{ _("back to main page") }}</a>.
+	</p>
+
+{% endblock %}

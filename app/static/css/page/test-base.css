@@ -6,7 +6,9 @@
     margin: 20px 50px;
 
     border-radius: 10px;
+
     border: 3px solid #ffc107;
+	background-color: #eeeeee;
 }
 .test-base__section-test-image{
     width: 100%;

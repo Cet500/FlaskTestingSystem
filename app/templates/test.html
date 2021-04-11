@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+	<form class="form" action="">
+
+		<div class="form-header">
+			<h2 class="form-header-title">{{ test.name }}</h2>
+		</div>
+
+		<div class="form-inputs">
+			{% for question in test.questions %}
+
+				<p>
+					{{ question.text }}<br>
+
+					{% for answers in question.answers %}
+
+						<label class="form-input-label">
+							<input type="radio" name="ans{{ question.id }}" class="form-input form-input-radio">
+							{{ answers.text }}
+						</label>
+
+					{% endfor %}
+				</p>
+
+			{% endfor %}
+		</div>
+
+		<div class="form-buttons">
+			<input type="submit" class="btn btn-md btn-round btn-primary" value="{{ _("Проверить тест") }}">
+		</div>
+
+	</form>
+
+{% endblock %}

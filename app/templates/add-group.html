@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+	<form class="form" action="" method="post" novalidate>
+		{{ form.hidden_tag() }}
+
+		<div class="form-header">
+			<h2 class="form-header-title">{{ _("Add group") }}</h2>
+		</div>
+
+		<div class="form-inputs">
+			<p>
+				{{ form.title.label }}<br>
+				{{ form.title(size=32, class="form-input") }}
+
+				{% for error in form.title.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.description.label }}<br>
+				{{ form.description(cols=34, rows=4, class="form-input") }}
+
+				{% for error in form.description.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+		</div>
+
+		<div class="form-buttons">
+			{{ form.submit(class="btn btn-md btn-round btn-primary") }}
+		</div>
+	</form>
+
+{% endblock %}
