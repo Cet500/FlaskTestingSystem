@@ -8,7 +8,6 @@ class Group(db.Model):
 	id           = db.Column( db.Integer, primary_key = True )
 	title        = db.Column( db.String(32), index = True, unique = True, nullable = False )
 	description  = db.Column( db.String(256) )
-	image        = db.Column( db.Integer )
 	datetime_add = db.Column( db.DateTime, default = datetime.utcnow(), index = True )
 	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
 
@@ -24,6 +23,7 @@ class Test(db.Model):
 	name         = db.Column( db.String(32), index = True, unique = True, nullable = False )
 	annotation   = db.Column( db.String(128) )
 	description  = db.Column( db.String(512) )
+	image        = db.Column( db.Integer )
 	datetime_add = db.Column( db.DateTime, default = datetime.utcnow(), index = True )
 	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
 
@@ -56,7 +56,7 @@ class Answer(db.Model):
 
 class User(UserMixin, db.Model):
 	id           = db.Column( db.Integer, primary_key = True )
-	username     = db.Column( db.String(32), index = True, unique = True,nullable = False )
+	username     = db.Column( db.String(32), index = True, unique = True, nullable = False )
 	name         = db.Column( db.String(32), nullable = False )
 	lastname     = db.Column( db.String(32) )
 	group        = db.Column( db.String(16) )
@@ -76,5 +76,5 @@ class User(UserMixin, db.Model):
 
 
 @login.user_loader
-def load_user( id ):
-	return User.query.get( int( id ) )
+def load_user( user_id ):
+	return User.query.get( int( user_id ) )

@@ -15,14 +15,14 @@ class LoginForm(FlaskForm):
 
 
 class RegisterForm(FlaskForm):
-	name      = StringField( _l("Name"), validators = [ DataRequired(), Length(min = 2, max = 32) ] )
-	lastname  = StringField( _l("Lastname"), validators = [ DataRequired(), Length(min = 2, max = 32) ] )
+	name      = StringField( _l("Name"), validators = [ DataRequired(), Length( min = 2, max = 32 ) ] )
+	lastname  = StringField( _l("Lastname"), validators = [ DataRequired(), Length( min = 2, max = 32 ) ] )
 	username  = StringField( _l("Username"), validators = [ DataRequired(), Length( min = 3, max = 32 ) ] )
 	group     = StringField( _l("Group"), validators = [ Length( max = 8 ) ] )
 	role      = SelectField( _l("Role"), choices = [ ( "S", _l("Student") ), ( "T", _l("Teacher") ) ],
 	                                     validators = [ DataRequired() ] )
-	password  = StringField( _l("Password"), validators = [ DataRequired(), Length( min = 8, max = 64 ) ] )
-	password2 = StringField( _l("Repeat password"), validators = [ DataRequired(), EqualTo( 'password' ) ] )
+	password  = PasswordField( _l("Password"), validators = [ DataRequired(), Length( min = 8, max = 64 ) ] )
+	password2 = PasswordField( _l("Repeat password"), validators = [ DataRequired(), EqualTo( 'password' ) ] )
 	submit    = SubmitField( _l("Register") )
 
 	def validate_username( self, username ):
@@ -43,3 +43,17 @@ class RegisterForm(FlaskForm):
 
 		if re.search('[0-9]', password.data) is None:
 			raise ValidationError( _l("Use number in password") )
+
+
+class AddGroupForm(FlaskForm):
+	title       = StringField( _l("Title"), validators = [ DataRequired(), Length( min = 4, max = 32 ) ] )
+	description = TextAreaField( _l("Description"), validators = [ DataRequired(), Length( min = 16, max = 256 ) ] )
+	submit      = SubmitField( _l("Add group") )
+
+
+class AddTestForm(FlaskForm):
+	id_group    = SelectField( _l("Group"), coerce = int, validators = [ DataRequired() ] )
+	name        = StringField( _l("Name of test"), validators = [ DataRequired(), Length( min = 4, max = 32 ) ] )
+	annotation  = TextAreaField( _l("Annotation of test"), validators = [ DataRequired(), Length( min = 16, max = 128 ) ] )
+	description = TextAreaField( _l("Description of test"), validators = [ DataRequired(), Length( min = 32, max = 512 ) ] )
+	submit      = SubmitField( _l( "Add test" ) )

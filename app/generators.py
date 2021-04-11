@@ -2,10 +2,9 @@ import random
 import string
 
 
-class Generators():
+class Generators:
 	def __init__(self):
 		pass
-
 
 	def random_string( self, length = 16, delta = 0, add_digits = False, add_space = False,
 	                         only_uppercase = False, only_lowercase = False ):
@@ -25,7 +24,6 @@ class Generators():
 
 		return self._get_string( source, length, delta )
 
-
 	def random_rus_string( self, length = 16, delta = 0, add_digits = False, add_space = False,
 	                             only_uppercase = False, only_lowercase = False ):
 
@@ -44,16 +42,14 @@ class Generators():
 
 		return self._get_string( source, length, delta )
 
-
-	def random_int( self, min = 0, max = 1 ):
-		return random.randint( min, max )
-
+	def random_int( self, min_int = 0, max_int = 1 ):
+		return random.randint( min_int, max_int )
 
 	def _get_string( self, source, length, delta ):
 		if delta > 0:
-			min = length - delta
-			max = length + delta
-			rand_string = ''.join( random.choices( source, k = random.randint( min, max ) ) )
+			min_int = length - delta
+			max_int = length + delta
+			rand_string = ''.join( random.choices( source, k = random.randint( min_int, max_int ) ) )
 		else:
 			rand_string = ''.join( random.choices( source, k = length ) )
 

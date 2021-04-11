@@ -4,7 +4,7 @@ from flask_babel import _
 from flask_babel import lazy_gettext as _l
 from app import app, db, moment
 from app.models import User, Group, Test
-from app.forms import LoginForm, RegisterForm
+from app.forms import LoginForm, RegisterForm, AddGroupForm, AddTestForm
 
 
 # ------------------------ main pages ------------------------ #
@@ -40,6 +40,18 @@ def test(id):
 	return render_template( "test-base.html", title = f"{test.name}", path = path, test = test )
 
 
+@app.route('/testing/<int:id>')
+def testing(id):
+	test  = Test.query.get(id)
+	group = Group.query.get(test.id_group)
+
+	link0 = url_for( 'index' )
+	link1 = url_for( 'group', id = group.id )
+	path  = f"<a href={link0}>Все тесты</a> / <a href={link1}>{group.title}</a> / {test.name}"
+
+	return render_template( "test.html", title = f"{test.name}", path = path, test = test )
+
+
 # ------------------------ login system ------------------------ #
 
 
@@ -71,14 +83,14 @@ def register():
 	form = RegisterForm()
 
 	if form.validate_on_submit():
-		user = User( name = form.name.data, lastname = form.lastname.data, username = form.username.data,
-		             group = form.group.data, role = form.group.data )
+		user = app.models.User( username = form.username.data, name = form.name.data, lastname = form.lastname.data,
+		                        group = form.group.data, role = form.role.data )
 		user.set_password( password = form.password.data )
 
 		db.session.add( user )
 		db.session.commit()
 
-		return redirect( '/index' )
+		return redirect( url_for( "index" ) )
 
 	return render_template( "register.html", title = _( "Register" ), form = form )
 
@@ -89,17 +101,70 @@ def logout():
 	return redirect( url_for( "index" ) )
 
 
+# ------------------------ forms pages ------------------------ #
+
+
+@app.route('/add_group', methods = [ 'GET', 'POST' ])
+def add_group():
+	form = AddGroupForm()
+
+	if form.validate_on_submit():
+		group = Group( title = form.title.data, description = form.description.data )
+
+		db.session.add( group )
+		db.session.commit()
+
+		last_insert_id = group.id
+
+		return redirect( url_for( "group", id = last_insert_id ) )
+
+	return render_template( "add-group.html", title = _( "Add group" ), form = form )
+
+
+@app.route('/add_test', methods = [ 'GET', 'POST' ])
+def add_test():
+	groups = db.session.query( Group ).all()
+	groups_list = [ ( g.id, g.title ) for g in groups ]
+
+	form = AddTestForm()
+	form.id_group.choices = groups_list
+
+	if form.validate_on_submit():
+		test = Test( id_group = form.id_group.data, name = form.name.data, annotation = form.annotation.data,
+		             description = form.description.data )
+
+		db.session.add( test )
+		db.session.commit()
+
+		last_insert_id = test.id
+
+		return redirect( url_for( "test", id = last_insert_id ) )
+
+	return render_template( "add-test.html", title = _( "Add test" ), form = form )
+
+
 # ------------------------ technical pages ------------------------ #
 
 
 @app.errorhandler(404)
 def error_404(e):
-	return render_template( "404.html", title = _('Error 404') ), 404
+	path = _('Errors') + " / 400 / " + _('Error 404')
+
+	return render_template( "404.html", title = _('Error 404'), path = path ), 404
+
+
+@app.errorhandler(405)
+def error_405(e):
+	path = _('Errors') + " / 400 / " + _('Error 405')
+
+	return render_template( "405.html", title = _('Error 405'), path = path ), 405
 
 
 @app.errorhandler(500)
 def error_500(e):
-	return render_template( "500.html", title = _('Error 500') ), 500
+	path = _('Errors') + " / 500 / " + _('Error 500')
+
+	return render_template( "500.html", title = _('Error 500'), path = path ), 500
 
 
 # ------------------------ test pages ------------------------ #
