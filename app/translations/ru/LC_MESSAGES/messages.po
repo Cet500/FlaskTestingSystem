@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-10 16:30+1000\n"
-"PO-Revision-Date: 2021-04-10 16:31+1000\n"
+"POT-Creation-Date: 2021-04-11 19:42+1000\n"
+"PO-Revision-Date: 2021-04-11 19:43+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -33,7 +33,7 @@ msgstr "Пароль"
 msgid "Remember me"
 msgstr "Запомнить меня"
 
-#: app/forms.py:14 app/routes.py:55 app/templates/login.html:10
+#: app/forms.py:14 app/routes.py:63 app/templates/login.html:10
 msgid "Sign in"
 msgstr "Войти в систему"
 
@@ -45,7 +45,7 @@ msgstr "Имя"
 msgid "Lastname"
 msgstr "Фамилия"
 
-#: app/forms.py:21
+#: app/forms.py:21 app/forms.py:55
 msgid "Group"
 msgstr "Группа"
 
@@ -53,11 +53,11 @@ msgstr "Группа"
 msgid "Role"
 msgstr "Роль"
 
-#: app/forms.py:22
+#: app/forms.py:22 app/forms.py:55
 msgid "Student"
 msgstr "Студент"
 
-#: app/forms.py:22
+#: app/forms.py:22 app/forms.py:55
 msgid "Teacher"
 msgstr "Учитель"
 
@@ -65,43 +65,80 @@ msgstr "Учитель"
 msgid "Repeat password"
 msgstr "Повторите пароль"
 
-#: app/forms.py:26 app/routes.py:65 app/templates/register.html:10
+#: app/forms.py:26 app/routes.py:83 app/templates/register.html:10
 msgid "Register"
 msgstr "Регистрация"
 
-#: app/forms.py:31
+#: app/forms.py:32
 msgid "Please use a different login"
 msgstr "Пожалуйста, используйте другой пароль"
 
-#: app/forms.py:34
+#: app/forms.py:35
 msgid "Use only A-Z, a-z, 0-9 and _"
 msgstr "Используйте только буквы и цифры "
 
-#: app/forms.py:38
+#: app/forms.py:39
 msgid "Use letter in password"
 msgstr "Используйте прописные буквы"
 
-#: app/forms.py:41
+#: app/forms.py:42
 msgid "Use capital in password"
 msgstr "Используйте заглавные буквы"
 
-#: app/forms.py:44
+#: app/forms.py:45
 msgid "Use number in password"
 msgstr "Используйте числа"
 
-#: app/routes.py:17
+#: app/forms.py:49
+msgid "Title"
+msgstr "Заголовок"
+
+#: app/forms.py:50
+msgid "Description"
+msgstr "Описание"
+
+#: app/forms.py:51 app/routes.py:109 app/templates/add-group.html:10
+#: app/templates/add-test.html:10
+msgid "Add group"
+msgstr "Добавить группу"
+
+#: app/forms.py:56
+msgid "Name of test"
+msgstr "Имя теста"
+
+#: app/forms.py:57
+msgid "Annotation of test"
+msgstr "Аннотация теста"
+
+#: app/forms.py:58
+msgid "Description of test"
+msgstr "Описание теста"
+
+#: app/forms.py:59 app/routes.py:119
+msgid "Add test"
+msgstr "Добавить тест"
+
+#: app/routes.py:18
 msgid "All tests"
 msgstr "Все тесты"
 
-#: app/routes.py:17
+#: app/routes.py:18
 msgid "Test by groups"
 msgstr "Тесты по группам"
 
-#: app/routes.py:73
+#: app/routes.py:127 app/routes.py:134 app/routes.py:141
+msgid "Errors"
+msgstr "Ошибки"
+
+#: app/routes.py:127 app/routes.py:129
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: app/routes.py:78
+#: app/routes.py:134 app/routes.py:136
+msgid "Error 405"
+msgstr "Ошибка 405"
+
+#: app/routes.py:141 app/routes.py:143
 msgid "Error 500"
 msgstr "Ошибка 500"
 
@@ -109,19 +146,62 @@ msgstr "Ошибка 500"
 msgid "Error 404: Not Found"
 msgstr "Ошибка 404: Не найдено"
 
-#: app/templates/404.html:8
+#: app/templates/404.html:8 app/templates/405.html:8
 msgid "Your url:"
 msgstr "Ваш адрес:"
 
-#: app/templates/404.html:10 app/templates/500.html:8
+#: app/templates/404.html:10
 msgid "You may have made a mistake somewhere. Try again or "
 msgstr "Возможно, вы ошиблись. Попробуйте ещё раз или "
 
-#: app/templates/404.html:11 app/templates/500.html:9
+#: app/templates/404.html:11 app/templates/405.html:11 app/templates/500.html:9
 msgid "back to main page"
 msgstr "вернитесь на главную страницу"
+
+#: app/templates/405.html:6
+msgid "Error 405: Method Not Allowed"
+msgstr "Ошибка 405: Метод не разрешён"
+
+#: app/templates/405.html:10
+msgid ""
+"You are accessing the server using the wrong method. But we'll fix it. "
+"Try again or "
+msgstr ""
+"Вы обращаетесь к серверу неверным методом. Но мы это починим. Попробуйте "
+"ещё раз или "
 
 #: app/templates/500.html:6
 msgid "Error 500: Internal Server Error"
 msgstr "Ошибка 500: Внутренняя ошибка сервера"
+
+#: app/templates/500.html:8
+msgid ""
+"This is a server-side error. We're already aware of the problem, so "
+"things should get better soon. Try again or "
+msgstr ""
+"Это ошибка на серверной стороне. Мы уже знаем о проблеме, так что скоро "
+"всё должно наладиться. Попробуйте ещё раз или "
+
+#: app/templates/base.html:33
+msgid "logout"
+msgstr "выход"
+
+#: app/templates/base.html:37
+msgid "add group"
+msgstr "добавить группу"
+
+#: app/templates/base.html:39
+msgid "add test"
+msgstr "добавить тест"
+
+#: app/templates/base.html:43
+msgid "login"
+msgstr "вход в систему"
+
+#: app/templates/base.html:45
+msgid "register"
+msgstr "регистрация"
+
+#~ msgid "Submit"
+#~ msgstr "Принять"
 
