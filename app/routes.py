@@ -1,10 +1,12 @@
-from flask import render_template, url_for, redirect, request
+from flask import render_template, url_for, redirect, request, send_from_directory
 from flask_login import current_user, login_user, logout_user, login_required
 from flask_babel import _
 from flask_babel import lazy_gettext as _l
+from wtforms import RadioField
+from wtforms.validators import DataRequired
 from app import app, db, moment
-from app.models import User, Group, Test
-from app.forms import LoginForm, RegisterForm, AddGroupForm, AddTestForm
+from app.models import User, Group, Test, Result
+from app.forms import EmptyForm, LoginForm, RegisterForm, AddGroupForm, AddTestForm
 
 
 # ------------------------ main pages ------------------------ #
@@ -37,10 +39,10 @@ def test(id):
 	link1 = url_for( 'group', id = group.id )
 	path  = f"<a href={link0}>Все тесты</a> / <a href={link1}>{group.title}</a> / {test.name}"
 
-	return render_template( "test-base.html", title = f"{test.name}", path = path, test = test )
+	return render_template( "test-base.html", title = test.name + " / " + _("Info"), path = path, test = test )
 
 
-@app.route('/testing/<int:id>')
+@app.route('/testing/<int:id>', methods = [ 'GET', 'POST' ])
 def testing(id):
 	test  = Test.query.get(id)
 	group = Group.query.get(test.id_group)
@@ -49,7 +51,74 @@ def testing(id):
 	link1 = url_for( 'group', id = group.id )
 	path  = f"<a href={link0}>Все тесты</a> / <a href={link1}>{group.title}</a> / {test.name}"
 
-	return render_template( "test.html", title = f"{test.name}", path = path, test = test )
+	class TestForm(EmptyForm):
+		pass
+
+	for question in test.questions:
+		setattr( TestForm,
+		         str(question.id),
+		         RadioField( question.text, choices = [ ( a.id, a.text ) for a in question.answers ] ,
+		                                    validators = [ DataRequired() ] ) )
+
+	form = TestForm()
+
+	if form.validate_on_submit():
+		arr    = form.data
+		score  = 0
+		mark   = 0
+		quests = test.questions.count()
+
+		if current_user.is_authenticated:
+			id_user = current_user.id
+		else:
+			id_user = None
+
+		for question in test.questions:
+			if arr[ str(question.id) ] == str( question.true_answer() ):
+				score += 1
+
+		percent = round( ( score / quests ) * 100, 1 )
+
+		if percent >= 90:
+			mark = 5
+		elif 75 < percent < 90:
+			mark = 4
+		elif 50 < percent <= 75:
+			mark = 3
+		elif percent <= 50:
+			mark = 2
+
+		print( mark )
+
+		result = Result( id_test = test.id, id_user = id_user, mark = mark, score = score, quests = quests, percent = percent )
+
+		db.session.add( result )
+		db.session.commit()
+
+		last_insert_id = result.id
+
+		return redirect( url_for( "result", id = last_insert_id ) )
+
+	return render_template( "test.html", title = test.name + " / " + _("Testing"), path = path, form = form, test = test )
+
+
+@app.route('/result/<int:id>')
+def result(id):
+	result = Result.query.get( id )
+	test   = Test.query.get( result.id_test )
+	group  = Group.query.get( test.id_group )
+
+	if result.id_user is None:
+		user = "None"
+	else:
+		user = User.query.get( result.id_user )
+
+	link0 = url_for( 'index' )
+	link1 = url_for( 'group', id = group.id )
+	path  = f"<a href={link0}>Все тесты</a> / <a href={link1}>{group.title}</a> / {test.name}"
+
+	return render_template( "test-result.html", title = test.name + " / " + _("Result"), path = path, result = result,
+	                                            test = test, user = user )
 
 
 # ------------------------ login system ------------------------ #
@@ -70,7 +139,7 @@ def login():
 
 		login_user( user, remember = form.remember_me.data )
 
-		return redirect( '/index' )
+		return redirect( url_for( "index" ) )
 
 	return render_template( "login.html", title = _("Sign in"), form = form )
 
@@ -83,14 +152,14 @@ def register():
 	form = RegisterForm()
 
 	if form.validate_on_submit():
-		user = app.models.User( username = form.username.data, name = form.name.data, lastname = form.lastname.data,
-		                        group = form.group.data, role = form.role.data )
+		user = User( username = form.username.data, name = form.name.data, lastname = form.lastname.data,
+		             group = form.group.data, role = form.role.data )
 		user.set_password( password = form.password.data )
 
 		db.session.add( user )
 		db.session.commit()
 
-		return redirect( url_for( "index" ) )
+		return redirect( url_for( "login" ) )
 
 	return render_template( "register.html", title = _( "Register" ), form = form )
 
@@ -123,7 +192,7 @@ def add_group():
 
 @app.route('/add_test', methods = [ 'GET', 'POST' ])
 def add_test():
-	groups = db.session.query( Group ).all()
+	groups = Group.query.all()
 	groups_list = [ ( g.id, g.title ) for g in groups ]
 
 	form = AddTestForm()
@@ -146,6 +215,13 @@ def add_test():
 # ------------------------ technical pages ------------------------ #
 
 
+@app.route('/favicon.ico')
+@app.route('/robots.txt')
+@app.route('/sitemap.xml')
+def static_from_root():
+	return send_from_directory(app.static_folder, request.path[1:])
+
+
 @app.errorhandler(404)
 def error_404(e):
 	path = _('Errors') + " / 400 / " + _('Error 404')
@@ -165,11 +241,3 @@ def error_500(e):
 	path = _('Errors') + " / 500 / " + _('Error 500')
 
 	return render_template( "500.html", title = _('Error 500'), path = path ), 500
-
-
-# ------------------------ test pages ------------------------ #
-
-
-@app.route('/add')
-def add():
-	return 'ok'

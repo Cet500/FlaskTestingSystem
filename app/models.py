@@ -28,6 +28,7 @@ class Test(db.Model):
 	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
 
 	questions = db.relationship( 'Question', backref = "questions", lazy = "dynamic" )
+	results   = db.relationship( 'Result', backref = "results", lazy = "dynamic" )
 
 	def __repr__(self):
 		return f'<test {self.name}>'
@@ -42,6 +43,9 @@ class Question(db.Model):
 
 	def __repr__(self):
 		return f'<question {self.text}>'
+
+	def true_answer( self ):
+		return self.answers.filter( Answer.is_true == True ).first().id
 
 
 class Answer(db.Model):
@@ -62,8 +66,10 @@ class User(UserMixin, db.Model):
 	group        = db.Column( db.String(16) )
 	pass_hash    = db.Column( db.String(128), nullable = False )
 	role         = db.Column( db.String(1) )
-	datetime_red = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
+	datetime_reg = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
 	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
+
+	solved_tests = db.relationship( 'Result', backref = "solved_tests", lazy = "dynamic" )
 
 	def __repr__( self ):
 		return f'<user {self.username}>'
@@ -78,3 +84,18 @@ class User(UserMixin, db.Model):
 @login.user_loader
 def load_user( user_id ):
 	return User.query.get( int( user_id ) )
+
+
+class Result(db.Model):
+	id           = db.Column( db.Integer, primary_key = True )
+	id_user      = db.Column( db.Integer, db.ForeignKey( 'user.id' ), nullable = True )
+	id_test      = db.Column( db.Integer, db.ForeignKey( 'test.id' ), nullable = False )
+	mark         = db.Column( db.Integer, nullable = False )
+	score        = db.Column( db.Integer, nullable = False )
+	quests       = db.Column( db.Integer, nullable = False )
+	percent      = db.Column( db.Float,   nullable = False )
+	datetime_add = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
+	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
+
+	def __repr__( self ):
+		return f'<result {self.id}>'

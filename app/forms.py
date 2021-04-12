@@ -7,6 +7,10 @@ from app.models import User
 import re
 
 
+class EmptyForm(FlaskForm):
+	submit = SubmitField( _l("Submit") )
+
+
 class LoginForm(FlaskForm):
 	username    = StringField(   _l("Username"), validators = [ DataRequired(), Length( min = 3, max = 32 ) ] )
 	password    = PasswordField( _l("Password"), validators = [ DataRequired(), Length( min = 3, max = 32 ) ] )
