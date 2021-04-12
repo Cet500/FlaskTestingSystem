@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% block links %}
+
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/test-base.min.css' ) }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+	<section class="test-base__section-test">
+		<h2 class="test-base__section-test-name">{{ _("Result by") }} "{{ test.name }}"</h2>
+
+		<p class="test-base__section-test-description">
+			{{ _("Name of the test subject:") }}
+
+			{% if user == "None" %}
+				{{ _("Anonimus") }}
+			{% else %}
+				{{ user.name }} {{ user.lastname }}
+			{% endif %}
+		</p>
+
+		<p class="test-base__section-test-description">
+			{{ _("Datetime of test:") }} {{ result.datetime_add }}
+		</p>
+
+		<p class="test-base__section-test-info">
+            {{ _("Total questions / correct answers:") }} {{ test.questions.count() }} / {{ result.score }}
+        </p>
+
+        <p class="test-base__section-test-info">
+			{{ _("Percent correct answers:") }} {{ result.percent }}%
+        </p>
+
+		<h3 class="test-base__section-test-name">
+			{{ _("Final mark:") }}
+
+			{% if result.mark == 5 %}
+				{{ _("5 (excellent)") }}
+			{% elif result.mark == 4 %}
+				{{ _("4 (good)") }}
+			{% elif result.mark == 3 %}
+				{{ _("3 (satisfactory)") }}
+			{% elif result.mark == 2 %}
+				{{ _("2 (bad)") }}
+			{% endif %}
+		</h3>
+
+		<p class="test-base__section-test-btn">
+			<a class="btn btn-round btn-lg btn-info"
+			   href="{{ url_for( "index" ) }}">{{ _("Back to main") }}</a>
+
+			<a class="btn btn-round btn-lg btn-success"
+			   href="{{ url_for( "testing", id = test.id ) }}">{{ _("Solve test again") }}</a>
+		</p>
+	</section>
+
+{% endblock %}

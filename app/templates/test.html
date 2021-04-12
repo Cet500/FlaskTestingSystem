@@ -3,35 +3,31 @@
 
 {% block content %}
 
-	<form class="form" action="">
+	<form class="form" action="" method="post" novalidate>
+		{{ form.hidden_tag() }}
 
 		<div class="form-header">
 			<h2 class="form-header-title">{{ test.name }}</h2>
 		</div>
 
 		<div class="form-inputs">
-			{% for question in test.questions %}
 
-				<p>
-					{{ question.text }}<br>
+			{% for quest in form %}
+				{% if quest.type == "RadioField" %}
+					{{ quest.label( class="form-input-label" ) }}
+					{{ quest( class="form-input-radio" ) }}
 
-					{% for answers in question.answers %}
-
-						<label class="form-input-label">
-							<input type="radio" name="ans{{ question.id }}" class="form-input form-input-radio">
-							{{ answers.text }}
-						</label>
-
+					{% for error in quest.errors %}
+						<span class="check error">[{{ error }}]</span>
 					{% endfor %}
-				</p>
-
+				{% endif %}
 			{% endfor %}
+
 		</div>
 
 		<div class="form-buttons">
-			<input type="submit" class="btn btn-md btn-round btn-primary" value="{{ _("Проверить тест") }}">
+			{{ form.submit(class="btn btn-md btn-round btn-primary") }}
 		</div>
-
 	</form>
 
 {% endblock %}

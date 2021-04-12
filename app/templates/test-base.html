@@ -21,23 +21,23 @@
 		<p class="test-base__section-test-description">{{ test.description }}</p>
 
 		<p class="test-base__section-test-info">
-            Количество вопросов: {{ test.questions.count() }}
+            {{ _("Count questions:") }} {{ test.questions.count() }}
         </p>
 
         <p class="test-base__section-test-info">
-            Количество прохождений: N/A
+            Количество прохождений: {{ test.results.count() }}
         </p>
 
         <p class="test-base__section-test-info">
-            Сложность: 5
+            {{ _("Difficult:") }} 5
         </p>
 
 		<p class="test-base__section-test-info">
-            Рейтинг: 5
+            {{ _("Raiting:") }} 5
         </p>
 
 		<p class="test-base__section-test-btn">
-			<a class="btn btn-rounded btn-lg btn-success"
+			<a class="btn btn-round btn-lg btn-success"
 			   href="{{ url_for( "testing", id = test.id ) }}">Начать прохождение</a>
 		</p>
 	</section>

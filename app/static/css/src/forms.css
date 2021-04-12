@@ -53,10 +53,15 @@
 	border: 1px solid #c13b4b;
 }
 .form-input-label{
-	display: block;
+    display: inline-block;
+
+	padding-top: 1em;
 }
 .form-input-radio{
-	display: inline-block;
+	margin: 2px 0;
+	padding-left: 20px;
+
+	list-style: none;
 }
 
 /* -------------------- buttons -------------------- */
