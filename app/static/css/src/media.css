@@ -1,0 +1,78 @@
+/* ------------------------------- media ------------------------------- */
+
+/* -------------------- base -------------------- */
+
+@media screen and (max-width: 1400px) {
+
+    .global__body{
+        grid-template-areas: "header header"
+                             "aside  main"
+                             "footer footer";
+        grid-template-columns: auto 1fr;
+    }
+
+}
+@media screen and (max-width: 1040px) {
+
+    .global__body{
+        grid-template-areas: "header"
+                             "main"
+                             "footer";
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* -------------------- header -------------------- */
+
+@media screen and (max-width: 1040px) {
+
+    .global__header{
+        padding: 0 20px
+    }
+    .global__header-inner{
+        width: 100%;
+    }
+
+}
+
+/* -------------------- aside -------------------- */
+
+@media screen and (max-width: 1400px) {
+
+    .global__aside{
+        width: auto;
+
+        padding: 0 0 0 20px;
+    }
+
+}
+@media screen and (max-width: 1040px) {
+
+    .global__aside{
+        display: none;
+    }
+
+}
+
+/* -------------------- main -------------------- */
+
+@media screen and (max-width: 1400px) {
+
+    .global__main{
+        width: auto;
+
+        padding: 0 20px 0 0;
+    }
+
+}
+
+@media screen and (max-width: 1040px) {
+
+    .global__main{
+        width: auto;
+
+        padding: 0 20px;
+    }
+
+}
