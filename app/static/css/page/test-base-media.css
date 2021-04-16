@@ -2,10 +2,28 @@
 
 /* -------------------- section group -------------------- */
 
+@media screen and (min-width: 2000px) {
+
+    .test-base__section-test{
+        width: 1200px;
+
+        margin: 20px auto;
+    }
+
+}
 @media screen and (max-width: 1400px) {
 
     .test-base__section-test{
         width: 700px;
+
+        margin: 20px auto;
+    }
+
+}
+@media screen and (max-width: 800px) {
+
+    .test-base__section-test{
+        width: auto;
 
         margin: 20px auto;
     }

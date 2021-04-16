@@ -25,6 +25,13 @@
 
 /* -------------------- header -------------------- */
 
+@media screen and (min-width: 2000px) {
+
+    .global__header-inner{
+        width: 1200px;
+    }
+
+}
 @media screen and (max-width: 1040px) {
 
     .global__header{
@@ -57,6 +64,13 @@
 
 /* -------------------- main -------------------- */
 
+@media screen and (min-width: 2000px) {
+
+    .global__main{
+        width: 1500px;
+    }
+
+}
 @media screen and (max-width: 1400px) {
 
     .global__main{

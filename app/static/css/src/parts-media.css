@@ -2,6 +2,14 @@
 
 /* -------------------- test -------------------- */
 
+@media screen and (min-width: 2000px) {
+
+    .parts__test{
+        width: 23%;
+    }
+
+}
+
 @media screen and (max-width: 1300px) {
 
     .parts__test{
