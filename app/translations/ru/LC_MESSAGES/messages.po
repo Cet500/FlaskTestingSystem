@@ -8,118 +8,131 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-12 20:44+1000\n"
-"PO-Revision-Date: 2021-04-12 20:52+1000\n"
+"POT-Creation-Date: 2021-04-18 21:04+1000\n"
+"PO-Revision-Date: 2021-04-18 21:03+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
-"X-Generator: Lokalize 20.12.3\n"
 
-#: app/forms.py:11
+#: app/forms.py:12
 msgid "Submit"
-msgstr "Принят"
+msgstr "Принять"
 
-#: app/forms.py:15 app/forms.py:24
+#: app/forms.py:16 app/forms.py:25
 msgid "Username"
 msgstr "Логин"
 
-#: app/forms.py:16 app/forms.py:28
+#: app/forms.py:17 app/forms.py:29
 msgid "Password"
 msgstr "Пароль"
 
-#: app/forms.py:17
+#: app/forms.py:18
 msgid "Remember me"
 msgstr "Запомнить меня"
 
-#: app/forms.py:18 app/routes.py:144 app/templates/login.html:10
+#: app/forms.py:19 app/routes.py:148 app/templates/login.html:10
 msgid "Sign in"
 msgstr "Войти в систему"
 
-#: app/forms.py:22
+#: app/forms.py:23
 msgid "Name"
 msgstr "Имя"
 
-#: app/forms.py:23
+#: app/forms.py:24
 msgid "Lastname"
 msgstr "Фамилия"
 
-#: app/forms.py:25 app/forms.py:59
+#: app/forms.py:26 app/forms.py:67
 msgid "Group"
 msgstr "Группа"
 
-#: app/forms.py:26
+#: app/forms.py:27
 msgid "Role"
 msgstr "Роль"
 
-#: app/forms.py:26
+#: app/forms.py:27
 msgid "Student"
 msgstr "Студент"
 
-#: app/forms.py:26
+#: app/forms.py:27
 msgid "Teacher"
 msgstr "Учитель"
 
-#: app/forms.py:29
+#: app/forms.py:30
 msgid "Repeat password"
 msgstr "Повторите пароль"
 
-#: app/forms.py:30 app/routes.py:164 app/templates/register.html:10
+#: app/forms.py:31 app/routes.py:168 app/templates/register.html:10
 msgid "Register"
 msgstr "Регистрация"
 
-#: app/forms.py:36
+#: app/forms.py:37
 msgid "Please use a different login"
 msgstr "Пожалуйста, используйте другой пароль"
 
-#: app/forms.py:39
+#: app/forms.py:40
 msgid "Use only A-Z, a-z, 0-9 and _"
 msgstr "Используйте только буквы и цифры "
 
-#: app/forms.py:43
+#: app/forms.py:44
 msgid "Use letter in password"
 msgstr "Используйте прописные буквы"
 
-#: app/forms.py:46
+#: app/forms.py:47
 msgid "Use capital in password"
 msgstr "Используйте заглавные буквы"
 
-#: app/forms.py:49
+#: app/forms.py:50
 msgid "Use number in password"
 msgstr "Используйте числа"
 
-#: app/forms.py:53
+#: app/forms.py:54
 msgid "Title"
 msgstr "Заголовок"
 
-#: app/forms.py:54
+#: app/forms.py:55
 msgid "Description"
 msgstr "Описание"
 
-#: app/forms.py:55 app/routes.py:190 app/templates/add-group.html:10
+#: app/forms.py:59 app/routes.py:195 app/templates/forms/group-add.html:10
 msgid "Add group"
 msgstr "Добавить группу"
 
-#: app/forms.py:60
+#: app/forms.py:63 app/templates/forms/group-update.html:10
+#: app/templates/index.html:58
+msgid "Update group"
+msgstr "Обновить группу"
+
+#: app/forms.py:68
 msgid "Name of test"
 msgstr "Имя теста"
 
-#: app/forms.py:61
+#: app/forms.py:69
 msgid "Annotation of test"
 msgstr "Аннотация теста"
 
-#: app/forms.py:62
+#: app/forms.py:70
 msgid "Description of test"
 msgstr "Описание теста"
 
-#: app/forms.py:63 app/routes.py:212 app/templates/add-test.html:10
+#: app/forms.py:74 app/routes.py:238 app/templates/forms/test-add.html:10
 msgid "Add test"
 msgstr "Добавить тест"
+
+#: app/forms.py:78
+msgid "Difficult of test"
+msgstr "Сложность теста"
+
+#: app/forms.py:79 app/templates/forms/test-update.html:10
+#: app/templates/test-base.html:49
+msgid "Update test"
+msgstr "Обновить тест"
 
 #: app/routes.py:20
 msgid "All tests"
@@ -133,27 +146,35 @@ msgstr "Тесты по группам"
 msgid "Info"
 msgstr "Информация"
 
-#: app/routes.py:102
+#: app/routes.py:106
 msgid "Testing"
 msgstr "Тестирование"
 
-#: app/routes.py:120
+#: app/routes.py:124
 msgid "Result"
 msgstr "Результат"
 
-#: app/routes.py:227 app/routes.py:234 app/routes.py:241
+#: app/routes.py:215
+msgid "Change of group"
+msgstr "Изменить группу"
+
+#: app/routes.py:269
+msgid "Change of test"
+msgstr "Изменить тест"
+
+#: app/routes.py:289 app/routes.py:296 app/routes.py:303
 msgid "Errors"
 msgstr "Ошибки"
 
-#: app/routes.py:227 app/routes.py:229
+#: app/routes.py:289 app/routes.py:291
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: app/routes.py:234 app/routes.py:236
+#: app/routes.py:296 app/routes.py:298
 msgid "Error 405"
 msgstr "Ошибка 405"
 
-#: app/routes.py:241 app/routes.py:243
+#: app/routes.py:303 app/routes.py:305
 msgid "Error 500"
 msgstr "Ошибка 500"
 
@@ -197,89 +218,117 @@ msgstr ""
 "Это ошибка на серверной стороне. Мы уже знаем о проблеме, так что скоро "
 "всё должно наладиться. Попробуйте ещё раз или "
 
-#: app/templates/base.html:36
+#: app/templates/base.html:42
 msgid "logout"
 msgstr "выход"
 
-#: app/templates/base.html:40
+#: app/templates/base.html:46
 msgid "add group"
 msgstr "добавить группу"
 
-#: app/templates/base.html:42
+#: app/templates/base.html:48
 msgid "add test"
 msgstr "добавить тест"
 
-#: app/templates/base.html:46
+#: app/templates/base.html:52
 msgid "login"
 msgstr "вход в систему"
 
-#: app/templates/base.html:48
+#: app/templates/base.html:54
 msgid "register"
 msgstr "регистрация"
 
-#: app/templates/test-base.html:24
+#: app/templates/index.html:61
+msgid "Show all tests"
+msgstr "Показать все тесты"
+
+#: app/templates/parts/test.html:16 app/templates/test-base.html:25
 msgid "Count questions:"
 msgstr "Количество вопросов:"
 
-#: app/templates/parts/test.html:24 app/templates/test-base.html:32
+#: app/templates/parts/test.html:20 app/templates/test-base.html:29
+msgid "Number of playthroughs:"
+msgstr "Число прохождений: "
+
+#: app/templates/parts/test.html:24 app/templates/test-base.html:33
+msgid "Average mark:"
+msgstr "Средняя оценка:"
+
+#: app/templates/parts/test.html:29 app/templates/test-base.html:37
 msgid "Difficult:"
 msgstr "Сложность:"
 
-#: app/templates/parts/test.html:28 app/templates/test-base.html:36
+#: app/templates/parts/test.html:34 app/templates/test-base.html:41
 msgid "Raiting:"
 msgstr "Рейтинг:"
 
-#: app/templates/test-result.html:14
+#: app/templates/test-base.html:55
+msgid "Start test"
+msgstr "Начать тест"
+
+#: app/templates/test-result.html:15
 msgid "Result by"
 msgstr "Результат по"
 
-#: app/templates/test-result.html:17
+#: app/templates/test-result.html:18
 msgid "Name of the test subject:"
-msgstr "Имя тестируемого"
+msgstr "Имя тестируемого:"
 
-#: app/templates/test-result.html:20
+#: app/templates/test-result.html:21
 msgid "Anonimus"
 msgstr "Анонимно"
 
-#: app/templates/test-result.html:27
+#: app/templates/test-result.html:28
 msgid "Datetime of test:"
 msgstr "Время теста:"
 
-#: app/templates/test-result.html:31
+#: app/templates/test-result.html:32
 msgid "Total questions / correct answers:"
 msgstr "Всего вопросов / правильных:"
 
-#: app/templates/test-result.html:35
+#: app/templates/test-result.html:36
 msgid "Percent correct answers:"
 msgstr "Процент верных ответов:"
 
-#: app/templates/test-result.html:39
+#: app/templates/test-result.html:44
 msgid "Final mark:"
 msgstr "Итоговая оценка:"
 
-#: app/templates/test-result.html:42
+#: app/templates/test-result.html:47
 msgid "5 (excellent)"
 msgstr "5 (отлично)"
 
-#: app/templates/test-result.html:44
+#: app/templates/test-result.html:49
 msgid "4 (good)"
 msgstr "4 (хорошо)"
 
-#: app/templates/test-result.html:46
+#: app/templates/test-result.html:51
 msgid "3 (satisfactory)"
 msgstr "3 (удовлетворительно)"
 
-#: app/templates/test-result.html:48
+#: app/templates/test-result.html:53
 msgid "2 (bad)"
 msgstr "2 (плохо)"
 
-#: app/templates/test-result.html:54
+#: app/templates/test-result.html:61
 msgid "Back to main"
 msgstr "Вернуться на главную страницу"
 
-#: app/templates/test-result.html:57
+#: app/templates/test-result.html:64
 msgid "Solve test again"
 msgstr "Решить тест опять"
+
+#: app/templates/parts/test.html:42
+msgid "Update"
+msgstr "Обновить"
+
+#: app/templates/parts/test.html:48
+msgid "Read more"
+msgstr "Подробнее"
+
+#: app/templates/parts/test.html:51
+msgid "Be tested"
+msgstr "Решить"
 
 #~ msgid "Submit"
 #~ msgstr "Принять"
