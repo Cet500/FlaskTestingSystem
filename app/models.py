@@ -2,6 +2,7 @@ from app import db, login
 from flask_login import UserMixin
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
+from sqlalchemy import func
 
 
 class Group(db.Model):
@@ -24,6 +25,7 @@ class Test(db.Model):
 	annotation   = db.Column( db.String(128) )
 	description  = db.Column( db.String(512) )
 	image        = db.Column( db.Integer )
+	difficult    = db.Column( db.Integer )
 	datetime_add = db.Column( db.DateTime, default = datetime.utcnow(), index = True )
 	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
 
@@ -32,6 +34,23 @@ class Test(db.Model):
 
 	def __repr__(self):
 		return f'<test {self.name}>'
+
+	def sum_marks( self ):
+		return Result.query.with_entities( func.sum( Result.mark ).label('sum') ).filter( Result.id_test == self.id ).first().sum
+
+	def avg_marks( self, is_round = True ):
+		marks = int( self.sum_marks() or 0 )
+		count = self.results.count()
+
+		try:
+			result = marks / count
+		except ZeroDivisionError:
+			result = 0.0
+
+		if is_round:
+			return round( result, 1 )
+		else:
+			return result
 
 
 class Question(db.Model):

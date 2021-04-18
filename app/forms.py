@@ -3,6 +3,7 @@ from flask_babel import _
 from flask_babel import lazy_gettext as _l
 from wtforms import StringField, TextAreaField, PasswordField, BooleanField, SelectField, RadioField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo, Length
+from wtforms.fields.html5 import IntegerRangeField
 from app.models import User
 import re
 
@@ -49,15 +50,30 @@ class RegisterForm(FlaskForm):
 			raise ValidationError( _l("Use number in password") )
 
 
-class AddGroupForm(FlaskForm):
+class GroupForm(FlaskForm):
 	title       = StringField( _l("Title"), validators = [ DataRequired(), Length( min = 4, max = 32 ) ] )
 	description = TextAreaField( _l("Description"), validators = [ DataRequired(), Length( min = 16, max = 256 ) ] )
-	submit      = SubmitField( _l("Add group") )
 
 
-class AddTestForm(FlaskForm):
+class AddGroupForm(GroupForm):
+	submit = SubmitField( _l( "Add group" ) )
+
+
+class UpdateGroupForm(GroupForm):
+	submit = SubmitField( _l( "Update group" ) )
+
+
+class TestForm(FlaskForm):
 	id_group    = SelectField( _l("Group"), coerce = int, validators = [ DataRequired() ] )
 	name        = StringField( _l("Name of test"), validators = [ DataRequired(), Length( min = 4, max = 32 ) ] )
 	annotation  = TextAreaField( _l("Annotation of test"), validators = [ DataRequired(), Length( min = 16, max = 128 ) ] )
 	description = TextAreaField( _l("Description of test"), validators = [ DataRequired(), Length( min = 32, max = 512 ) ] )
-	submit      = SubmitField( _l( "Add test" ) )
+
+
+class AddTestForm(TestForm):
+	submit = SubmitField( _l( "Add test" ) )
+
+
+class UpdateTestForm(TestForm):
+	difficult = IntegerRangeField( _l( "Difficult of test" ) )
+	submit    = SubmitField( _l( "Update test" ) )
