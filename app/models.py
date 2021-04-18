@@ -53,6 +53,16 @@ class Test(db.Model):
 			return result
 
 
+class TestResume(db.Model):
+	id      = db.Column( db.Integer, primary_key = True )
+	id_test = db.Column( db.Integer, db.ForeignKey( 'test.id' ), nullable = False )
+	mark    = db.Column( db.Integer, nullable = False )
+	resume  = db.Column( db.String(512), nullable = False )
+
+	def __repr__(self):
+		return f'<resume of test {self.id_test} for mark {self.mark}>'
+
+
 class Question(db.Model):
 	id      = db.Column( db.Integer, primary_key = True )
 	id_test = db.Column( db.Integer, db.ForeignKey( 'test.id' ), nullable = False )
