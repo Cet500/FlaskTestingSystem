@@ -8,17 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-18 21:04+1000\n"
-"PO-Revision-Date: 2021-04-18 21:03+1000\n"
+"POT-Creation-Date: 2021-04-19 00:15+1000\n"
+"PO-Revision-Date: 2021-04-19 00:16+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
+"X-Generator: Lokalize 20.12.3\n"
 
 #: app/forms.py:12
 msgid "Submit"
@@ -129,7 +130,23 @@ msgstr "Добавить тест"
 msgid "Difficult of test"
 msgstr "Сложность теста"
 
-#: app/forms.py:79 app/templates/forms/test-update.html:10
+#: app/forms.py:79
+msgid "Test resume for mark '5'"
+msgstr "Заключение теста при оценке '5'"
+
+#: app/forms.py:80
+msgid "Test resume for mark '4'"
+msgstr "Заключение теста при оценке '4'"
+
+#: app/forms.py:81
+msgid "Test resume for mark '3'"
+msgstr "Заключение теста при оценке '3'"
+
+#: app/forms.py:82
+msgid "Test resume for mark '2'"
+msgstr "Заключение теста при оценке '2'"
+
+#: app/forms.py:83 app/templates/forms/test-update.html:10
 #: app/templates/test-base.html:49
 msgid "Update test"
 msgstr "Обновить тест"
@@ -158,23 +175,23 @@ msgstr "Результат"
 msgid "Change of group"
 msgstr "Изменить группу"
 
-#: app/routes.py:269
+#: app/routes.py:284
 msgid "Change of test"
 msgstr "Изменить тест"
 
-#: app/routes.py:289 app/routes.py:296 app/routes.py:303
+#: app/routes.py:304 app/routes.py:311 app/routes.py:318
 msgid "Errors"
 msgstr "Ошибки"
 
-#: app/routes.py:289 app/routes.py:291
+#: app/routes.py:304 app/routes.py:306
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: app/routes.py:296 app/routes.py:298
+#: app/routes.py:311 app/routes.py:313
 msgid "Error 405"
 msgstr "Ошибка 405"
 
-#: app/routes.py:303 app/routes.py:305
+#: app/routes.py:318 app/routes.py:320
 msgid "Error 500"
 msgstr "Ошибка 500"
 
@@ -310,11 +327,11 @@ msgstr "3 (удовлетворительно)"
 msgid "2 (bad)"
 msgstr "2 (плохо)"
 
-#: app/templates/test-result.html:61
+#: app/templates/test-result.html:63
 msgid "Back to main"
 msgstr "Вернуться на главную страницу"
 
-#: app/templates/test-result.html:64
+#: app/templates/test-result.html:66
 msgid "Solve test again"
 msgstr "Решить тест опять"
 
