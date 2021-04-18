@@ -3,6 +3,7 @@
 /* -------------------- buttons base -------------------- */
 
 .btn{
+	display: inline-block;
 	font-family: Roboto, sans-serif;
 	margin: .5rem;
 	color: inherit;

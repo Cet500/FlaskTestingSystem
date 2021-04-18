@@ -26,11 +26,15 @@
         </p>
 
         <p class="test-base__section-test-info">
-            Количество прохождений: {{ test.results.count() }}
+            {{ _("Number of playthroughs:") }} {{ test.results.count() }}
         </p>
 
+		<p class="test-base__section-test-info">
+			{{ _("Average mark:") }} {{ test.avg_marks() }} / 5.0
+		</p>
+
         <p class="test-base__section-test-info">
-            {{ _("Difficult:") }} 5
+            {{ _("Difficult:") }} {{ test.difficult }}
         </p>
 
 		<p class="test-base__section-test-info">
@@ -38,8 +42,17 @@
         </p>
 
 		<p class="test-base__section-test-btn">
+			{% if current_user.is_authenticated %}
+				{% if current_user.role == "A" %}
+
+				<a class="btn btn-round btn-lg btn-primary"
+				   href="{{ url_for( "update_test", id = test.id ) }}">{{ _("Update test") }}</a>
+
+				{% endif %}
+			{% endif %}
+
 			<a class="btn btn-round btn-lg btn-success"
-			   href="{{ url_for( "testing", id = test.id ) }}">Начать прохождение</a>
+			   href="{{ url_for( "testing", id = test.id ) }}">{{ _("Start test") }}</a>
 		</p>
 	</section>
 

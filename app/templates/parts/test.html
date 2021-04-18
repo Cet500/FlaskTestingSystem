@@ -13,26 +13,41 @@
 	</p>
 
 	<p class="parts__test-info">
-		Количество вопросов: {{ test.questions.count() }}
+		{{ _("Count questions:") }} {{ test.questions.count() }}
 	</p>
 
 	<p class="parts__test-info">
-		Количество прохождений: {{ test.results.count() }}
+		{{ _("Number of playthroughs:") }} {{ test.results.count() }}
 	</p>
 
 	<p class="parts__test-info">
-		{{ _("Difficult:") }} 5
+		{{ _("Average mark:") }} {{ test.avg_marks() }} / 5.0
 	</p>
+
+	{% if test.difficult != None %}
+		<p class="parts__test-info">
+			{{ _("Difficult:") }} {{ test.difficult }}
+		</p>
+	{% endif %}
 
 	<p class="parts__test-info">
 		{{ _("Raiting:") }} 5
 	</p>
 
 	<p class="parts__test-btn">
+		{% if current_user.is_authenticated %}
+			{% if current_user.role == "A" %}
+
+			<a class="btn btn-round btn-md btn-primary"
+			   href="{{ url_for( "update_test", id = test.id ) }}">{{ _("Update") }}</a>
+
+			{% endif %}
+		{% endif %}
+
 		<a class="btn btn-round btn-md btn-info"
-		   href="{{ url_for( 'test', id = test.id ) }}">Узнать</a>
+		   href="{{ url_for( 'test', id = test.id ) }}">{{ _("Read more") }}</a>
 
 		<a class="btn btn-round btn-md btn-success"
-		   href="{{ url_for( 'testing', id = test.id ) }}">Пройти</a>
+		   href="{{ url_for( 'testing', id = test.id ) }}">{{ _("Be tested") }}</a>
 	</p>
 </div>

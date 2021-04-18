@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+	<form class="form" action="" method="post" novalidate>
+		{{ form.hidden_tag() }}
+
+		<div class="form-header">
+			<h2 class="form-header-title">{{ _("Update test") }}</h2>
+		</div>
+
+		<div class="form-inputs">
+
+			<p>
+				{{ form.id_group.label }}<br>
+				{{ form.id_group(size=1, class="form-input") }}
+
+				{% for error in form.id_group.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.name.label }}<br>
+				{{ form.name(size=50, class="form-input") }}
+
+				{% for error in form.name.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.difficult.label }}<br>
+				{{ form.difficult(min=1, max=5, step=1, list="tickmarks", class="form-input") }}
+
+				<datalist id="tickmarks">
+					<option value="1" label="1">
+					<option value="2" label="2">
+					<option value="3" label="3">
+					<option value="4" label="4">
+					<option value="5" label="5">
+				</datalist>
+
+				{% for error in form.difficult.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.annotation.label }}<br>
+				{{ form.annotation(cols=53, rows=3, class="form-input") }}
+
+				{% for error in form.annotation.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.description.label }}<br>
+				{{ form.description(cols=53, rows=6, class="form-input") }}
+
+				{% for error in form.description.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+		</div>
+
+		<div class="form-buttons">
+			{{ form.submit(class="btn btn-md btn-round btn-primary") }}
+		</div>
+	</form>
+
+{% endblock %}
