@@ -5,7 +5,7 @@ from flask_babel import lazy_gettext as _l
 from wtforms import RadioField
 from wtforms.validators import DataRequired
 from app import app, db, moment
-from app.models import User, Group, Test, Result
+from app.models import User, Group, Test, Result, TestResume
 from app.forms import EmptyForm, LoginForm, RegisterForm, AddGroupForm, UpdateGroupForm, AddTestForm, UpdateTestForm
 
 
@@ -249,12 +249,22 @@ def update_test(id):
 
 	test = Test.query.get(id)
 
+	resume_5 = test.get_description_mark(5)
+	resume_4 = test.get_description_mark(4)
+	resume_3 = test.get_description_mark(3)
+	resume_2 = test.get_description_mark(2)
+
 	if form.validate_on_submit():
 		test.id_group    = form.id_group.data
 		test.name        = form.name.data
 		test.difficult   = form.difficult.data
 		test.annotation  = form.annotation.data
 		test.description = form.description.data
+
+		test.set_description_mark( 5, form.test_resume_5.data )
+		test.set_description_mark( 4, form.test_resume_4.data )
+		test.set_description_mark( 3, form.test_resume_3.data )
+		test.set_description_mark( 2, form.test_resume_2.data )
 
 		db.session.commit()
 		return redirect( url_for( 'update_test', id = id ) )
@@ -265,6 +275,11 @@ def update_test(id):
 		form.difficult.data   = test.difficult
 		form.annotation.data  = test.annotation
 		form.description.data = test.description
+
+		form.test_resume_5.data = resume_5
+		form.test_resume_4.data = resume_4
+		form.test_resume_3.data = resume_3
+		form.test_resume_2.data = resume_2
 
 	return render_template( "forms/test-update.html", title = _('Change of test'), form = form )
 

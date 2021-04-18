@@ -31,6 +31,7 @@ class Test(db.Model):
 
 	questions = db.relationship( 'Question', backref = "questions", lazy = "dynamic" )
 	results   = db.relationship( 'Result', backref = "results", lazy = "dynamic" )
+	resumes   = db.relationship( 'TestResume', backref = "resumes", lazy = "dynamic" )
 
 	def __repr__(self):
 		return f'<test {self.name}>'
@@ -51,6 +52,21 @@ class Test(db.Model):
 			return round( result, 1 )
 		else:
 			return result
+
+	def get_description_mark( self, mark ):
+		try:
+			return TestResume.query.filter( TestResume.id_test == self.id, TestResume.mark == mark ).first().resume
+		except:
+			return ""
+
+	def set_description_mark( self, mark, desc ):
+		try:
+			TestResume.query.filter( TestResume.id_test == self.id, TestResume.mark == mark ).first().resume = desc
+		except:
+			res = TestResume( id_test = self.id, mark = mark, resume = desc )
+
+			db.session.add(res)
+			db.session.commit()
 
 
 class TestResume(db.Model):

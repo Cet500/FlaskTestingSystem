@@ -75,5 +75,9 @@ class AddTestForm(TestForm):
 
 
 class UpdateTestForm(TestForm):
-	difficult = IntegerRangeField( _l( "Difficult of test" ) )
-	submit    = SubmitField( _l( "Update test" ) )
+	difficult     = IntegerRangeField( _l( "Difficult of test" ), validators = [ DataRequired() ] )
+	test_resume_5 = TextAreaField( _l( "Test resume for mark '5'" ), validators = [ DataRequired(), Length( min = 32, max = 512 ) ] )
+	test_resume_4 = TextAreaField( _l( "Test resume for mark '4'" ), validators = [ DataRequired(), Length( min = 32, max = 512 ) ] )
+	test_resume_3 = TextAreaField( _l( "Test resume for mark '3'" ), validators = [ DataRequired(), Length( min = 32, max = 512 ) ] )
+	test_resume_2 = TextAreaField( _l( "Test resume for mark '2'" ), validators = [ DataRequired(), Length( min = 32, max = 512 ) ] )
+	submit        = SubmitField( _l( "Update test" ) )
