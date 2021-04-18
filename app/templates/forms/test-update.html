@@ -49,7 +49,7 @@
 
 			<p>
 				{{ form.annotation.label }}<br>
-				{{ form.annotation(cols=53, rows=3, class="form-input") }}
+				{{ form.annotation(cols=70, rows=2, class="form-input") }}
 
 				{% for error in form.annotation.errors %}
 					<span class="check error">[{{ error }}]</span>
@@ -58,9 +58,45 @@
 
 			<p>
 				{{ form.description.label }}<br>
-				{{ form.description(cols=53, rows=6, class="form-input") }}
+				{{ form.description(cols=70, rows=6, class="form-input") }}
 
 				{% for error in form.description.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.test_resume_5.label }}<br>
+				{{ form.test_resume_5(cols=70, rows=3, class="form-input") }}
+
+				{% for error in form.test_resume_5.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.test_resume_4.label }}<br>
+				{{ form.test_resume_4(cols=70, rows=3, class="form-input") }}
+
+				{% for error in form.test_resume_4.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.test_resume_3.label }}<br>
+				{{ form.test_resume_3(cols=70, rows=3, class="form-input") }}
+
+				{% for error in form.test_resume_3.errors %}
+					<span class="check error">[{{ error }}]</span>
+				{% endfor %}
+			</p>
+
+			<p>
+				{{ form.test_resume_2.label }}<br>
+				{{ form.test_resume_2(cols=70, rows=3, class="form-input") }}
+
+				{% for error in form.test_resume_2.errors %}
 					<span class="check error">[{{ error }}]</span>
 				{% endfor %}
 			</p>
