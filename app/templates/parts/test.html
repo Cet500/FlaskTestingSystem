@@ -20,9 +20,11 @@
 		{{ _("Number of playthroughs:") }} {{ test.results.count() }}
 	</p>
 
-	<p class="parts__test-info">
-		{{ _("Average mark:") }} {{ test.avg_marks() }} / 5.0
-	</p>
+	{% if test.is_usual() %}
+		<p class="parts__test-info">
+			{{ _("Average mark:") }} {{ test.avg_marks() }} / 5.0
+		</p>
+	{% endif %}
 
 	{% if test.difficult != None %}
 		<p class="parts__test-info">

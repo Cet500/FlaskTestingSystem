@@ -65,41 +65,16 @@
 				{% endfor %}
 			</p>
 
-			<p>
-				{{ form.test_resume_5.label }}<br>
-				{{ form.test_resume_5(cols=70, rows=3, class="form-input") }}
+			{% for i in range(min_key, max_key) %}
+				<p>
+					{{ form[ "test_resume_{}".format(i) ].label }}<br>
+					{{ form[ "test_resume_{}".format(i) ](cols=70, rows=3, class="form-input") }}
 
-				{% for error in form.test_resume_5.errors %}
-					<span class="check error">[{{ error }}]</span>
-				{% endfor %}
-			</p>
-
-			<p>
-				{{ form.test_resume_4.label }}<br>
-				{{ form.test_resume_4(cols=70, rows=3, class="form-input") }}
-
-				{% for error in form.test_resume_4.errors %}
-					<span class="check error">[{{ error }}]</span>
-				{% endfor %}
-			</p>
-
-			<p>
-				{{ form.test_resume_3.label }}<br>
-				{{ form.test_resume_3(cols=70, rows=3, class="form-input") }}
-
-				{% for error in form.test_resume_3.errors %}
-					<span class="check error">[{{ error }}]</span>
-				{% endfor %}
-			</p>
-
-			<p>
-				{{ form.test_resume_2.label }}<br>
-				{{ form.test_resume_2(cols=70, rows=3, class="form-input") }}
-
-				{% for error in form.test_resume_2.errors %}
-					<span class="check error">[{{ error }}]</span>
-				{% endfor %}
-			</p>
+					{% for error in form[ "test_resume_{}".format(i) ].errors %}
+						<span class="check error">[{{ error }}]</span>
+					{% endfor %}
+				</p>
+			{% endfor %}
 		</div>
 
 		<div class="form-buttons">

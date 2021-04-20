@@ -68,6 +68,18 @@ class Test(db.Model):
 			db.session.add(res)
 			db.session.commit()
 
+	def is_usual( self ):
+		if self.id == 9:
+			return False
+		else:
+			return True
+
+	def is_unusual( self ):
+		if self.id == 9:
+			return True
+		else:
+			return False
+
 
 class TestResume(db.Model):
 	id      = db.Column( db.Integer, primary_key = True )

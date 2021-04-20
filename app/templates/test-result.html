@@ -29,11 +29,17 @@
 		</p>
 
 		<p class="test-base__section-test-info">
-            {{ _("Total questions / correct answers:") }} {{ test.questions.count() }} / {{ result.score }}
+			{% if result.score >= 0 %}
+				{# only for usually tests #}
+            	{{ _("Total questions / correct answers:") }} {{ test.questions.count() }} / {{ result.score }}
+			{% endif %}
         </p>
 
         <p class="test-base__section-test-info">
-			{{ _("Percent correct answers:") }} {{ result.percent }}%
+			{% if result.percent >= 0 %}
+				{# only for usually tests #}
+				{{ _("Percent correct answers:") }} {{ result.percent }}%
+			{% endif %}
         </p>
 
 {#		Вы подняли ( опусили ) среднюю оценку теста на... #}
@@ -41,16 +47,50 @@
 {#	    Оцените рейтинг этого теста #}
 
 		<h3 class="test-base__section-test-name">
-			{{ _("Final mark:") }}
+			{% if result.percent == -1 %}
 
-			{% if result.mark == 5 %}
-				{{ _("5 (excellent)") }}
-			{% elif result.mark == 4 %}
-				{{ _("4 (good)") }}
-			{% elif result.mark == 3 %}
-				{{ _("3 (satisfactory)") }}
-			{% elif result.mark == 2 %}
-				{{ _("2 (bad)") }}
+				{# for special tests #}
+
+				{% if test.id == 9 %}
+					{{ _("Your future аctivity - ") }}
+
+					{% if result.mark == 1 %}
+						{{ _("crop production") }}
+					{% elif result.mark == 2 %}
+						{{ _("public catering") }}
+					{% elif result.mark == 3 %}
+						{{ _("clothing manufacturing") }}
+					{% elif result.mark == 4 %}
+						{{ _("Woodworking") }}
+					{% elif result.mark == 5 %}
+						{{ _("locksmith work") }}
+					{% elif result.mark == 6 %}
+						{{ _("decorative works") }}
+					{% elif result.mark == 7 %}
+						{{ _("construction") }}
+					{% elif result.mark == 8 %}
+						{{ _("working professions") }}
+					{% elif result.mark == 9 %}
+						{{ _("housing and communal services") }}
+					{% endif %}
+				{% endif %}
+
+			{% else %}
+
+				{# for useally tests #}
+
+				{{ _("Final mark:") }}
+
+				{% if result.mark == 5 %}
+					{{ _("5 (excellent)") }}
+				{% elif result.mark == 4 %}
+					{{ _("4 (good)") }}
+				{% elif result.mark == 3 %}
+					{{ _("3 (satisfactory)") }}
+				{% elif result.mark == 2 %}
+					{{ _("2 (bad)") }}
+				{% endif %}
+
 			{% endif %}
 		</h3>
 

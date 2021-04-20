@@ -2,11 +2,12 @@ from flask import render_template, url_for, redirect, request, send_from_directo
 from flask_login import current_user, login_user, logout_user, login_required
 from flask_babel import _
 from flask_babel import lazy_gettext as _l
-from wtforms import RadioField
-from wtforms.validators import DataRequired
+from wtforms import RadioField, TextAreaField
+from wtforms.validators import DataRequired, Length
 from app import app, db, moment
 from app.models import User, Group, Test, Result, TestResume
 from app.forms import EmptyForm, LoginForm, RegisterForm, AddGroupForm, UpdateGroupForm, AddTestForm, UpdateTestForm
+from app.spec_checks import check_test_9
 
 
 # ------------------------ main pages ------------------------ #
@@ -63,36 +64,41 @@ def testing(id):
 	form = TestingForm()
 
 	if form.validate_on_submit():
-		arr    = form.data
-		score  = 0
-		mark   = 0
-		quests = test.questions.count()
+		arr     = form.data
+		score   = -1
+		mark    = 0
+		quests  = test.questions.count()
+		percent = -1
 
 		if current_user.is_authenticated:
 			id_user = current_user.id
 		else:
 			id_user = None
 
-		# if id != 7
+		if id != 9:
+			# Checks usual tests
 
-		for question in test.questions:
-			if arr[ str(question.id) ] == str( question.true_answer() ):
-				score += 1
+			score = 0
 
-		percent = round( ( score / quests ) * 100, 1 )
+			for question in test.questions:
+				if arr[ str(question.id) ] == str( question.true_answer() ):
+					score += 1
 
-		if percent >= 90:
-			mark = 5
-		elif 75 < percent < 90:
-			mark = 4
-		elif 50 < percent <= 75:
-			mark = 3
-		elif percent <= 50:
-			mark = 2
+			percent = round( ( score / quests ) * 100, 1 )
 
-		print( mark )
+			if percent >= 90:
+				mark = 5
+			elif 75 < percent < 90:
+				mark = 4
+			elif 50 < percent <= 75:
+				mark = 3
+			elif percent <= 50:
+				mark = 2
 
-		# else...
+		elif id == 9:
+			# Check test 9
+
+			mark  = check_test_9( arr )
 
 		result = Result( id_test = test.id, id_user = id_user, mark = mark, score = score, quests = quests, percent = percent )
 
@@ -243,16 +249,32 @@ def add_test():
 def update_test(id):
 	groups = Group.query.all()
 	groups_list = [(g.id, g.title) for g in groups]
+	test = Test.query.get( id )
 
-	form = UpdateTestForm()
+	class UpdateSpecTestForm(UpdateTestForm):
+		pass
+
+	min_key  = 0
+	max_key  = 0
+	name_key = ""
+
+	if test.is_usual():
+		min_key = 2
+		max_key = 6
+		name_key =  _l( "Test resume for mark " )
+	else:
+		if id == 9:
+			min_key = 1
+			max_key = 10
+			name_key = _l( "Test resume for key " )
+
+	for i in range( min_key, max_key ):
+		setattr( UpdateSpecTestForm, f'test_resume_{i}',
+		         TextAreaField( "{}'{}'".format( name_key, i ), validators = [DataRequired(), Length( min = 32, max = 512 )] ) )
+
+	form = UpdateSpecTestForm()
+
 	form.id_group.choices = groups_list
-
-	test = Test.query.get(id)
-
-	resume_5 = test.get_description_mark(5)
-	resume_4 = test.get_description_mark(4)
-	resume_3 = test.get_description_mark(3)
-	resume_2 = test.get_description_mark(2)
 
 	if form.validate_on_submit():
 		test.id_group    = form.id_group.data
@@ -261,10 +283,8 @@ def update_test(id):
 		test.annotation  = form.annotation.data
 		test.description = form.description.data
 
-		test.set_description_mark( 5, form.test_resume_5.data )
-		test.set_description_mark( 4, form.test_resume_4.data )
-		test.set_description_mark( 3, form.test_resume_3.data )
-		test.set_description_mark( 2, form.test_resume_2.data )
+		for i in range(min_key, max_key):
+			test.set_description_mark( i, form[ f'test_resume_{i}' ].data )
 
 		db.session.commit()
 		return redirect( url_for( 'update_test', id = id ) )
@@ -276,12 +296,11 @@ def update_test(id):
 		form.annotation.data  = test.annotation
 		form.description.data = test.description
 
-		form.test_resume_5.data = resume_5
-		form.test_resume_4.data = resume_4
-		form.test_resume_3.data = resume_3
-		form.test_resume_2.data = resume_2
+		for i in range( min_key, max_key ):
+			form[ f'test_resume_{i}' ].data = test.get_description_mark(i)
 
-	return render_template( "forms/test-update.html", title = _('Change of test'), form = form )
+	return render_template( "forms/test-update.html", title = _('Change of test'), form = form,
+	                                                  min_key = min_key, max_key = max_key )
 
 
 # ------------------------ technical pages ------------------------ #

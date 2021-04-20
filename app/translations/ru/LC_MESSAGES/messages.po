@@ -8,18 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-19 00:15+1000\n"
-"PO-Revision-Date: 2021-04-19 00:16+1000\n"
+"POT-Creation-Date: 2021-04-21 00:26+1000\n"
+"PO-Revision-Date: 2021-04-21 00:26+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
-"X-Generator: Lokalize 20.12.3\n"
 
 #: app/forms.py:12
 msgid "Submit"
@@ -37,7 +36,7 @@ msgstr "Пароль"
 msgid "Remember me"
 msgstr "Запомнить меня"
 
-#: app/forms.py:19 app/routes.py:148 app/templates/login.html:10
+#: app/forms.py:19 app/routes.py:154 app/templates/login.html:10
 msgid "Sign in"
 msgstr "Войти в систему"
 
@@ -69,7 +68,7 @@ msgstr "Учитель"
 msgid "Repeat password"
 msgstr "Повторите пароль"
 
-#: app/forms.py:31 app/routes.py:168 app/templates/register.html:10
+#: app/forms.py:31 app/routes.py:174 app/templates/register.html:10
 msgid "Register"
 msgstr "Регистрация"
 
@@ -101,12 +100,12 @@ msgstr "Заголовок"
 msgid "Description"
 msgstr "Описание"
 
-#: app/forms.py:59 app/routes.py:195 app/templates/forms/group-add.html:10
+#: app/forms.py:59 app/routes.py:201 app/templates/forms/group-add.html:10
 msgid "Add group"
 msgstr "Добавить группу"
 
 #: app/forms.py:63 app/templates/forms/group-update.html:10
-#: app/templates/index.html:58
+#: app/templates/index.html:61
 msgid "Update group"
 msgstr "Обновить группу"
 
@@ -122,7 +121,7 @@ msgstr "Аннотация теста"
 msgid "Description of test"
 msgstr "Описание теста"
 
-#: app/forms.py:74 app/routes.py:238 app/templates/forms/test-add.html:10
+#: app/forms.py:74 app/routes.py:244 app/templates/forms/test-add.html:10
 msgid "Add test"
 msgstr "Добавить тест"
 
@@ -130,68 +129,60 @@ msgstr "Добавить тест"
 msgid "Difficult of test"
 msgstr "Сложность теста"
 
-#: app/forms.py:79
-msgid "Test resume for mark '5'"
-msgstr "Заключение теста при оценке '5'"
-
-#: app/forms.py:80
-msgid "Test resume for mark '4'"
-msgstr "Заключение теста при оценке '4'"
-
-#: app/forms.py:81
-msgid "Test resume for mark '3'"
-msgstr "Заключение теста при оценке '3'"
-
-#: app/forms.py:82
-msgid "Test resume for mark '2'"
-msgstr "Заключение теста при оценке '2'"
-
 #: app/forms.py:83 app/templates/forms/test-update.html:10
 #: app/templates/test-base.html:49
 msgid "Update test"
 msgstr "Обновить тест"
 
-#: app/routes.py:20
+#: app/routes.py:21
 msgid "All tests"
 msgstr "Все тесты"
 
-#: app/routes.py:20
+#: app/routes.py:21
 msgid "Test by groups"
 msgstr "Тесты по группам"
 
-#: app/routes.py:42
+#: app/routes.py:43
 msgid "Info"
 msgstr "Информация"
 
-#: app/routes.py:106
+#: app/routes.py:112
 msgid "Testing"
 msgstr "Тестирование"
 
-#: app/routes.py:124
+#: app/routes.py:130
 msgid "Result"
 msgstr "Результат"
 
-#: app/routes.py:215
+#: app/routes.py:221
 msgid "Change of group"
 msgstr "Изменить группу"
 
-#: app/routes.py:284
+#: app/routes.py:264
+msgid "Test resume for mark "
+msgstr "Заключение теста при оценке "
+
+#: app/routes.py:269
+msgid "Test resume for key "
+msgstr "Заключение теста для ключа "
+
+#: app/routes.py:302
 msgid "Change of test"
 msgstr "Изменить тест"
 
-#: app/routes.py:304 app/routes.py:311 app/routes.py:318
+#: app/routes.py:323 app/routes.py:330 app/routes.py:337
 msgid "Errors"
 msgstr "Ошибки"
 
-#: app/routes.py:304 app/routes.py:306
+#: app/routes.py:323 app/routes.py:325
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: app/routes.py:311 app/routes.py:313
+#: app/routes.py:330 app/routes.py:332
 msgid "Error 405"
 msgstr "Ошибка 405"
 
-#: app/routes.py:318 app/routes.py:320
+#: app/routes.py:337 app/routes.py:339
 msgid "Error 500"
 msgstr "Ошибка 500"
 
@@ -255,7 +246,7 @@ msgstr "вход в систему"
 msgid "register"
 msgstr "регистрация"
 
-#: app/templates/index.html:61
+#: app/templates/index.html:67
 msgid "Show all tests"
 msgstr "Показать все тесты"
 
@@ -267,15 +258,15 @@ msgstr "Количество вопросов:"
 msgid "Number of playthroughs:"
 msgstr "Число прохождений: "
 
-#: app/templates/parts/test.html:24 app/templates/test-base.html:33
+#: app/templates/parts/test.html:25 app/templates/test-base.html:33
 msgid "Average mark:"
 msgstr "Средняя оценка:"
 
-#: app/templates/parts/test.html:29 app/templates/test-base.html:37
+#: app/templates/parts/test.html:31 app/templates/test-base.html:37
 msgid "Difficult:"
 msgstr "Сложность:"
 
-#: app/templates/parts/test.html:34 app/templates/test-base.html:41
+#: app/templates/parts/test.html:36 app/templates/test-base.html:41
 msgid "Raiting:"
 msgstr "Рейтинг:"
 
@@ -299,54 +290,136 @@ msgstr "Анонимно"
 msgid "Datetime of test:"
 msgstr "Время теста:"
 
-#: app/templates/test-result.html:32
+#: app/templates/test-result.html:34
 msgid "Total questions / correct answers:"
 msgstr "Всего вопросов / правильных:"
 
-#: app/templates/test-result.html:36
+#: app/templates/test-result.html:41
 msgid "Percent correct answers:"
 msgstr "Процент верных ответов:"
 
-#: app/templates/test-result.html:44
+#: app/templates/test-result.html:55
+msgid "Your future аctivity - "
+msgstr "Ваша будущая деятельность - "
+
+#: app/templates/test-result.html:58
+msgid "crop production"
+msgstr "растениеводство"
+
+#: app/templates/test-result.html:60
+msgid "public catering"
+msgstr "общественное питание"
+
+#: app/templates/test-result.html:62
+msgid "clothing manufacturing"
+msgstr "швейное производство"
+
+#: app/templates/test-result.html:64
+msgid "Woodworking"
+msgstr "деревообработка"
+
+#: app/templates/test-result.html:66
+msgid "locksmith work"
+msgstr "слесарные работы"
+
+#: app/templates/test-result.html:68
+msgid "decorative works"
+msgstr "декоративные работы"
+
+#: app/templates/test-result.html:70
+msgid "construction"
+msgstr "строительство"
+
+#: app/templates/test-result.html:72
+msgid "working professions"
+msgstr "рабочие профессии"
+
+#: app/templates/test-result.html:74
+msgid "housing and communal services"
+msgstr "жилищно-коммунальное хозяйство"
+
+#: app/templates/test-result.html:82
 msgid "Final mark:"
 msgstr "Итоговая оценка:"
 
-#: app/templates/test-result.html:47
+#: app/templates/test-result.html:85
 msgid "5 (excellent)"
 msgstr "5 (отлично)"
 
-#: app/templates/test-result.html:49
+#: app/templates/test-result.html:87
 msgid "4 (good)"
 msgstr "4 (хорошо)"
 
-#: app/templates/test-result.html:51
+#: app/templates/test-result.html:89
 msgid "3 (satisfactory)"
 msgstr "3 (удовлетворительно)"
 
-#: app/templates/test-result.html:53
+#: app/templates/test-result.html:91
 msgid "2 (bad)"
 msgstr "2 (плохо)"
 
-#: app/templates/test-result.html:63
+#: app/templates/test-result.html:103
 msgid "Back to main"
 msgstr "Вернуться на главную страницу"
 
-#: app/templates/test-result.html:66
+#: app/templates/test-result.html:106
 msgid "Solve test again"
 msgstr "Решить тест опять"
 
-#: app/templates/parts/test.html:42
+#: app/templates/parts/test.html:44
 msgid "Update"
 msgstr "Обновить"
 
-#: app/templates/parts/test.html:48
+#: app/templates/parts/test.html:50
 msgid "Read more"
 msgstr "Подробнее"
 
-#: app/templates/parts/test.html:51
+#: app/templates/parts/test.html:53
 msgid "Be tested"
 msgstr "Решить"
 
 #~ msgid "Submit"
 #~ msgstr "Принять"
+
+#~ msgid "Test resume for mark '5'"
+#~ msgstr "Заключение теста при оценке '5'"
+
+#~ msgid "Test resume for mark '4'"
+#~ msgstr "Заключение теста при оценке '4'"
+
+#~ msgid "Test resume for mark '3'"
+#~ msgstr "Заключение теста при оценке '3'"
+
+#~ msgid "Test resume for mark '2'"
+#~ msgstr "Заключение теста при оценке '2'"
+
+#~ msgid "Test resume for key '1'"
+#~ msgstr "Заключение теста при ключе '1'"
+
+#~ msgid "Test resume for key '2'"
+#~ msgstr "Заключение теста при ключе '2'"
+
+#~ msgid "Test resume for key '3'"
+#~ msgstr "Заключение теста при ключе '3'"
+
+#~ msgid "Test resume for key '4'"
+#~ msgstr "Заключение теста при ключе '4'"
+
+#~ msgid "Test resume for key '5'"
+#~ msgstr "Заключение теста при ключе '5'"
+
+#~ msgid "Test resume for key '6'"
+#~ msgstr "Заключение теста при ключе '6'"
+
+#~ msgid "Test resume for key '7'"
+#~ msgstr "Заключение теста при ключе '7'"
+
+#~ msgid "Test resume for key '8'"
+#~ msgstr "Заключение теста при ключе '8'"
+
+#~ msgid "Test resume for key '9'"
+#~ msgstr "Заключение теста при ключе '9'"
+
+#~ msgid "{}'{}'"
+#~ msgstr " "
 
