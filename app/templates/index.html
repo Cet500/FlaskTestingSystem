@@ -54,8 +54,14 @@
 			{% endfor %}
 
 			<p class="index__section-group-btn">
-				<a class="btn btn-round btn-lg btn-primary"
-				   href="{{ url_for( 'update_group', id = group.id ) }}">{{ _("Update group") }}</a>
+				{% if current_user.is_authenticated %}
+					{% if current_user.role == "A" %}
+
+					<a class="btn btn-round btn-lg btn-primary"
+					   href="{{ url_for( 'update_group', id = group.id ) }}">{{ _("Update group") }}</a>
+
+					{% endif %}
+				{% endif %}
 
 				<a class="btn btn-round btn-lg btn-info"
 				   href="{{ url_for( 'group', id = group.id ) }}">{{ _("Show all tests") }}</a>
