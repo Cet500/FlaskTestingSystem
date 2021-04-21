@@ -1,6 +1,6 @@
-from flask import render_template, url_for, redirect, request, send_from_directory
+from flask import render_template, url_for, redirect, request, send_from_directory, g
 from flask_login import current_user, login_user, logout_user, login_required
-from flask_babel import _
+from flask_babel import _, get_locale
 from flask_babel import lazy_gettext as _l
 from wtforms import RadioField, TextAreaField
 from wtforms.validators import DataRequired, Length
@@ -212,7 +212,7 @@ def update_group(id):
 		group.description = form.description.data
 
 		db.session.commit()
-		return redirect( url_for( 'update_group', id = id ) )
+		return redirect( url_for( "group", id = id ) )
 
 	elif request.method == 'GET':
 		form.title.data       = group.title
@@ -287,7 +287,7 @@ def update_test(id):
 			test.set_description_mark( i, form[ f'test_resume_{i}' ].data )
 
 		db.session.commit()
-		return redirect( url_for( 'update_test', id = id ) )
+		return redirect( url_for( "test", id = id ) )
 
 	elif request.method == 'GET':
 		form.id_group.data    = test.id_group
@@ -301,6 +301,19 @@ def update_test(id):
 
 	return render_template( "forms/test-update.html", title = _('Change of test'), form = form,
 	                                                  min_key = min_key, max_key = max_key )
+
+
+# ------------------------ system pages ------------------------ #
+
+
+@app.route('/about_system')
+def about_system():
+	return render_template( "about-system.html", title = _('About TeSi') )
+
+
+@app.route('/about_us')
+def about_us():
+	return render_template( "about-us.html", title = _('About us') )
 
 
 # ------------------------ technical pages ------------------------ #
@@ -337,3 +350,8 @@ def error_500(e):
 	path = _('Errors') + " / 500 / " + _('Error 500')
 
 	return render_template( "500.html", title = _('Error 500'), path = path ), 500
+
+
+@app.before_request
+def before_request():
+	g.locale = str( get_locale() )
