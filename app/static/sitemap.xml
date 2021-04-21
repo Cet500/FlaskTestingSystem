@@ -1,115 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+<!-- index pages -->
+    <url>
+        <loc>https://serind.ru/</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/index</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
 
-<url>
-  <loc>http://serind.online/</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>http://serind.online/index</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+<!-- login pages -->
+    <url>
+        <loc>https://serind.ru/login</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/register</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
 
-<url>
-  <loc>http://serind.online/login</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/register</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+<!-- about pages -->
+    <url>
+        <loc>https://serind.ru/about_us</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/about_system</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
 
-<url>
-  <loc>http://serind.online/group/1</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/group/2</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+<!-- group pages -->
+    <url>
+        <loc>https://serind.ru/group/1</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/group/2</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
 
-<url>
-  <loc>http://serind.online/test/1</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/test/2</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/test/3</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/test/4</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/test/5</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/test/6</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/test/7</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+<!-- tests pages -->
+    <url>
+        <loc>https://serind.ru/test/1</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/test/2</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/test/3</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/test/4</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/test/5</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/test/6</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/test/7</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/test/8</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/test/9</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/test/10</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.80</priority>
+    </url>
 
-<url>
-  <loc>http://serind.online/testing/1</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/testing/2</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/testing/3</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/testing/4</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/testing/5</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/testing/6</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>http://serind.online/testing/7</loc>
-  <lastmod>2021-04-12T05:58:05+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
+<!-- testing pages -->
+    <url>
+        <loc>https://serind.ru/testing/1</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/testing/2</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/testing/3</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/testing/4</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/testing/5</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/testing/6</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/testing/7</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/testing/8</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/testing/9</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
+    <url>
+        <loc>https://serind.ru/testing/10</loc>
+        <lastmod>2021-04-21T05:04:09+00:00</lastmod>
+        <priority>0.64</priority>
+    </url>
 
 </urlset>
