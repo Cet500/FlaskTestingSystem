@@ -7,4 +7,5 @@ app.db
 app/test.db
 index.lokalize
 lokalize-scripts
+main.lqa
 venv
