@@ -8,17 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-21 00:26+1000\n"
-"PO-Revision-Date: 2021-04-21 00:26+1000\n"
+"POT-Creation-Date: 2021-04-21 14:15+1000\n"
+"PO-Revision-Date: 2021-04-21 14:15+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
+"X-Generator: Lokalize 20.12.3\n"
 
 #: app/forms.py:12
 msgid "Submit"
@@ -170,19 +171,27 @@ msgstr "Заключение теста для ключа "
 msgid "Change of test"
 msgstr "Изменить тест"
 
-#: app/routes.py:323 app/routes.py:330 app/routes.py:337
+#: app/routes.py:311 app/templates/base.html:93
+msgid "About TeSi"
+msgstr "О ТеСи"
+
+#: app/routes.py:316 app/templates/base.html:97
+msgid "About us"
+msgstr "О нас"
+
+#: app/routes.py:336 app/routes.py:343 app/routes.py:350
 msgid "Errors"
 msgstr "Ошибки"
 
-#: app/routes.py:323 app/routes.py:325
+#: app/routes.py:336 app/routes.py:338
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: app/routes.py:330 app/routes.py:332
+#: app/routes.py:343 app/routes.py:345
 msgid "Error 405"
 msgstr "Ошибка 405"
 
-#: app/routes.py:337 app/routes.py:339
+#: app/routes.py:350 app/routes.py:352
 msgid "Error 500"
 msgstr "Ошибка 500"
 
@@ -226,6 +235,124 @@ msgstr ""
 "Это ошибка на серверной стороне. Мы уже знаем о проблеме, так что скоро "
 "всё должно наладиться. Попробуйте ещё раз или "
 
+#: app/templates/about-system.html:14
+msgid "Briefly about the system"
+msgstr "Кратко о системе"
+
+#: app/templates/about-system.html:17
+msgid ""
+"TeSi is a Test System created by order of an educational institution and "
+"designed to create and pass various tests."
+msgstr ""
+"ТеСи - это Тестовая Система, созданная по заказу учебного заведения и "
+"предназначенная для создания и прохождения различных тестов."
+
+#: app/templates/about-system.html:20
+msgid "History of creation"
+msgstr "История создания"
+
+#: app/templates/about-system.html:23
+msgid ""
+"Initially, this system appeared as a test shell for coursework and was "
+"written in C#, using WinForms. It was a fairly simple program, but it was"
+" already possible to create and pass tests in it. There was even a "
+"\"board of honor\" where you could see who was the best at solving tests."
+" All the data was stored in a single MySQL database, so you could even do"
+" this - deploy one database, and connect many clients to it, thereby "
+"obtaining \"centralization\". One immediately after the end of the "
+"course, this project was abandoned as unnecessary."
+msgstr ""
+"Первоначально, эта система появилась как тестовая оболочка для курсовой "
+"работы и была написана на C#, с использованием WinForms. Это была "
+"достаточно простая программа, однако в ней уже можно было создавать и "
+"проходить тесты. Даже была \"доска почёта\", на которой можно было "
+"увидеть, кто лучше всех решает тесты. Все данные хранились в единой базе "
+"данных MySQL, так что можно было даже сделать так - развернуть одну базу,"
+" а к ней подключить к ней множество клиентов, получив тем самым "
+"\"централизацию\". Одна сразу же за окончанием курсовой, этот проект был "
+"заброшен за ненадобностью."
+
+#: app/templates/about-system.html:27
+msgid ""
+"The current version is a different system, even if it is built on the "
+"same principles as before. This is a Web application based on Flask. The "
+"capabilities are the same - creating and passing tests, but the internal "
+"architecture is built quite differently. If everything was previously "
+"unloaded, then on the contrary, decomposition is used - that is, "
+"splitting into small parts. But the database and its general structure is"
+" the same - it is MySQL. This DBMS has long been reliably showing itself "
+"and it makes no sense to replace it."
+msgstr ""
+"Нынешняя же версия - это уже иная система, пусть и построенная на тех же "
+"самых принципах, как и ранее. Это Web-приложение, основанное на Flask. "
+"Возможности те же самые - создание и прохождение тестов, однако "
+"внутренняя архитектура построена совсем иначе. Если ранее всё было "
+"сгружено, то тут напротив, используется декомпозиция - т.е. разбиение на "
+"небольшие части. А вот база данных и её общая структура та же самая - это"
+" MySQL. Данная СУБД уже давно надёжно себя показывает и заменять её нет "
+"смысла."
+
+#: app/templates/about-system.html:30
+msgid "Future plans"
+msgstr "Планы на будущее"
+
+#: app/templates/about-system.html:33
+msgid ""
+"In general, the system is mostly ready - but there is always something to"
+" improve. Probably, this site will just be constantly expanding and "
+"developing. There are simply no concrete global plans."
+msgstr ""
+"В целом, система в большей степени уже готова - однако всегда есть что "
+"доработать. Вероятно, этот сайт будет просто постоянно расширяться и "
+"развиваться. Конкретных же глобальных планов просто нет."
+
+#: app/templates/about-system.html:36
+msgid "Open source code"
+msgstr "Открытый исходный код"
+
+#: app/templates/about-system.html:39
+msgid ""
+"This system is not something special, so it was decided to open the "
+"source code to everyone-the actual link to the repository is always at "
+"the bottom of the page. I really like the open source movement, so this "
+"decision is another small support for the desire for freedom. Everyone "
+"can contribute to the common cause, and this is the reason why I will not"
+" stay away."
+msgstr ""
+"Данная система не является чем-то особым, поэтому было решено открыть "
+"исходный код для всех желающих - актуальная ссылка на репозиторий всегда "
+"находится внизу страницы. Мне очень нравится движение открытого ПО, "
+"поэтому данное решение - это ещё одна небольшая поддержка стремления к "
+"свободе. Каждый в может внести свой вклад в общее дело, и это причина, по"
+" которой я не останусь в стороне."
+
+#: app/templates/about-us.html:14
+msgid "Thanks to the development team"
+msgstr "Благодарность команде разработки"
+
+#: app/templates/about-us.html:17
+msgid ""
+"As much as I would like to write a la \"We are a team of ambitious "
+"developers...\", I can not do this, because I create all this only by "
+"myself. However, I would like to express my gratitude to all those who "
+"help me from the shadows. Guys, thank you, this would not have happened "
+"without you."
+msgstr ""
+"Как бы мне не хотелось написать а-ля \"Мы - команда амбициозных"
+" разработчиков...\", я не могу этого сделать, т.к. создаю всё это лишь я"
+" один. Однако, мне хочется выразить благодарность всем тем, кто помогает мне"
+" из тени. Ребят, спасибо, без вас этого не было бы."
+
+#: app/templates/about-us.html:20
+msgid ""
+"And of course, thanks to the customer, without whom this system would not"
+" exist at all. For this system has some meaning for me. Like things on a "
+"shelf, just by looking at them, you remember the past."
+msgstr ""
+"Ну и конечно спасибо заказчику, без которого этой системы вообще бы не"
+" существовало. Ибо эта система для меня имеет некое значение. Как вещи на"
+" полке, лишь посмотрев на которые, ты вспоминаешь прошлое."
+
 #: app/templates/base.html:42
 msgid "logout"
 msgstr "выход"
@@ -245,6 +372,10 @@ msgstr "вход в систему"
 #: app/templates/base.html:54
 msgid "register"
 msgstr "регистрация"
+
+#: app/templates/base.html:103
+msgid "We are for open software"
+msgstr "Мы за открытое ПО"
 
 #: app/templates/index.html:67
 msgid "Show all tests"
