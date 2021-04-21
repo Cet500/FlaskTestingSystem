@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block links %}
+
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/about.min.css' ) }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+	<section class="about__section-main">
+		<h2>{{ _("Briefly about the system") }}</h2>
+
+		<p>
+			{{ _("TeSi is a Test System created by order of an educational institution and designed to create and pass various tests.") }}
+		</p>
+
+		<h2>{{ _("History of creation") }}</h2>
+
+		<p>
+			{{ _('Initially, this system appeared as a test shell for coursework and was written in C#, using WinForms. It was a fairly simple program, but it was already possible to create and pass tests in it. There was even a "board of honor" where you could see who was the best at solving tests. All the data was stored in a single MySQL database, so you could even do this - deploy one database, and connect many clients to it, thereby obtaining "centralization". One immediately after the end of the course, this project was abandoned as unnecessary.') }}
+		</p>
+
+		<p>
+			{{ _("The current version is a different system, even if it is built on the same principles as before. This is a Web application based on Flask. The capabilities are the same - creating and passing tests, but the internal architecture is built quite differently. If everything was previously unloaded, then on the contrary, decomposition is used - that is, splitting into small parts. But the database and its general structure is the same - it is MySQL. This DBMS has long been reliably showing itself and it makes no sense to replace it.") }}
+		</p>
+
+		<h2>{{ _("Future plans") }}</h2>
+
+		<p>
+			{{ _("In general, the system is mostly ready - but there is always something to improve. Probably, this site will just be constantly expanding and developing. There are simply no concrete global plans.") }}
+		</p>
+
+		<h2>{{ _("Open source code") }}</h2>
+
+		<p>
+			{{ _("This system is not something special, so it was decided to open the source code to everyone-the actual link to the repository is always at the bottom of the page. I really like the open source movement, so this decision is another small support for the desire for freedom. Everyone can contribute to the common cause, and this is the reason why I will not stay away.") }}
+		</p>
+	</section>
+
+{% endblock %}

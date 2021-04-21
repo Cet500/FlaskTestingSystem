@@ -18,7 +18,7 @@
 				   href="{{ url_for( 'group', id = group.id ) }}">{{ group.title }}</a>
 
 				<ul class="global__menu-submenu">
-					{% for test in group.tests %}
+					{% for test in group.tests.limit(3) %}
 
 						<li class="global__menu-submenu-item">
 							<a class="global__menu-submenu-item-link"

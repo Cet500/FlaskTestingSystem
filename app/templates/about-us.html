@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block links %}
+
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/about.min.css' ) }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+	<section class="about__section-main">
+		<h2>{{ _("Thanks to the development team") }}</h2>
+
+		<p>{{ _('As much as I would like to write a la "We are a team of ambitious developers...", I can not do this, because I create all this only by myself. However, I would like to express my gratitude to all those who help me from the shadows. Guys, thank you, this would not have happened without you.') }}</p>
+
+		<p>{{ _("And of course, thanks to the customer, without whom this system would not exist at all. For this system has some meaning for me. Like things on a shelf, just by looking at them, you remember the past.") }}</p>
+	</section>
+
+{% endblock %}

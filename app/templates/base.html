@@ -88,6 +88,22 @@
 		</main>
 
 		<footer class="global__footer">
+			<p class="global__footer-links">
+				<a class="btn btn-sm btn-round btn-grey" href="{{ url_for('about_system') }}">
+					{{ _("About TeSi") }}
+				</a>
+
+				<a class="btn btn-sm btn-round btn-grey" href="{{ url_for('about_us') }}">
+					{{ _("About us") }}
+				</a>
+
+				<br>
+
+				<a class="btn btn-sm btn-round btn-grey" href="https://github.com/Cet500/FlaskTestingSystem">
+					{{ _("We are for open software")  }}
+				</a>
+			</p>
+
 			<p class="global__footer-author">FTS by SI, 2021</p>
 		</footer>
     </body>

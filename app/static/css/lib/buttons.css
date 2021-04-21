@@ -218,3 +218,44 @@
 	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
 }
+
+/* -------------------- monochrome colors of buttons -------------------- */
+
+.btn-grey {
+	color: #fff;
+	background-color: #616161 !important
+}
+.btn-grey:hover {
+	color: #fff;
+	background-color: #6e6e6e !important
+}
+.btn-grey:focus,
+.btn-grey.focus {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+.btn-grey:focus,
+.btn-grey:active,
+.btn-grey.active {
+	background-color: #2e2e2e
+}
+.btn-grey.dropdown-toggle {
+	background-color: #616161 !important
+}
+.btn-grey.dropdown-toggle:hover,
+.btn-grey.dropdown-toggle:focus {
+	background-color: #6e6e6e !important
+}
+.btn-grey:not([disabled]):not(.disabled):active,
+.btn-grey:not([disabled]):not(.disabled).active,
+.show>.btn-grey.dropdown-toggle {
+	background-color: #2e2e2e !important;
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+.btn-grey:not([disabled]):not(.disabled):active:focus,
+.btn-grey:not([disabled]):not(.disabled).active:focus,
+.show>.btn-grey.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}

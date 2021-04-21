@@ -153,6 +153,12 @@
 
 	border-top: 10px solid #ffc107;
 }
+.global__footer-links{
+	text-align: center;
+}
+.global__footer-links a{
+	text-decoration: none !important;
+}
 .global__footer-author{
 	text-align: center;
 }

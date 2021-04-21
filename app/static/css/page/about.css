@@ -1,0 +1,13 @@
+/* ------------------------------- page about ------------------------------- */
+
+/* -------------------- section main -------------------- */
+
+.about__section-main{
+    margin: 20px 50px;
+    padding: 0 20px;
+
+    border-radius: 10px;
+
+    border: 3px solid #ffc107;
+	background-color: #eeeeee;
+}

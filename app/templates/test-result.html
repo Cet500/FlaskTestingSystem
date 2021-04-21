@@ -25,7 +25,7 @@
 		</p>
 
 		<p class="test-base__section-test-description">
-			{{ _("Datetime of test:") }} {{ result.datetime_add }}
+			{{ _("Datetime of test:") }} {{ moment( result.datetime_add ).format('L') }} {{ moment( result.datetime_add ).format('LT') }}
 		</p>
 
 		<p class="test-base__section-test-info">
