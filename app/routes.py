@@ -100,6 +100,8 @@ def testing(id):
 
 			mark  = check_test_9( arr )
 
+			print( mark )
+
 		result = Result( id_test = test.id, id_user = id_user, mark = mark, score = score, quests = quests, percent = percent )
 
 		db.session.add( result )
@@ -264,8 +266,8 @@ def update_test(id):
 		name_key =  _l( "Test resume for mark " )
 	else:
 		if id == 9:
-			min_key = 1
-			max_key = 10
+			min_key = -1
+			max_key = 11
 			name_key = _l( "Test resume for key " )
 
 	for i in range( min_key, max_key ):

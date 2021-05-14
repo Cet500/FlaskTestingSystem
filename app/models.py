@@ -55,6 +55,9 @@ class Test(db.Model):
 
 	def get_description_mark( self, mark ):
 		try:
+			if mark > 10:
+				mark = 10
+
 			return TestResume.query.filter( TestResume.id_test == self.id, TestResume.mark == mark ).first().resume
 		except:
 			return ""
@@ -79,6 +82,9 @@ class Test(db.Model):
 			return True
 		else:
 			return False
+
+	def print( self, data ):
+		print( data )
 
 
 class TestResume(db.Model):
@@ -156,3 +162,9 @@ class Result(db.Model):
 
 	def __repr__( self ):
 		return f'<result {self.id}>'
+
+	def len_mark( self ):
+		return len( str( self.mark ) )
+
+	def get_int_mark( self, index ):
+		return int( str( self.mark )[ index ] )

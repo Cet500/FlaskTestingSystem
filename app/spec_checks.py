@@ -13,6 +13,27 @@ def check_test_9( questions ):
 			if int( questions[ str( id ) ] ) % 2 != 0:
 				result[ i - 64 ] = result[ i - 64 ] + 1
 
-	answer = result.index( max(result) ) + 1
+	max_res = max( result )
 
-	return answer
+	print( result )
+
+	if sum( result ) < 3:
+		return 0
+	elif sum( result ) >= 40:
+		return -1
+	else:
+		repeat = result.count( max_res )
+		start  = 0
+		answer = ""
+
+		if repeat > 1:
+			for i in range( repeat ):
+				start = result.index( max_res, start ) + 1
+				answer += str( start )
+				print( answer )
+
+			return int( answer )
+
+		else:
+			return result.index( max_res ) + 1
+

@@ -54,7 +54,11 @@
 				{% if test.id == 9 %}
 					{{ _("Your future аctivity - ") }}
 
-					{% if result.mark == 1 %}
+					{% if result.mark == -1 %}
+						{{ _("too many") }}
+					{% elif result.mark == 0 %}
+						{{ _("no data") }}
+					{% elif result.mark == 1 %}
 						{{ _("crop production") }}
 					{% elif result.mark == 2 %}
 						{{ _("public catering") }}
@@ -72,6 +76,10 @@
 						{{ _("working professions") }}
 					{% elif result.mark == 9 %}
 						{{ _("housing and communal services") }}
+					{% elif result.mark > 10 %}
+						{{ _("more variants") }}
+					{% else %}
+						{{ _("null") }}
 					{% endif %}
 				{% endif %}
 
@@ -97,6 +105,14 @@
 		<p class="test-base__section-test-description">
 			{{ test.get_description_mark( result.mark ) }}
 		</p>
+
+		{% if result.mark > 10 %}
+			{% for i in range( result.len_mark() ) %}
+				<p class="test-base__section-test-description">
+					{{ test.get_description_mark( result.get_int_mark( i ) ) }}
+				</p>
+			{% endfor %}
+		{% endif %}
 
 		<p class="test-base__section-test-btn">
 			<a class="btn btn-round btn-lg btn-info"
