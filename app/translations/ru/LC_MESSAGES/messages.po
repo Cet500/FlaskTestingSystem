@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-04-21 14:15+1000\n"
-"PO-Revision-Date: 2021-04-21 14:15+1000\n"
+"POT-Creation-Date: 2021-05-18 18:04+1000\n"
+"PO-Revision-Date: 2021-05-18 18:05+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -37,7 +37,7 @@ msgstr "Пароль"
 msgid "Remember me"
 msgstr "Запомнить меня"
 
-#: app/forms.py:19 app/routes.py:154 app/templates/login.html:10
+#: app/forms.py:19 app/routes.py:156 app/templates/login.html:10
 msgid "Sign in"
 msgstr "Войти в систему"
 
@@ -69,7 +69,7 @@ msgstr "Учитель"
 msgid "Repeat password"
 msgstr "Повторите пароль"
 
-#: app/forms.py:31 app/routes.py:174 app/templates/register.html:10
+#: app/forms.py:31 app/routes.py:176 app/templates/register.html:10
 msgid "Register"
 msgstr "Регистрация"
 
@@ -101,7 +101,7 @@ msgstr "Заголовок"
 msgid "Description"
 msgstr "Описание"
 
-#: app/forms.py:59 app/routes.py:201 app/templates/forms/group-add.html:10
+#: app/forms.py:59 app/routes.py:203 app/templates/forms/group-add.html:10
 msgid "Add group"
 msgstr "Добавить группу"
 
@@ -122,7 +122,7 @@ msgstr "Аннотация теста"
 msgid "Description of test"
 msgstr "Описание теста"
 
-#: app/forms.py:74 app/routes.py:244 app/templates/forms/test-add.html:10
+#: app/forms.py:74 app/routes.py:246 app/templates/forms/test-add.html:10
 msgid "Add test"
 msgstr "Добавить тест"
 
@@ -147,51 +147,51 @@ msgstr "Тесты по группам"
 msgid "Info"
 msgstr "Информация"
 
-#: app/routes.py:112
+#: app/routes.py:114
 msgid "Testing"
 msgstr "Тестирование"
 
-#: app/routes.py:130
+#: app/routes.py:132
 msgid "Result"
 msgstr "Результат"
 
-#: app/routes.py:221
+#: app/routes.py:223
 msgid "Change of group"
 msgstr "Изменить группу"
 
-#: app/routes.py:264
+#: app/routes.py:266
 msgid "Test resume for mark "
 msgstr "Заключение теста при оценке "
 
-#: app/routes.py:269
+#: app/routes.py:271
 msgid "Test resume for key "
 msgstr "Заключение теста для ключа "
 
-#: app/routes.py:302
+#: app/routes.py:304
 msgid "Change of test"
 msgstr "Изменить тест"
 
-#: app/routes.py:311 app/templates/base.html:93
+#: app/routes.py:313 app/templates/base.html:93
 msgid "About TeSi"
 msgstr "О ТеСи"
 
-#: app/routes.py:316 app/templates/base.html:97
+#: app/routes.py:318 app/templates/base.html:97
 msgid "About us"
 msgstr "О нас"
 
-#: app/routes.py:336 app/routes.py:343 app/routes.py:350
+#: app/routes.py:338 app/routes.py:345 app/routes.py:352
 msgid "Errors"
 msgstr "Ошибки"
 
-#: app/routes.py:336 app/routes.py:338
+#: app/routes.py:338 app/routes.py:340
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: app/routes.py:343 app/routes.py:345
+#: app/routes.py:345 app/routes.py:347
 msgid "Error 405"
 msgstr "Ошибка 405"
 
-#: app/routes.py:350 app/routes.py:352
+#: app/routes.py:352 app/routes.py:354
 msgid "Error 500"
 msgstr "Ошибка 500"
 
@@ -330,7 +330,7 @@ msgstr ""
 msgid "Thanks to the development team"
 msgstr "Благодарность команде разработки"
 
-#: app/templates/about-us.html:17
+#: app/templates/about-us.html:16
 msgid ""
 "As much as I would like to write a la \"We are a team of ambitious "
 "developers...\", I can not do this, because I create all this only by "
@@ -338,20 +338,20 @@ msgid ""
 "help me from the shadows. Guys, thank you, this would not have happened "
 "without you."
 msgstr ""
-"Как бы мне не хотелось написать а-ля \"Мы - команда амбициозных"
-" разработчиков...\", я не могу этого сделать, т.к. создаю всё это лишь я"
-" один. Однако, мне хочется выразить благодарность всем тем, кто помогает мне"
-" из тени. Ребят, спасибо, без вас этого не было бы."
+"Как бы мне не хотелось написать а-ля \"Мы - команда амбициозных "
+"разработчиков...\", я не могу этого сделать, т.к. создаю всё это лишь я "
+"один. Однако, мне хочется выразить благодарность всем тем, кто помогает "
+"мне из тени. Ребят, спасибо, без вас этого не было бы."
 
-#: app/templates/about-us.html:20
+#: app/templates/about-us.html:18
 msgid ""
 "And of course, thanks to the customer, without whom this system would not"
 " exist at all. For this system has some meaning for me. Like things on a "
 "shelf, just by looking at them, you remember the past."
 msgstr ""
-"Ну и конечно спасибо заказчику, без которого этой системы вообще бы не"
-" существовало. Ибо эта система для меня имеет некое значение. Как вещи на"
-" полке, лишь посмотрев на которые, ты вспоминаешь прошлое."
+"Ну и конечно спасибо заказчику, без которого этой системы вообще бы не "
+"существовало. Ибо эта система для меня имеет некое значение. Как вещи на "
+"полке, лишь посмотрев на которые, ты вспоминаешь прошлое."
 
 #: app/templates/base.html:42
 msgid "logout"
@@ -434,66 +434,82 @@ msgid "Your future аctivity - "
 msgstr "Ваша будущая деятельность - "
 
 #: app/templates/test-result.html:58
+msgid "too many"
+msgstr "слишком много"
+
+#: app/templates/test-result.html:60
+msgid "no data"
+msgstr "нет данных"
+
+#: app/templates/test-result.html:62
 msgid "crop production"
 msgstr "растениеводство"
 
-#: app/templates/test-result.html:60
+#: app/templates/test-result.html:64
 msgid "public catering"
 msgstr "общественное питание"
 
-#: app/templates/test-result.html:62
+#: app/templates/test-result.html:66
 msgid "clothing manufacturing"
 msgstr "швейное производство"
 
-#: app/templates/test-result.html:64
+#: app/templates/test-result.html:68
 msgid "Woodworking"
 msgstr "деревообработка"
 
-#: app/templates/test-result.html:66
+#: app/templates/test-result.html:70
 msgid "locksmith work"
 msgstr "слесарные работы"
 
-#: app/templates/test-result.html:68
+#: app/templates/test-result.html:72
 msgid "decorative works"
 msgstr "декоративные работы"
 
-#: app/templates/test-result.html:70
+#: app/templates/test-result.html:74
 msgid "construction"
 msgstr "строительство"
 
-#: app/templates/test-result.html:72
+#: app/templates/test-result.html:76
 msgid "working professions"
 msgstr "рабочие профессии"
 
-#: app/templates/test-result.html:74
+#: app/templates/test-result.html:78
 msgid "housing and communal services"
 msgstr "жилищно-коммунальное хозяйство"
 
+#: app/templates/test-result.html:80
+msgid "more variants"
+msgstr "несколько вариантов"
+
 #: app/templates/test-result.html:82
+msgid "null"
+msgstr "пустота"
+
+#: app/templates/test-result.html:90
 msgid "Final mark:"
 msgstr "Итоговая оценка:"
 
-#: app/templates/test-result.html:85
+#: app/templates/test-result.html:93
 msgid "5 (excellent)"
 msgstr "5 (отлично)"
 
-#: app/templates/test-result.html:87
+#: app/templates/test-result.html:95
 msgid "4 (good)"
 msgstr "4 (хорошо)"
 
-#: app/templates/test-result.html:89
+#: app/templates/test-result.html:97
 msgid "3 (satisfactory)"
 msgstr "3 (удовлетворительно)"
 
-#: app/templates/test-result.html:91
+#: app/templates/test-result.html:99
 msgid "2 (bad)"
 msgstr "2 (плохо)"
 
-#: app/templates/test-result.html:103
+#: app/templates/test-result.html:119
 msgid "Back to main"
 msgstr "Вернуться на главную страницу"
 
-#: app/templates/test-result.html:106
+#: app/templates/test-result.html:122
 msgid "Solve test again"
 msgstr "Решить тест опять"
 
