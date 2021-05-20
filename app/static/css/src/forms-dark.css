@@ -1,0 +1,38 @@
+/* ------------------------------- forms ------------------------------- */
+
+/* -------------------- base -------------------- */
+
+.form{
+	border: 3px solid #e2be4d;
+	background-color: #333333;
+}
+
+/* -------------------- header -------------------- */
+
+.form-header{
+	color: #cccccc;
+	border-bottom: 2px solid #e2be4d
+}
+
+/* -------------------- inputs -------------------- */
+
+.form-inputs{
+	color: #cccccc;
+}
+.form-input{
+	color: #eeeeee;
+	background-color: rgba(255, 255, 255, 0.1);
+	border: 1px solid #e2be4d;
+}
+.form-input-label{
+	color: #eeeeee;
+}
+.form-input-radio{
+	color: #eeeeee;
+}
+
+/* -------------------- buttons -------------------- */
+
+.form-buttons{
+	border-top: 2px solid #e2be4d
+}

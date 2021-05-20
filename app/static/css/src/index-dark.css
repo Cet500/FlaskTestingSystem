@@ -1,0 +1,18 @@
+/* ------------------------------- page index dark ------------------------------- */
+
+/* -------------------- section group -------------------- */
+
+.index__section-group{
+	border: 3px solid #e2be4d;
+	background-color: #333333;
+}
+.index__section-group-title-link{
+	color: #cccccc;
+}
+.index__section-group-description{
+	color: #eeeeee;
+	border-bottom: 3px solid #e2be4d;
+}
+.index__section-group-btn{
+	border-top: 1px solid #e2be4d;
+}

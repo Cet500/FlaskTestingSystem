@@ -22,6 +22,13 @@
 
 		{% block links %}{% endblock %}
 
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/global-dark.min.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/index-dark.min.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/parts-dark.min.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/forms-dark.min.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/test-base-dark.min.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/about-dark.min.css' ) }}">
+
 		{{ moment.include_jquery() }}
 		{{ moment.include_moment() }}
 		{{ moment.locale( g.locale ) }}

@@ -1,0 +1,12 @@
+/* ------------------------------- page about dark ------------------------------- */
+
+/* -------------------- section main -------------------- */
+
+.about__section-main{
+    border: 3px solid #e2be4d;
+	background-color: #333333;
+	color: #eeeeee;
+}
+.about__section-main h2{
+	color: #dddddd;
+}

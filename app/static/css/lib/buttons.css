@@ -259,3 +259,126 @@
 	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
 }
+
+/* -------------------- additional colors of buttons -------------------- */
+
+.btn-indigo {
+	color: #fff;
+	background-color: #3f51b5 !important
+}
+.btn-indigo:hover {
+	color: #fff;
+	background-color: #4d5ec1 !important
+}
+.btn-indigo:focus,
+.btn-indigo.focus {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+.btn-indigo:focus,
+.btn-indigo:active,
+.btn-indigo.active {
+	background-color: #252f69
+}
+.btn-indigo.dropdown-toggle {
+	background-color: #3f51b5 !important
+}
+.btn-indigo.dropdown-toggle:hover,
+.btn-indigo.dropdown-toggle:focus {
+	background-color: #4d5ec1 !important
+}
+.btn-indigo:not([disabled]):not(.disabled):active,
+.btn-indigo:not([disabled]):not(.disabled).active,
+.show>.btn-indigo.dropdown-toggle {
+	background-color: #252f69 !important;
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+.btn-indigo:not([disabled]):not(.disabled):active:focus,
+.btn-indigo:not([disabled]):not(.disabled).active:focus,
+.show>.btn-indigo.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+.btn-blue {
+	color: #fff;
+	background-color: #1976d2 !important
+}
+.btn-blue:hover {
+	color: #fff;
+	background-color: #2083e4 !important
+}
+.btn-blue:focus,
+.btn-blue.focus {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active {
+	background-color: #0e4377
+}
+.btn-blue.dropdown-toggle {
+	background-color: #1976d2 !important
+}
+.btn-blue.dropdown-toggle:hover,
+.btn-blue.dropdown-toggle:focus {
+	background-color: #2083e4 !important
+}
+.btn-blue:not([disabled]):not(.disabled):active,
+.btn-blue:not([disabled]):not(.disabled).active,
+.show>.btn-blue.dropdown-toggle {
+	background-color: #0e4377 !important;
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+.btn-blue:not([disabled]):not(.disabled):active:focus,
+.btn-blue:not([disabled]):not(.disabled).active:focus,
+.show>.btn-blue.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+.btn-green {
+	color: #fff;
+	background-color: #388e3c !important
+}
+.btn-green:hover {
+	color: #fff;
+	background-color: #3fa044 !important
+}
+.btn-green:focus,
+.btn-green.focus {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+.btn-green:focus,
+.btn-green:active,
+.btn-green.active {
+	background-color: #1b451d
+}
+.btn-green.dropdown-toggle {
+	background-color: #388e3c !important
+}
+.btn-green.dropdown-toggle:hover,
+.btn-green.dropdown-toggle:focus {
+	background-color: #3fa044 !important
+}
+.btn-green:not([disabled]):not(.disabled):active,
+.btn-green:not([disabled]):not(.disabled).active,
+.show>.btn-green.dropdown-toggle {
+	background-color: #1b451d !important;
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}
+.btn-green:not([disabled]):not(.disabled):active:focus,
+.btn-green:not([disabled]):not(.disabled).active:focus,
+.show>.btn-green.dropdown-toggle:focus {
+	-webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+	box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15)
+}

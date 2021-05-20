@@ -1,0 +1,23 @@
+/* ------------------------------- parts dark ------------------------------- */
+
+/* -------------------- test -------------------- */
+
+.parts__test{
+	border: 2px solid #e2be4d;
+	background-color: rgba(255, 255, 255, 0.075);
+}
+.parts__test-image{
+	border-bottom: 2px solid #e2be4d;
+}
+.parts__test-title-link{
+	color: #cccccc;
+}
+.parts__test-desc{
+	color: #eeeeee;
+}
+.parts__test-info{
+	color: #cccccc;
+}
+.parts__test-btn{
+	border-top: 1px solid #e2be4d;
+}
