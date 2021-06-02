@@ -8,18 +8,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-03 00:03+1000\n"
-"PO-Revision-Date: 2021-06-03 00:03+1000\n"
+"POT-Creation-Date: 2021-06-03 02:55+1000\n"
+"PO-Revision-Date: 2021-06-03 02:47+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
-"X-Generator: Lokalize 21.04.1\n"
 
 #: app/forms.py:12
 msgid "Submit"
@@ -106,7 +105,7 @@ msgid "Add group"
 msgstr "Добавить группу"
 
 #: app/forms.py:63 app/templates/forms/group-update.html:10
-#: app/templates/index.html:61
+#: app/templates/index.html:69
 msgid "Update group"
 msgstr "Обновить группу"
 
@@ -131,7 +130,7 @@ msgid "Difficult of test"
 msgstr "Сложность теста"
 
 #: app/forms.py:83 app/templates/forms/test-update.html:10
-#: app/templates/test-base.html:49
+#: app/templates/test-base.html:55
 msgid "Update test"
 msgstr "Обновить тест"
 
@@ -171,81 +170,45 @@ msgstr "Заключение теста для ключа "
 msgid "Change of test"
 msgstr "Изменить тест"
 
-#: app/routes.py:315
-msgid "Admin"
-msgstr "Админ"
+#: app/routes.py:319 app/routes.py:324
+msgid "Admin-panel"
+msgstr "Админ-панель"
 
-#: app/routes.py:315
+#: app/routes.py:319
+msgid "Tables"
+msgstr "Таблицы"
+
+#: app/routes.py:324
 msgid "Statistic"
 msgstr "Статистика"
 
-#: app/routes.py:323
+#: app/routes.py:332
 msgid "API methods list"
 msgstr "Список методов API"
 
-#: app/routes.py:441 app/templates/base.html:147
+#: app/routes.py:450 app/templates/base.html:159
 msgid "About TeSi"
 msgstr "О ТеСи"
 
-#: app/routes.py:446 app/templates/base.html:151
+#: app/routes.py:455 app/templates/base.html:163
 msgid "About us"
 msgstr "О нас"
 
-#: app/routes.py:466 app/routes.py:473 app/routes.py:480
+#: app/routes.py:475 app/routes.py:482 app/routes.py:489
 msgid "Errors"
 msgstr "Ошибки"
 
-#: app/routes.py:466 app/routes.py:468
+#: app/routes.py:475 app/routes.py:477
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: app/routes.py:473 app/routes.py:475
+#: app/routes.py:482 app/routes.py:484
 msgid "Error 405"
 msgstr "Ошибка 405"
 
-#: app/routes.py:480 app/routes.py:482
+#: app/routes.py:489 app/routes.py:491
 msgid "Error 500"
 msgstr "Ошибка 500"
-
-#: app/templates/404.html:6
-msgid "Error 404: Not Found"
-msgstr "Ошибка 404: Не найдено"
-
-#: app/templates/404.html:8 app/templates/405.html:8
-msgid "Your url:"
-msgstr "Ваш адрес:"
-
-#: app/templates/404.html:10
-msgid "You may have made a mistake somewhere. Try again or "
-msgstr "Возможно, вы ошиблись. Попробуйте ещё раз или "
-
-#: app/templates/404.html:11 app/templates/405.html:11 app/templates/500.html:9
-msgid "back to main page"
-msgstr "вернитесь на главную страницу"
-
-#: app/templates/405.html:6
-msgid "Error 405: Method Not Allowed"
-msgstr "Ошибка 405: Метод не разрешён"
-
-#: app/templates/405.html:10
-msgid ""
-"You are accessing the server using the wrong method. But we'll fix it. "
-"Try again or "
-msgstr ""
-"Вы обращаетесь к серверу неверным методом. Но мы это починим. Попробуйте "
-"ещё раз или "
-
-#: app/templates/500.html:6
-msgid "Error 500: Internal Server Error"
-msgstr "Ошибка 500: Внутренняя ошибка сервера"
-
-#: app/templates/500.html:8
-msgid ""
-"This is a server-side error. We're already aware of the problem, so "
-"things should get better soon. Try again or "
-msgstr ""
-"Это ошибка на серверной стороне. Мы уже знаем о проблеме, так что скоро "
-"всё должно наладиться. Попробуйте ещё раз или "
 
 #: app/templates/about-system.html:14
 msgid "Briefly about the system"
@@ -461,177 +424,299 @@ msgstr "Получить количество прохождений одног�
 msgid "Returns the number of passes of one specific test in the system."
 msgstr "Возвращает количество прохождений одного определённого теста в системе"
 
-#: app/templates/base.html:62
+#: app/templates/base.html:67
 msgid "watch statistic"
 msgstr "статистика"
 
-#: app/templates/base.html:69
+#: app/templates/base.html:74
+msgid "watch tables"
+msgstr "таблицы"
+
+#: app/templates/base.html:81
 msgid "add group"
 msgstr "добавить группу"
 
-#: app/templates/base.html:76
+#: app/templates/base.html:88
 msgid "add test"
 msgstr "добавить тест"
 
-#: app/templates/base.html:85
+#: app/templates/base.html:97
 msgid "methods of API"
 msgstr "методы API"
 
-#: app/templates/base.html:92
+#: app/templates/base.html:104
 msgid "logout"
 msgstr "выход"
 
-#: app/templates/base.html:102
+#: app/templates/base.html:114
 msgid "login"
 msgstr "вход в систему"
 
-#: app/templates/base.html:106
+#: app/templates/base.html:118
 msgid "register"
 msgstr "регистрация"
 
-#: app/templates/base.html:157
+#: app/templates/base.html:169
 msgid "We are for open software"
 msgstr "Мы за открытое ПО"
 
-#: app/templates/base.html:161
+#: app/templates/base.html:173
 msgid "Open API"
 msgstr "Открытое API"
 
-#: app/templates/index.html:67
+#: app/templates/index.html:75
 msgid "Show all tests"
 msgstr "Показать все тесты"
 
-#: app/templates/parts/test.html:16 app/templates/test-base.html:25
+#: app/templates/parts/test.html:16 app/templates/test-base.html:31
 msgid "Count questions:"
 msgstr "Количество вопросов:"
 
-#: app/templates/parts/test.html:20 app/templates/test-base.html:29
+#: app/templates/parts/test.html:20 app/templates/test-base.html:35
 msgid "Number of playthroughs:"
 msgstr "Число прохождений: "
 
-#: app/templates/parts/test.html:25 app/templates/test-base.html:33
+#: app/templates/parts/test.html:25 app/templates/test-base.html:39
 msgid "Average mark:"
 msgstr "Средняя оценка:"
 
-#: app/templates/parts/test.html:31 app/templates/test-base.html:37
+#: app/templates/parts/test.html:31 app/templates/test-base.html:43
 msgid "Difficult:"
 msgstr "Сложность:"
 
-#: app/templates/parts/test.html:36 app/templates/test-base.html:41
+#: app/templates/parts/test.html:36 app/templates/test-base.html:47
 msgid "Raiting:"
 msgstr "Рейтинг:"
 
-#: app/templates/test-base.html:55
+#: app/templates/test-base.html:61
 msgid "Start test"
 msgstr "Начать тест"
 
-#: app/templates/test-result.html:15
+#: app/templates/test-result.html:21
 msgid "Result by"
 msgstr "Результат по"
 
-#: app/templates/test-result.html:18
+#: app/templates/test-result.html:24
 msgid "Name of the test subject:"
 msgstr "Имя тестируемого:"
 
-#: app/templates/test-result.html:21
+#: app/templates/test-result.html:27
 msgid "Anonimus"
 msgstr "Анонимно"
 
-#: app/templates/test-result.html:28
+#: app/templates/test-result.html:34
 msgid "Datetime of test:"
 msgstr "Время теста:"
 
-#: app/templates/test-result.html:34
+#: app/templates/test-result.html:40
 msgid "Total questions / correct answers:"
 msgstr "Всего вопросов / правильных:"
 
-#: app/templates/test-result.html:41
+#: app/templates/test-result.html:47
 msgid "Percent correct answers:"
 msgstr "Процент верных ответов:"
 
-#: app/templates/test-result.html:55
+#: app/templates/test-result.html:61
 msgid "Your future аctivity - "
 msgstr "Ваша будущая деятельность - "
 
-#: app/templates/test-result.html:58
+#: app/templates/test-result.html:64
 msgid "too many"
 msgstr "слишком много"
 
-#: app/templates/test-result.html:60
+#: app/templates/test-result.html:66
 msgid "no data"
 msgstr "нет данных"
 
-#: app/templates/test-result.html:62
+#: app/templates/test-result.html:68
 msgid "crop production"
 msgstr "растениеводство"
 
-#: app/templates/test-result.html:64
+#: app/templates/test-result.html:70
 msgid "public catering"
 msgstr "общественное питание"
 
-#: app/templates/test-result.html:66
+#: app/templates/test-result.html:72
 msgid "clothing manufacturing"
 msgstr "швейное производство"
 
-#: app/templates/test-result.html:68
+#: app/templates/test-result.html:74
 msgid "Woodworking"
 msgstr "деревообработка"
 
-#: app/templates/test-result.html:70
+#: app/templates/test-result.html:76
 msgid "locksmith work"
 msgstr "слесарные работы"
 
-#: app/templates/test-result.html:72
+#: app/templates/test-result.html:78
 msgid "decorative works"
 msgstr "декоративные работы"
 
-#: app/templates/test-result.html:74
+#: app/templates/test-result.html:80
 msgid "construction"
 msgstr "строительство"
 
-#: app/templates/test-result.html:76
+#: app/templates/test-result.html:82
 msgid "working professions"
 msgstr "рабочие профессии"
 
-#: app/templates/test-result.html:78
+#: app/templates/test-result.html:84
 msgid "housing and communal services"
 msgstr "жилищно-коммунальное хозяйство"
 
-#: app/templates/test-result.html:80
+#: app/templates/test-result.html:86
 msgid "more variants"
 msgstr "несколько вариантов"
 
-#: app/templates/test-result.html:82
+#: app/templates/test-result.html:88
 msgid "null"
 msgstr "пустота"
 
-#: app/templates/test-result.html:90
+#: app/templates/test-result.html:96
 msgid "Final mark:"
 msgstr "Итоговая оценка:"
 
-#: app/templates/test-result.html:93
+#: app/templates/test-result.html:99
 msgid "5 (excellent)"
 msgstr "5 (отлично)"
 
-#: app/templates/test-result.html:95
+#: app/templates/test-result.html:101
 msgid "4 (good)"
 msgstr "4 (хорошо)"
 
-#: app/templates/test-result.html:97
+#: app/templates/test-result.html:103
 msgid "3 (satisfactory)"
 msgstr "3 (удовлетворительно)"
 
-#: app/templates/test-result.html:99
+#: app/templates/test-result.html:105
 msgid "2 (bad)"
 msgstr "2 (плохо)"
 
-#: app/templates/test-result.html:119
+#: app/templates/test-result.html:125
 msgid "Back to main"
 msgstr "Вернуться на главную страницу"
 
-#: app/templates/test-result.html:122
+#: app/templates/test-result.html:128
 msgid "Solve test again"
 msgstr "Решить тест опять"
+
+#: app/templates/admin/tables.html:15
+msgid "Table of users"
+msgstr "Таблица пользователей"
+
+#: app/templates/admin/tables.html:20 app/templates/admin/tables.html:58
+#: app/templates/admin/tables.html:88
+msgid "id"
+msgstr "id"
+
+#: app/templates/admin/tables.html:21 app/templates/admin/tables.html:90
+msgid "name"
+msgstr "имя"
+
+#: app/templates/admin/tables.html:22
+msgid "lastname"
+msgstr "фамилия"
+
+#: app/templates/admin/tables.html:23 app/templates/admin/tables.html:89
+msgid "group"
+msgstr "группа"
+
+#: app/templates/admin/tables.html:24
+msgid "role"
+msgstr "роль"
+
+#: app/templates/admin/tables.html:25
+msgid "registated"
+msgstr "регистрация"
+
+#: app/templates/admin/tables.html:26
+msgid "updated"
+msgstr "обновлено"
+
+#: app/templates/admin/tables.html:40
+msgid "student"
+msgstr "студент"
+
+#: app/templates/admin/tables.html:42
+msgid "admin"
+msgstr "админ"
+
+#: app/templates/admin/tables.html:53
+msgid "Table of groups"
+msgstr "Таблица групп"
+
+#: app/templates/admin/tables.html:59
+msgid "title"
+msgstr "имя"
+
+#: app/templates/admin/tables.html:60
+msgid "tests"
+msgstr "тестов"
+
+#: app/templates/admin/tables.html:61 app/templates/admin/tables.html:94
+msgid "datetime_add"
+msgstr "дата/время созд."
+
+#: app/templates/admin/tables.html:62 app/templates/admin/tables.html:95
+msgid "datetime_upd"
+msgstr "дата/время обн."
+
+#: app/templates/admin/tables.html:83
+msgid "Table of tests"
+msgstr "Таблица тестов"
+
+#: app/templates/admin/tables.html:91
+msgid "difficult"
+msgstr "сложность"
+
+#: app/templates/admin/tables.html:92
+msgid "quests"
+msgstr "вопросов"
+
+#: app/templates/admin/tables.html:93
+msgid "results"
+msgstr "пройдено"
+
+#: app/templates/errors/404.html:6
+msgid "Error 404: Not Found"
+msgstr "Ошибка 404: Не найдено"
+
+#: app/templates/errors/404.html:8 app/templates/errors/405.html:8
+msgid "Your url:"
+msgstr "Ваш адрес:"
+
+#: app/templates/errors/404.html:10
+msgid "You may have made a mistake somewhere. Try again or "
+msgstr "Возможно, вы ошиблись. Попробуйте ещё раз или "
+
+#: app/templates/errors/404.html:11 app/templates/errors/405.html:11
+#: app/templates/errors/500.html:9
+msgid "back to main page"
+msgstr "вернитесь на главную страницу"
+
+#: app/templates/errors/405.html:6
+msgid "Error 405: Method Not Allowed"
+msgstr "Ошибка 405: Метод не разрешён"
+
+#: app/templates/errors/405.html:10
+msgid ""
+"You are accessing the server using the wrong method. But we'll fix it. "
+"Try again or "
+msgstr ""
+"Вы обращаетесь к серверу неверным методом. Но мы это починим. Попробуйте "
+"ещё раз или "
+
+#: app/templates/errors/500.html:6
+msgid "Error 500: Internal Server Error"
+msgstr "Ошибка 500: Внутренняя ошибка сервера"
+
+#: app/templates/errors/500.html:8
+msgid ""
+"This is a server-side error. We're already aware of the problem, so "
+"things should get better soon. Try again or "
+msgstr ""
+"Это ошибка на серверной стороне. Мы уже знаем о проблеме, так что скоро "
+"всё должно наладиться. Попробуйте ещё раз или "
 
 #: app/templates/parts/test.html:44
 msgid "Update"
