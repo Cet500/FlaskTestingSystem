@@ -68,6 +68,23 @@
 	background-color: #444444;
 }
 
+/* -------------------- main -------------------- */
+
+.global__main-header{
+	color: #cccccc;
+}
+.global__main-subheader{
+	color: #cccccc;
+}
+
+/* -------------------- sections -------------------- */
+
+.global__section{
+	border: 3px solid #e2be4d;
+	background-color: #333333;
+	color: #eeeeee;
+}
+
 /* -------------------- footer -------------------- */
 
 .global__footer{

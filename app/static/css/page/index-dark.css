@@ -2,10 +2,6 @@
 
 /* -------------------- section group -------------------- */
 
-.index__section-group{
-	border: 3px solid #e2be4d;
-	background-color: #333333;
-}
 .index__section-group-title-link{
 	color: #cccccc;
 }

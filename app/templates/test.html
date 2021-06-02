@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 
 
+{% block links %}
+
+	{% if g.theme == "dark" %}
+
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/test-base-dark.min.css' ) }}">
+
+	{% endif %}
+
+{% endblock %}
+
+
 {% block content %}
 
 	<form class="form" action="" method="post" novalidate>

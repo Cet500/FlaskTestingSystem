@@ -5,6 +5,14 @@
 
 	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/index.min.css' ) }}">
 
+	{# Dark theme #}
+
+	{% if g.theme == "dark" %}
+
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/index-dark.min.css' ) }}">
+
+	{% endif %}
+
 {% endblock %}
 
 
@@ -39,8 +47,8 @@
 
 	{% for group in groups %}
 
-		<section class="index__section-group">
-			<h2 class="index__section-group-title">
+		<section class="global__section index__section-group">
+			<h2 class="global__main-header index__section-group-title">
 				<a class="index__section-group-title-link"
 				   href="{{ url_for( 'group', id = group.id ) }}">{{ group.title }}</a>
 			</h2>

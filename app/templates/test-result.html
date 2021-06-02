@@ -6,13 +6,19 @@
 	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/test-base.min.css' ) }}">
 	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/test-base-media.min.css' ) }}">
 
+	{% if g.theme == "dark" %}
+
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/test-base-dark.min.css' ) }}">
+
+	{% endif %}
+
 {% endblock %}
 
 
 {% block content %}
 
-	<section class="test-base__section-test">
-		<h2 class="test-base__section-test-name">{{ _("Result by") }} "{{ test.name }}"</h2>
+	<section class="global__section test-base__section-test">
+		<h2 class="global__main-header test-base__section-test-name">{{ _("Result by") }} "{{ test.name }}"</h2>
 
 		<p class="test-base__section-test-description">
 			{{ _("Name of the test subject:") }}
@@ -46,7 +52,7 @@
 
 {#	    Оцените рейтинг этого теста #}
 
-		<h3 class="test-base__section-test-name">
+		<h3 class="global__main-subheader test-base__section-test-name">
 			{% if result.percent == -1 %}
 
 				{# for special tests #}

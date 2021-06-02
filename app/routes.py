@@ -310,9 +310,16 @@ def update_test(id):
 # ------------------------ admin pages ------------------------ #
 
 
+@app.route('/admin/tables')
+def admin_tables():
+	users = User.query.all()
+
+	return render_template( "admin/tables.html", title = _('Admin-panel') + ' / ' + _('Tables'), users = users )
+
+
 @app.route('/admin/statistic')
 def admin_statistic():
-	return render_template( "admin/statistic.html", title = _('Admin') + ' / ' + _('Statistic') )
+	return render_template( "admin/statistic.html", title = _('Admin-panel') + ' / ' + _('Statistic') )
 
 
 # ------------------------ API pages ------------------------ #
@@ -465,23 +472,24 @@ def static_from_root():
 def error_404(e):
 	path = _('Errors') + " / 400 / " + _('Error 404')
 
-	return render_template( "404.html", title = _('Error 404'), path = path ), 404
+	return render_template( "errors/404.html", title = _( 'Error 404' ), path = path ), 404
 
 
 @app.errorhandler(405)
 def error_405(e):
 	path = _('Errors') + " / 400 / " + _('Error 405')
 
-	return render_template( "405.html", title = _('Error 405'), path = path ), 405
+	return render_template( "errors/405.html", title = _( 'Error 405' ), path = path ), 405
 
 
 @app.errorhandler(500)
 def error_500(e):
 	path = _('Errors') + " / 500 / " + _('Error 500')
 
-	return render_template( "500.html", title = _('Error 500'), path = path ), 500
+	return render_template( "errors/500.html", title = _( 'Error 500' ), path = path ), 500
 
 
 @app.before_request
 def before_request():
 	g.locale = str( get_locale() )
+	g.theme = 'dark'

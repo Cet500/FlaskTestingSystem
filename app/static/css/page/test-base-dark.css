@@ -2,10 +2,6 @@
 
 /* -------------------- section group -------------------- */
 
-.test-base__section-test{
-	border: 3px solid #e2be4d;
-	background-color: #333333;
-}
 .test-base__section-test-image{
 	border-bottom: 3px solid #e2be4d;
 }
