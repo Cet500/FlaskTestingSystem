@@ -9,259 +9,258 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2021-06-03 00:03+1000\n"
-"PO-Revision-Date: 2021-06-03 00:03+1000\n"
+"PO-Revision-Date: 2021-05-18 18:05+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
-"X-Generator: Lokalize 21.04.1\n"
 
 #: app/forms.py:12
 msgid "Submit"
-msgstr "Принять"
+msgstr "Aceptar"
 
 #: app/forms.py:16 app/forms.py:25
 msgid "Username"
-msgstr "Логин"
+msgstr "Acceso"
 
 #: app/forms.py:17 app/forms.py:29
 msgid "Password"
-msgstr "Пароль"
+msgstr "Contraseña"
 
 #: app/forms.py:18
 msgid "Remember me"
-msgstr "Запомнить меня"
+msgstr "Recuérdame"
 
 #: app/forms.py:19 app/routes.py:158 app/templates/login.html:10
 msgid "Sign in"
-msgstr "Войти в систему"
+msgstr "Registrarse"
 
 #: app/forms.py:23
 msgid "Name"
-msgstr "Имя"
+msgstr "Nombre"
 
 #: app/forms.py:24
 msgid "Lastname"
-msgstr "Фамилия"
+msgstr "Apellido"
 
 #: app/forms.py:26 app/forms.py:67
 msgid "Group"
-msgstr "Группа"
+msgstr "Grupo"
 
 #: app/forms.py:27
 msgid "Role"
-msgstr "Роль"
+msgstr "Papel"
 
 #: app/forms.py:27
 msgid "Student"
-msgstr "Студент"
+msgstr "Estudiante"
 
 #: app/forms.py:27
 msgid "Teacher"
-msgstr "Учитель"
+msgstr "Profesor"
 
 #: app/forms.py:30
 msgid "Repeat password"
-msgstr "Повторите пароль"
+msgstr "repite la contraseña"
 
 #: app/forms.py:31 app/routes.py:178 app/templates/register.html:10
 msgid "Register"
-msgstr "Регистрация"
+msgstr "registrarse"
 
 #: app/forms.py:37
 msgid "Please use a different login"
-msgstr "Пожалуйста, используйте другой пароль"
+msgstr "Utilice una contraseña diferente"
 
 #: app/forms.py:40
 msgid "Use only A-Z, a-z, 0-9 and _"
-msgstr "Используйте только буквы и цифры "
+msgstr "Use solo letras y números"
 
 #: app/forms.py:44
 msgid "Use letter in password"
-msgstr "Используйте прописные буквы"
+msgstr "Usa letras mayúsculas"
 
 #: app/forms.py:47
 msgid "Use capital in password"
-msgstr "Используйте заглавные буквы"
+msgstr "Usa letras mayúsculas"
 
 #: app/forms.py:50
 msgid "Use number in password"
-msgstr "Используйте числа"
+msgstr "Usar números"
 
 #: app/forms.py:54
 msgid "Title"
-msgstr "Заголовок"
+msgstr "Bóveda"
 
 #: app/forms.py:55
 msgid "Description"
-msgstr "Описание"
+msgstr "Descripción"
 
 #: app/forms.py:59 app/routes.py:205 app/templates/forms/group-add.html:10
 msgid "Add group"
-msgstr "Добавить группу"
+msgstr "Añadir grupo"
 
 #: app/forms.py:63 app/templates/forms/group-update.html:10
 #: app/templates/index.html:61
 msgid "Update group"
-msgstr "Обновить группу"
+msgstr "Actualizar grupo"
 
 #: app/forms.py:68
 msgid "Name of test"
-msgstr "Имя теста"
+msgstr "Nombre de la prueba"
 
 #: app/forms.py:69
 msgid "Annotation of test"
-msgstr "Аннотация теста"
+msgstr "Resumen de prueba"
 
 #: app/forms.py:70
 msgid "Description of test"
-msgstr "Описание теста"
+msgstr "Descripción de la prueba"
 
 #: app/forms.py:74 app/routes.py:248 app/templates/forms/test-add.html:10
 msgid "Add test"
-msgstr "Добавить тест"
+msgstr "Agregar prueba"
 
 #: app/forms.py:78
 msgid "Difficult of test"
-msgstr "Сложность теста"
+msgstr "Prueba de dificultad"
 
 #: app/forms.py:83 app/templates/forms/test-update.html:10
 #: app/templates/test-base.html:49
 msgid "Update test"
-msgstr "Обновить тест"
+msgstr "Prueba de actualización"
 
 #: app/routes.py:23
 msgid "All tests"
-msgstr "Все тесты"
+msgstr "Todas las pruebas"
 
 #: app/routes.py:23
 msgid "Test by groups"
-msgstr "Тесты по группам"
+msgstr "Pruebas grupales"
 
 #: app/routes.py:45
 msgid "Info"
-msgstr "Информация"
+msgstr "Información"
 
 #: app/routes.py:116
 msgid "Testing"
-msgstr "Тестирование"
+msgstr "Pruebas"
 
 #: app/routes.py:134
 msgid "Result"
-msgstr "Результат"
+msgstr "Resultado"
 
 #: app/routes.py:225
 msgid "Change of group"
-msgstr "Изменить группу"
+msgstr "Cambiar de grupo"
 
 #: app/routes.py:268
 msgid "Test resume for mark "
-msgstr "Заключение теста при оценке "
+msgstr "Conclusión de la prueba al evaluar"
 
 #: app/routes.py:273
 msgid "Test resume for key "
-msgstr "Заключение теста для ключа "
+msgstr "Conclusión de la prueba de la llave"
 
 #: app/routes.py:306
 msgid "Change of test"
-msgstr "Изменить тест"
+msgstr "Prueba de cambio"
 
 #: app/routes.py:315
 msgid "Admin"
-msgstr "Админ"
+msgstr ""
 
 #: app/routes.py:315
 msgid "Statistic"
-msgstr "Статистика"
+msgstr ""
 
 #: app/routes.py:323
 msgid "API methods list"
-msgstr "Список методов API"
+msgstr ""
 
 #: app/routes.py:441 app/templates/base.html:147
 msgid "About TeSi"
-msgstr "О ТеСи"
+msgstr "Sobre TeSi"
 
 #: app/routes.py:446 app/templates/base.html:151
 msgid "About us"
-msgstr "О нас"
+msgstr "Sobre nosotros"
 
 #: app/routes.py:466 app/routes.py:473 app/routes.py:480
 msgid "Errors"
-msgstr "Ошибки"
+msgstr "Errores"
 
 #: app/routes.py:466 app/routes.py:468
 msgid "Error 404"
-msgstr "Ошибка 404"
+msgstr "error 404"
 
 #: app/routes.py:473 app/routes.py:475
 msgid "Error 405"
-msgstr "Ошибка 405"
+msgstr "Error 405"
 
 #: app/routes.py:480 app/routes.py:482
 msgid "Error 500"
-msgstr "Ошибка 500"
+msgstr "Error 500"
 
 #: app/templates/404.html:6
 msgid "Error 404: Not Found"
-msgstr "Ошибка 404: Не найдено"
+msgstr "Error 404 no encontrado"
 
 #: app/templates/404.html:8 app/templates/405.html:8
 msgid "Your url:"
-msgstr "Ваш адрес:"
+msgstr "Su dirección:"
 
 #: app/templates/404.html:10
 msgid "You may have made a mistake somewhere. Try again or "
-msgstr "Возможно, вы ошиблись. Попробуйте ещё раз или "
+msgstr "Puede que te hayas equivocado. Inténtalo de nuevo o"
 
 #: app/templates/404.html:11 app/templates/405.html:11 app/templates/500.html:9
 msgid "back to main page"
-msgstr "вернитесь на главную страницу"
+msgstr "Regresa a la página principal"
 
 #: app/templates/405.html:6
 msgid "Error 405: Method Not Allowed"
-msgstr "Ошибка 405: Метод не разрешён"
+msgstr "Error 405: método no permitido"
 
 #: app/templates/405.html:10
 msgid ""
 "You are accessing the server using the wrong method. But we'll fix it. "
 "Try again or "
 msgstr ""
-"Вы обращаетесь к серверу неверным методом. Но мы это починим. Попробуйте "
-"ещё раз или "
+"Está accediendo al servidor con el método incorrecto. Pero lo "
+"arreglaremos. Pruébelootra vez o"
 
 #: app/templates/500.html:6
 msgid "Error 500: Internal Server Error"
-msgstr "Ошибка 500: Внутренняя ошибка сервера"
+msgstr "Error 500 - Error Interno del Servidor"
 
 #: app/templates/500.html:8
 msgid ""
 "This is a server-side error. We're already aware of the problem, so "
 "things should get better soon. Try again or "
 msgstr ""
-"Это ошибка на серверной стороне. Мы уже знаем о проблеме, так что скоро "
-"всё должно наладиться. Попробуйте ещё раз или "
+"Este es un error del lado del servidor. Ya conocemos el problema, muy "
+"pronto\"todo debería estar bien. Vuelve a intentarlo o"
 
 #: app/templates/about-system.html:14
 msgid "Briefly about the system"
-msgstr "Кратко о системе"
+msgstr "Brevemente sobre el sistema"
 
 #: app/templates/about-system.html:17
 msgid ""
 "TeSi is a Test System created by order of an educational institution and "
 "designed to create and pass various tests."
 msgstr ""
-"ТеСи - это Тестовая Система, созданная по заказу учебного заведения и "
-"предназначенная для создания и прохождения различных тестов."
+"TeSi es un sistema de pruebas creado por orden de una institución "
+"educativa ydiseñado para crear y aprobar varias pruebas\""
 
 #: app/templates/about-system.html:20
 msgid "History of creation"
-msgstr "История создания"
+msgstr "Historia de la creacion"
 
 #: app/templates/about-system.html:23
 msgid ""
@@ -274,15 +273,15 @@ msgid ""
 "obtaining \"centralization\". One immediately after the end of the "
 "course, this project was abandoned as unnecessary."
 msgstr ""
-"Первоначально, эта система появилась как тестовая оболочка для курсовой "
-"работы и была написана на C#, с использованием WinForms. Это была "
-"достаточно простая программа, однако в ней уже можно было создавать и "
-"проходить тесты. Даже была \"доска почёта\", на которой можно было "
-"увидеть, кто лучше всех решает тесты. Все данные хранились в единой базе "
-"данных MySQL, так что можно было даже сделать так - развернуть одну базу,"
-" а к ней подключить к ней множество клиентов, получив тем самым "
-"\"централизацию\". Одна сразу же за окончанием курсовой, этот проект был "
-"заброшен за ненадобностью."
+"Originalmente, este sistema apareció como un caparazón de prueba para el "
+"trabajo del curso\"funciona y fue escrito en C # usando WinForms. Fueun "
+"programa bastante simple, pero ya era posible crear ypara tomar exámenes."
+" Incluso había un \" tablero de honor \\ \"en el que era posiblepara ver "
+"quién es el mejor resolviendo pruebas. Todos los datos se almacenaron en "
+"una única base de datosDatos MySQL, por lo que incluso podría hacer esto:"
+" implementar una base de datosy conectar a muchos clientes con él, "
+"obteniendo\" centralización. \\ \"Uno inmediatamente después del final "
+"del trabajo del curso, este proyecto fueabandonado por innecesario\""
 
 #: app/templates/about-system.html:27
 msgid ""
@@ -295,18 +294,19 @@ msgid ""
 " the same - it is MySQL. This DBMS has long been reliably showing itself "
 "and it makes no sense to replace it."
 msgstr ""
-"Нынешняя же версия - это уже иная система, пусть и построенная на тех же "
-"самых принципах, как и ранее. Это Web-приложение, основанное на Flask. "
-"Возможности те же самые - создание и прохождение тестов, однако "
-"внутренняя архитектура построена совсем иначе. Если ранее всё было "
-"сгружено, то тут напротив, используется декомпозиция - т.е. разбиение на "
-"небольшие части. А вот база данных и её общая структура та же самая - это"
-" MySQL. Данная СУБД уже давно надёжно себя показывает и заменять её нет "
-"смысла."
+"La versión actual es un sistema diferente, aunque construido sobre el "
+"mismoLos mismos principios que antes. Esta es una aplicación web basada "
+"en Flask\"Las posibilidades son las mismas, sin embargo, crear y aprobar "
+"pruebasla arquitectura interna está construida de una manera "
+"completamente diferente. Si todo fuera antescargado, por el contrario, se"
+" utiliza la descomposición, es decir, dividir enpartes pequeñas. Pero la "
+"base de datos y su estructura general son las mismas, esto esMySQL. Este "
+"DBMS se ha mostrado confiable durante mucho tiempo y no hay sustituto "
+"para él\"significado."
 
 #: app/templates/about-system.html:30
 msgid "Future plans"
-msgstr "Планы на будущее"
+msgstr "Planes futuros"
 
 #: app/templates/about-system.html:33
 msgid ""
@@ -314,13 +314,13 @@ msgid ""
 " improve. Probably, this site will just be constantly expanding and "
 "developing. There are simply no concrete global plans."
 msgstr ""
-"В целом, система в большей степени уже готова - однако всегда есть что "
-"доработать. Вероятно, этот сайт будет просто постоянно расширяться и "
-"развиваться. Конкретных же глобальных планов просто нет."
+"En general, el sistema está casi listo, pero siempre hay algo\"finalizar."
+" Es probable que este sitio siga expandiéndose ypara desarrollar. "
+"Simplemente no hay planes globales específicos\""
 
 #: app/templates/about-system.html:36
 msgid "Open source code"
-msgstr "Открытый исходный код"
+msgstr "Fuente abierta"
 
 #: app/templates/about-system.html:39
 msgid ""
@@ -331,16 +331,16 @@ msgid ""
 "can contribute to the common cause, and this is the reason why I will not"
 " stay away."
 msgstr ""
-"Данная система не является чем-то особым, поэтому было решено открыть "
-"исходный код для всех желающих - актуальная ссылка на репозиторий всегда "
-"находится внизу страницы. Мне очень нравится движение открытого ПО, "
-"поэтому данное решение - это ещё одна небольшая поддержка стремления к "
-"свободе. Каждый в может внести свой вклад в общее дело, и это причина, по"
-" которой я не останусь в стороне."
+"Este sistema no es algo especial, por eso se decidió abrircódigo fuente "
+"para todos: un vínculo real al repositorio siempreestá en la parte "
+"inferior de la página. Me gusta mucho el movimiento de código "
+"abierto\"Por tanto, esta decisión es otro pequeño apoyo a la consecución "
+"deLibertad. Todos pueden contribuir a la causa común, y esta es la razón "
+"por la queque no me apartaré\""
 
 #: app/templates/about-us.html:14
 msgid "Thanks to the development team"
-msgstr "Благодарность команде разработки"
+msgstr "Gracias al equipo de desarrollo"
 
 #: app/templates/about-us.html:16
 msgid ""
@@ -350,10 +350,11 @@ msgid ""
 "help me from the shadows. Guys, thank you, this would not have happened "
 "without you."
 msgstr ""
-"Как бы мне не хотелось написать а-ля \"Мы - команда амбициозных "
-"разработчиков...\", я не могу этого сделать, т.к. создаю всё это лишь я "
-"один. Однако, мне хочется выразить благодарность всем тем, кто помогает "
-"мне из тени. Ребят, спасибо, без вас этого не было бы."
+"Por mucho que no me gustaría escribir a la \" Somos un equipo de "
+"ambiciosos desarrolladores ... \", no puedo hacer esto porque Soy el "
+"único que crea todo esto Solo. Sin embargo, me gustaría expresar mi "
+"gratitud a todos los que ayudan\"Estoy fuera de las sombras. Chicos, "
+"gracias, sin ustedes esto no habría sucedido\""
 
 #: app/templates/about-us.html:18
 msgid ""
@@ -361,335 +362,345 @@ msgid ""
 " exist at all. For this system has some meaning for me. Like things on a "
 "shelf, just by looking at them, you remember the past."
 msgstr ""
-"Ну и конечно спасибо заказчику, без которого этой системы вообще бы не "
-"существовало. Ибо эта система для меня имеет некое значение. Как вещи на "
-"полке, лишь посмотрев на которые, ты вспоминаешь прошлое."
+"existía. Porque este sistema tiene un cierto significado para mí. Como "
+"cosas enLa estantería, con sólo mirarla, te acuerdas del pasado\""
 
 #: app/templates/api.html:16
 msgid "Methods of users"
-msgstr "Методы пользователей"
+msgstr ""
 
 #: app/templates/api.html:18
 msgid "Get users count"
-msgstr "Получить количество пользователей"
+msgstr ""
 
 #: app/templates/api.html:20
 msgid "Returns the number of registered users in the system"
-msgstr "Возвращает количество пользователей, зарегистрированных в системе"
+msgstr ""
 
 #: app/templates/api.html:29
+#, fuzzy
 msgid "Methods of groups"
-msgstr "Методы групп"
+msgstr "Pruebas grupales"
 
 #: app/templates/api.html:31
+#, fuzzy
 msgid "Get groups count"
-msgstr "Получить количество групп"
+msgstr "Pruebas grupales"
 
 #: app/templates/api.html:33
 msgid "Returns the number of groups that combine tests in the system"
-msgstr "Возвращает количество групп, что объединяют тесты в системе"
+msgstr ""
 
 #: app/templates/api.html:41
+#, fuzzy
 msgid "Get groups list"
-msgstr "Получить список групп"
+msgstr "Pruebas grupales"
 
 #: app/templates/api.html:43
 msgid "Returns the list of all groups of the system in JSON format"
-msgstr "Возвращает список всех групп тестов системы в формате JSON"
+msgstr ""
 
 #: app/templates/api.html:52
+#, fuzzy
 msgid "Methods of tests"
-msgstr "Методы тестов"
+msgstr "Nombre de la prueba"
 
 #: app/templates/api.html:54
 msgid "Get tests count"
-msgstr "Получить количество тестов"
+msgstr ""
 
 #: app/templates/api.html:56
 msgid "Returns the number of open tests in the system"
-msgstr "Возвращает количество открытых тестов в системе"
+msgstr ""
 
 #: app/templates/api.html:64
 msgid "Get tests list"
-msgstr "Получить список тестов"
+msgstr ""
 
 #: app/templates/api.html:66
 msgid "Returns the list of all open tests in JSON format"
-msgstr "Возвращает список всех открытых тестов формате JSON"
+msgstr ""
 
 #: app/templates/api.html:74
+#, fuzzy
 msgid "Get tests count by group"
-msgstr "Получить количество тестов в группе"
+msgstr "Pruebas grupales"
 
 #: app/templates/api.html:76
 msgid "Returns the number of open tests in a single group system"
-msgstr "Возвращает количество открытых тестов в одной группе"
+msgstr ""
 
 #: app/templates/api.html:84
+#, fuzzy
 msgid "Get tests list by group"
-msgstr "Получить список тестов в группе"
+msgstr "Pruebas grupales"
 
 #: app/templates/api.html:86
 msgid "Returns the list of open tests in a single group in JSON format"
-msgstr "Возвращает список открытых тестов в одной группе в формате JSON"
+msgstr ""
 
 #: app/templates/api.html:95
+#, fuzzy
 msgid "Methods of results"
-msgstr "Методы прохождений"
+msgstr "Nombre de la prueba"
 
 #: app/templates/api.html:97
 msgid "Get results count"
-msgstr "Получить количество прохождений"
+msgstr ""
 
 #: app/templates/api.html:99
 msgid "Returns the number of passes of all tests in the system"
-msgstr "Возвращает количество прохождений всех тестов в системе"
+msgstr ""
 
 #: app/templates/api.html:107
 msgid "Get results list"
-msgstr "Получить список прохождений"
+msgstr ""
 
 #: app/templates/api.html:109
 msgid "Returns the list of passes of all tests in the system in JSON format"
-msgstr "Возвращает список прохождений всех тестов в системе в формате JSON"
+msgstr ""
 
 #: app/templates/api.html:117
 msgid "Get results count by test"
-msgstr "Получить количество прохождений одного теста"
+msgstr ""
 
 #: app/templates/api.html:119
 msgid "Returns the number of passes of one specific test in the system."
-msgstr "Возвращает количество прохождений одного определённого теста в системе"
+msgstr ""
 
 #: app/templates/base.html:62
 msgid "watch statistic"
-msgstr "статистика"
+msgstr ""
 
 #: app/templates/base.html:69
 msgid "add group"
-msgstr "добавить группу"
+msgstr "añadir grupo"
 
 #: app/templates/base.html:76
 msgid "add test"
-msgstr "добавить тест"
+msgstr "agregar prueba"
 
 #: app/templates/base.html:85
+#, fuzzy
 msgid "methods of API"
-msgstr "методы API"
+msgstr "Pruebas grupales"
 
 #: app/templates/base.html:92
 msgid "logout"
-msgstr "выход"
+msgstr "producción"
 
 #: app/templates/base.html:102
 msgid "login"
-msgstr "вход в систему"
+msgstr "acceso"
 
 #: app/templates/base.html:106
 msgid "register"
-msgstr "регистрация"
+msgstr "registrarse"
 
 #: app/templates/base.html:157
 msgid "We are for open software"
-msgstr "Мы за открытое ПО"
+msgstr "Estamos a favor del software de código abierto"
 
 #: app/templates/base.html:161
 msgid "Open API"
-msgstr "Открытое API"
+msgstr ""
 
 #: app/templates/index.html:67
 msgid "Show all tests"
-msgstr "Показать все тесты"
+msgstr "Mostrar todas las pruebas"
 
 #: app/templates/parts/test.html:16 app/templates/test-base.html:25
 msgid "Count questions:"
-msgstr "Количество вопросов:"
+msgstr "Numero de preguntas:"
 
 #: app/templates/parts/test.html:20 app/templates/test-base.html:29
 msgid "Number of playthroughs:"
-msgstr "Число прохождений: "
+msgstr "Número de pases:"
 
 #: app/templates/parts/test.html:25 app/templates/test-base.html:33
 msgid "Average mark:"
-msgstr "Средняя оценка:"
+msgstr "Puntuación media:"
 
 #: app/templates/parts/test.html:31 app/templates/test-base.html:37
 msgid "Difficult:"
-msgstr "Сложность:"
+msgstr "Complejidad:"
 
 #: app/templates/parts/test.html:36 app/templates/test-base.html:41
 msgid "Raiting:"
-msgstr "Рейтинг:"
+msgstr "Clasificación:"
 
 #: app/templates/test-base.html:55
 msgid "Start test"
-msgstr "Начать тест"
+msgstr "Iniciar prueba"
 
 #: app/templates/test-result.html:15
 msgid "Result by"
-msgstr "Результат по"
+msgstr "Resultado por"
 
 #: app/templates/test-result.html:18
 msgid "Name of the test subject:"
-msgstr "Имя тестируемого:"
+msgstr "Nombre del examinado:"
 
 #: app/templates/test-result.html:21
 msgid "Anonimus"
-msgstr "Анонимно"
+msgstr "Anónimamente"
 
 #: app/templates/test-result.html:28
 msgid "Datetime of test:"
-msgstr "Время теста:"
+msgstr "Tiempo de prueba:"
 
 #: app/templates/test-result.html:34
 msgid "Total questions / correct answers:"
-msgstr "Всего вопросов / правильных:"
+msgstr "Total de preguntas / correctas:"
 
 #: app/templates/test-result.html:41
 msgid "Percent correct answers:"
-msgstr "Процент верных ответов:"
+msgstr "Porcentaje de respuestas correctas:"
 
 #: app/templates/test-result.html:55
 msgid "Your future аctivity - "
-msgstr "Ваша будущая деятельность - "
+msgstr "Tu actividad futura - "
 
 #: app/templates/test-result.html:58
 msgid "too many"
-msgstr "слишком много"
+msgstr "demasiado"
 
 #: app/templates/test-result.html:60
 msgid "no data"
-msgstr "нет данных"
+msgstr "no hay datos"
 
 #: app/templates/test-result.html:62
 msgid "crop production"
-msgstr "растениеводство"
+msgstr "cultivo de plantas"
 
 #: app/templates/test-result.html:64
 msgid "public catering"
-msgstr "общественное питание"
+msgstr "abastecimiento"
 
 #: app/templates/test-result.html:66
 msgid "clothing manufacturing"
-msgstr "швейное производство"
+msgstr "industria textil"
 
 #: app/templates/test-result.html:68
 msgid "Woodworking"
-msgstr "деревообработка"
+msgstr "carpintero"
 
 #: app/templates/test-result.html:70
 msgid "locksmith work"
-msgstr "слесарные работы"
+msgstr "trabajo de cerrajero"
 
 #: app/templates/test-result.html:72
 msgid "decorative works"
-msgstr "декоративные работы"
+msgstr "trabajo decorativo"
 
 #: app/templates/test-result.html:74
 msgid "construction"
-msgstr "строительство"
+msgstr "edificio"
 
 #: app/templates/test-result.html:76
 msgid "working professions"
-msgstr "рабочие профессии"
+msgstr "ocupaciones de cuello azul"
 
 #: app/templates/test-result.html:78
 msgid "housing and communal services"
-msgstr "жилищно-коммунальное хозяйство"
+msgstr "Vivienda y servicios públicos"
 
 #: app/templates/test-result.html:80
 msgid "more variants"
-msgstr "несколько вариантов"
+msgstr "Varias variantes"
 
 #: app/templates/test-result.html:82
 msgid "null"
-msgstr "пустота"
+msgstr "vacío"
 
 #: app/templates/test-result.html:90
 msgid "Final mark:"
-msgstr "Итоговая оценка:"
+msgstr "Nota final:"
 
 #: app/templates/test-result.html:93
 msgid "5 (excellent)"
-msgstr "5 (отлично)"
+msgstr "5 (excelente)"
 
 #: app/templates/test-result.html:95
 msgid "4 (good)"
-msgstr "4 (хорошо)"
+msgstr "4 (bueno)"
 
 #: app/templates/test-result.html:97
 msgid "3 (satisfactory)"
-msgstr "3 (удовлетворительно)"
+msgstr "3 (satisfactorio)"
 
 #: app/templates/test-result.html:99
 msgid "2 (bad)"
-msgstr "2 (плохо)"
+msgstr "2 (malo)"
 
 #: app/templates/test-result.html:119
 msgid "Back to main"
-msgstr "Вернуться на главную страницу"
+msgstr "Vuelve a la página inicial"
 
 #: app/templates/test-result.html:122
 msgid "Solve test again"
-msgstr "Решить тест опять"
+msgstr "Resuelve la prueba de nuevo"
 
 #: app/templates/parts/test.html:44
 msgid "Update"
-msgstr "Обновить"
+msgstr "Actualizar"
 
 #: app/templates/parts/test.html:50
 msgid "Read more"
-msgstr "Подробнее"
+msgstr "Más detalles"
 
 #: app/templates/parts/test.html:53
 msgid "Be tested"
-msgstr "Решить"
+msgstr "Decidir"
 
 #~ msgid "Submit"
-#~ msgstr "Принять"
+#~ msgstr "Aceptar"
 
 #~ msgid "Test resume for mark '5'"
-#~ msgstr "Заключение теста при оценке '5'"
+#~ msgstr "Conclusión de la prueba al evaluar '5'"
 
 #~ msgid "Test resume for mark '4'"
-#~ msgstr "Заключение теста при оценке '4'"
+#~ msgstr "Conclusión de la prueba al evaluar '4'"
 
 #~ msgid "Test resume for mark '3'"
-#~ msgstr "Заключение теста при оценке '3'"
+#~ msgstr "Conclusión de la prueba al evaluar '3'"
 
 #~ msgid "Test resume for mark '2'"
-#~ msgstr "Заключение теста при оценке '2'"
+#~ msgstr "Conclusión de la prueba al evaluar '2'"
 
 #~ msgid "Test resume for key '1'"
-#~ msgstr "Заключение теста при ключе '1'"
+#~ msgstr "Conclusión de la prueba con la clave '1'"
 
 #~ msgid "Test resume for key '2'"
-#~ msgstr "Заключение теста при ключе '2'"
+#~ msgstr "Conclusión de la prueba con la tecla '2'"
 
 #~ msgid "Test resume for key '3'"
-#~ msgstr "Заключение теста при ключе '3'"
+#~ msgstr "Conclusión de la prueba con la tecla '3'"
 
 #~ msgid "Test resume for key '4'"
-#~ msgstr "Заключение теста при ключе '4'"
+#~ msgstr "Conclusión de la prueba con la tecla '4'"
 
 #~ msgid "Test resume for key '5'"
-#~ msgstr "Заключение теста при ключе '5'"
+#~ msgstr "Conclusión de la prueba con la tecla '5'"
 
 #~ msgid "Test resume for key '6'"
-#~ msgstr "Заключение теста при ключе '6'"
+#~ msgstr "Conclusión de la prueba con la tecla '6'"
 
 #~ msgid "Test resume for key '7'"
-#~ msgstr "Заключение теста при ключе '7'"
+#~ msgstr "Conclusión de la prueba con la tecla '7'"
 
 #~ msgid "Test resume for key '8'"
-#~ msgstr "Заключение теста при ключе '8'"
+#~ msgstr "Conclusión de la prueba con la tecla '8'"
 
 #~ msgid "Test resume for key '9'"
-#~ msgstr "Заключение теста при ключе '9'"
+#~ msgstr "Conclusión de la prueba con la tecla '9'"
 
 #~ msgid "{}'{}'"
 #~ msgstr " "
 
 #~ msgid "API list methods"
-#~ msgstr "Список методов API"
+#~ msgstr ""
+
+#~ msgid "Returns the list of all tests in the system in JSON format"
+#~ msgstr ""
 
