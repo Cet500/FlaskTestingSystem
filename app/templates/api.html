@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+
+{% block links %}
+
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/api.min.css' ) }}">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/api-dark.min.css' ) }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+	<section class="api__section-main">
+
+		<h2 class="api__section-main-header">{{ _("Methods of users") }}</h2>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_users_count' ) }}">{{ _('Get users count') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the number of registered users in the system") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_users_count <br>
+			Input:&nbsp;&nbsp;none <br>
+			Output:&nbsp;integer
+		</p>
+
+
+		<h2 class="api__section-main-header">{{ _("Methods of groups") }}</h2>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_groups_count' ) }}">{{ _('Get groups count') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the number of groups that combine tests in the system") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_groups_count <br>
+			Input:&nbsp;&nbsp;none <br>
+			Output:&nbsp;integer
+		</p>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_groups_list' ) }}">{{ _('Get groups list') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the list of all groups of the system in JSON format") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_groups_list <br>
+			Input:&nbsp;&nbsp;none <br>
+			Output:&nbsp;json
+		</p>
+
+
+		<h2 class="api__section-main-header">{{ _("Methods of tests") }}</h2>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_tests_count' ) }}">{{ _('Get tests count') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the number of open tests in the system") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_tests_count <br>
+			Input:&nbsp;&nbsp;none <br>
+			Output:&nbsp;integer
+		</p>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_tests_list' ) }}">{{ _('Get tests list') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the list of all open tests in JSON format") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_tests_list <br>
+			Input:&nbsp;&nbsp;none <br>
+			Output:&nbsp;json
+		</p>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_tests_count_by_group', id = 0 ) }}">{{ _('Get tests count by group') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the number of open tests in a single group system") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_tests_count_by_group/int:id_group <br>
+			Input:&nbsp;&nbsp;integer <br>
+			Output:&nbsp;integer / null
+		</p>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_tests_list_by_group', id = 0 ) }}">{{ _('Get tests list by group') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the list of open tests in a single group in JSON format") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_tests_list_by_group/int:id_group <br>
+			Input:&nbsp;&nbsp;integer <br>
+			Output:&nbsp;json / null
+		</p>
+
+
+		<h2 class="api__section-main-header">{{ _("Methods of results") }}</h2>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_results_count' ) }}">{{ _('Get results count') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the number of passes of all tests in the system") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_results_count <br>
+			Input:&nbsp;&nbsp;none <br>
+			Output:&nbsp;integer
+		</p>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_results_list' ) }}">{{ _('Get results list') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the list of passes of all tests in the system in JSON format") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_results_list <br>
+			Input:&nbsp;&nbsp;none <br>
+			Output:&nbsp;json
+		</p>
+
+		<a class="api__section-main-link" href="{{ url_for( 'api_get_results_count_by_test', id = 0 ) }}">{{ _('Get results count by test') }}</a>
+
+		<p class="api__section-main-text">{{ _("Returns the number of passes of one specific test in the system.") }}</p>
+
+		<p class="api__section-main-info">
+			Path:&nbsp;&nbsp;&nbsp;api/get_tests_count_by_test/int:id_test <br>
+			Input:&nbsp;&nbsp;integer <br>
+			Output:&nbsp;integer / null
+		</p>
+
+	</section>
+
+{% endblock %}

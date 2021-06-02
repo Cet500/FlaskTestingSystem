@@ -32,6 +32,8 @@
 		{{ moment.include_jquery() }}
 		{{ moment.include_moment() }}
 		{{ moment.locale( g.locale ) }}
+
+		<script src="{{ url_for( 'static', filename = 'js/ext/chart.js' ) }}"></script>
     </head>
 
     <body class="global__body">
@@ -56,6 +58,13 @@
 
 										<li class="global__header-menu-sublist-item">
 											<a class="global__header-menu-sublist-item-link"
+											   href="{{ url_for('admin_statistic') }}">
+												{{ _('watch statistic') }}
+											</a>
+										</li>
+
+										<li class="global__header-menu-sublist-item">
+											<a class="global__header-menu-sublist-item-link"
 											   href="{{ url_for('add_group') }}">
 												{{ _('add group') }}
 											</a>
@@ -69,6 +78,13 @@
 										</li>
 
 									{% endif %}
+
+									<li class="global__header-menu-sublist-item">
+										<a class="global__header-menu-sublist-item-link"
+										   href="{{ url_for('api') }}">
+											{{ _('methods of API') }}
+										</a>
+									</li>
 
 									<li class="global__header-menu-sublist-item">
 										<a class="global__header-menu-sublist-item-link"
@@ -139,6 +155,10 @@
 
 				<a class="btn btn-sm btn-round btn-grey" href="https://github.com/Cet500/FlaskTestingSystem">
 					{{ _("We are for open software")  }}
+				</a>
+
+				<a class="btn btn-sm btn-round btn-grey" href="{{ url_for('api') }}">
+					{{ _("Open API") }}
 				</a>
 			</p>
 

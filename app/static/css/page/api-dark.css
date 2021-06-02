@@ -1,0 +1,17 @@
+/* ------------------------------- page API dark ------------------------------- */
+
+/* -------------------- section main -------------------- */
+
+.api__section-main-header{
+	color: #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+.api__section-main-link{
+	color: #84c3be;
+}
+.api__section-main-text{
+	color: #dddddd;
+}
+.api__section-main-info{
+	color: #cccccc;
+}

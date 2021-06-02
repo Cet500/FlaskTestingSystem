@@ -14,7 +14,7 @@ class Group(db.Model):
 
 	tests = db.relationship( 'Test', backref = "tests", lazy = "dynamic" )
 
-	def __repr__(self):
+	def __repr__( self ):
 		return f'<group {self.title}>'
 
 

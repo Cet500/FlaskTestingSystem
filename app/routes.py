@@ -1,3 +1,5 @@
+import json
+
 from flask import render_template, url_for, redirect, request, send_from_directory, g
 from flask_login import current_user, login_user, logout_user, login_required
 from flask_babel import _, get_locale
@@ -303,6 +305,132 @@ def update_test(id):
 
 	return render_template( "forms/test-update.html", title = _('Change of test'), form = form,
 	                                                  min_key = min_key, max_key = max_key )
+
+
+# ------------------------ admin pages ------------------------ #
+
+
+@app.route('/admin/statistic')
+def admin_statistic():
+	return render_template( "admin/statistic.html", title = _('Admin') + ' / ' + _('Statistic') )
+
+
+# ------------------------ API pages ------------------------ #
+
+
+@app.route('/api')
+def api():
+	return render_template("api.html", title = _('API methods list'))
+
+
+# --- users ---
+
+
+@app.route('/api/get_users_count')
+def api_get_users_count():
+	count = User.query.count()
+
+	return str( count )
+
+
+# --- groups ---
+
+
+@app.route('/api/get_groups_count')
+def api_get_groups_count():
+	count = Group.query.count()
+
+	return str( count )
+
+
+@app.route('/api/get_groups_list')
+def api_get_groups_list():
+	list = Group.query.all()
+	arr  = []
+
+	for item in list:
+		arr.append( { 'id': item.id, 'title': item.title } )
+
+	return json.dumps(arr)
+
+
+# --- tests ---
+
+
+@app.route('/api/get_tests_count')
+def api_get_tests_count():
+	count = Test.query.count()
+
+	return str( count )
+
+
+@app.route('/api/get_tests_list')
+def api_get_tests_list():
+	list = Test.query.all()
+	arr = []
+
+	for item in list:
+		arr.append( { 'id': item.id, 'id_group': item.id_group, 'name': item.name } )
+
+	return json.dumps( arr )
+
+
+@app.route('/api/get_tests_count_by_group/<int:id>')
+def api_get_tests_count_by_group(id):
+	if Group.query.get( id ):
+		count = Test.query.filter( Test.id_group == id ).count()
+	else:
+		count = 'null'
+
+	return str( count )
+
+
+@app.route('/api/get_tests_list_by_group/<int:id>')
+def api_get_tests_list_by_group(id):
+	if Group.query.get( id ):
+		list = Test.query.filter( Test.id_group == id ).all()
+		arr = []
+
+		for item in list:
+			arr.append( { 'id': item.id, 'id_group': item.id_group, 'name': item.name } )
+
+		return json.dumps( arr )
+
+	else:
+		response = 'null'
+
+	return str( response )
+
+
+# --- results ---
+
+
+@app.route('/api/get_results_count')
+def api_get_results_count():
+	count = Result.query.count()
+
+	return str( count )
+
+
+@app.route('/api/get_results_list')
+def api_get_results_list():
+	list = Result.query.all()
+	arr = []
+
+	for item in list:
+		arr.append( { 'id': item.id, 'id_test': item.id_test, 'id_user': item.id_user, 'mark': item.mark } )
+
+	return json.dumps( arr )
+
+
+@app.route('/api/get_results_count_by_test/<int:id>')
+def api_get_results_count_by_test(id):
+	if Test.query.get( id ):
+		count = Result.query.filter( Result.id_test == id ).count()
+	else:
+		count = 'null'
+
+	return str( count )
 
 
 # ------------------------ system pages ------------------------ #

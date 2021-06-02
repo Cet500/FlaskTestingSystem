@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block links %}
+
+
+
+{% endblock %}
+
+
+{% block content %}
+
+	<canvas id="marksPieChart" height="300"></canvas>
+	<script src="{{ url_for( 'static', filename = 'js/min/statistic.min.js' ) }}"></script>
+
+{% endblock %}
