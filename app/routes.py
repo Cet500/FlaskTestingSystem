@@ -312,9 +312,11 @@ def update_test(id):
 
 @app.route('/admin/tables')
 def admin_tables():
-	users = User.query.all()
+	users  = User.query.all()
+	groups = Group.query.all()
+	tests  = Test.query.all()
 
-	return render_template( "admin/tables.html", title = _('Admin-panel') + ' / ' + _('Tables'), users = users )
+	return render_template( "admin/tables.html", title = _('Admin-panel') + ' / ' + _('Tables'), users = users, groups = groups, tests = tests, wide = True )
 
 
 @app.route('/admin/statistic')

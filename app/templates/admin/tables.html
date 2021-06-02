@@ -11,8 +11,10 @@
 
 {% block content %}
 
-	<section class="admin__section-main">
-		<table>
+	<section class="global__section admin__section-main">
+		<h2 class="global__main-header">{{ _("Table of users") }}</h2>
+
+		<table class="table table-md table-full table-hover {% if g.theme == 'dark' %} table-dark {% endif %}">
 			<thead>
 				<tr>
 					<th>{{ _("id") }}</th>
@@ -42,6 +44,72 @@
 						</td>
 						<td>{{ user.datetime_reg }}</td>
 						<td>{{ user.datetime_upd }}</td>
+					</tr>
+
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<h2 class="global__main-header">{{ _("Table of groups") }}</h2>
+
+		<table class="table table-md table-full table-hover {% if g.theme == 'dark' %} table-dark {% endif %}">
+			<thead>
+				<tr>
+					<th>{{ _("id") }}</th>
+					<th>{{ _("title") }}</th>
+					<th>{{ _("tests") }}</th>
+					<th>{{ _("datetime_add") }}</th>
+					<th>{{ _("datetime_upd") }}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for group in groups %}
+
+					<tr>
+						<td>{{ group.id }}</td>
+						<td>
+							<a href="{{ url_for( 'update_group', id = group.id ) }}">{{ group.title }}</a>
+						</td>
+						<td>{{ group.tests.count() }}</td>
+						<td>{{ group.datetime_add }}</td>
+						<td>{{ group.datetime_upd }}</td>
+					</tr>
+
+				{% endfor %}
+			</tbody>
+		</table>
+
+		<h2 class="global__main-header">{{ _("Table of tests") }}</h2>
+
+		<table class="table table-md table-full table-hover {% if g.theme == 'dark' %} table-dark {% endif %}">
+			<thead>
+				<tr>
+					<th>{{ _("id") }}</th>
+					<th>{{ _("group") }}</th>
+					<th>{{ _("name") }}</th>
+					<th>{{ _("difficult") }}</th>
+					<th>{{ _("quests") }}</th>
+					<th>{{ _("results") }}</th>
+					<th>{{ _("datetime_add") }}</th>
+					<th>{{ _("datetime_upd") }}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for test in tests %}
+
+					<tr>
+						<td>{{ test.id }}</td>
+						<td>{{ test.id_group }}</td>
+						<td>
+							<a href="{{ url_for( 'update_test', id = test.id ) }}">{{ test.name }}</a>
+						</td>
+						<td>{{ test.difficult }} / 5</td>
+						<td>{{ test.questions.count() }}</td>
+						<td>{{ test.results.count() }}</td>
+						<td>{{ test.datetime_add }}</td>
+						<td>{{ test.datetime_upd }}</td>
 					</tr>
 
 				{% endfor %}

@@ -1,0 +1,196 @@
+/* ------------------------------- lib of tables ------------------------------- */ 
+
+/* -------------------- base of tables -------------------- */
+
+.table{
+	margin: 10px 0;
+
+	font-family: Roboto, sans-serif;
+
+	border-collapse: collapse;
+}
+.table thead{
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+.table th,
+.table td{
+	padding: 0.75rem;
+}
+.table th{
+	font-size: .9rem;
+	font-weight: 600;
+	vertical-align: bottom;
+	text-align: center;
+}
+.table td{
+	font-size: .9rem;
+	font-weight: 400;
+	text-align: left;
+
+	border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+.table a{
+	margin: 0;
+
+	color: #212529;
+}
+
+/* -------------------- sizes of tables -------------------- */
+
+.table-mc th,
+.table-mc td{
+	padding-top: .2rem;
+	padding-bottom: .2rem;
+}
+
+.table-sm th,
+.table-sm td{
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+}
+
+.table-md th,
+.table-md td{
+	padding-top: .6rem;
+	padding-bottom: .6rem;
+
+	font-size: 1rem;
+}
+
+.table-lg th,
+.table-lg td{
+	padding-top: .9rem;
+	padding-bottom: .9rem;
+
+	font-size: 1.1rem;
+}
+
+/* -------------------- additional -------------------- */
+
+.table-inline{
+	display: inline-table;
+}
+
+.table-striped tbody tr:nth-of-type(odd){
+ 	background-color: rgba(0, 0, 0, 0.125);
+}
+
+.table-hover tbody tr:hover{
+	-webkit-transition: .15s;
+	transition: .15s;
+
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.table-full{
+	width: 100%;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+.table-bordered{
+	border: 1px solid #c5cbd1;
+}
+.table-bordered th,
+.table-bordered td{
+	border: 1px solid #c5cbd1;
+}
+.table-bordered thead th,
+.table-bordered thead td{
+	border-bottom-width: 2px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+.table-borderless th,
+.table-borderless td,
+.table-borderless thead th,
+.table-borderless tbody + tbody{
+	border: 0;
+}
+
+/* -------------------- colors -------------------- */
+
+.table-aqua{
+	background-color: rgba(23, 238, 227, 0.2);
+}
+.table-aqua thead{
+	background-color: rgba(23, 238, 227, 0.6);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+.table-aqua td{
+	border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.table-aqua.table-striped tbody tr:nth-of-type(odd){
+ 	background-color: rgba(23, 238, 227, 0.1);
+}
+
+.table-aqua.table-hover tbody tr:hover{
+	background-color: rgba(23, 238, 227, 0.35);
+}
+
+.table-aqua.table-bordered{
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.table-aqua.table-bordered th,
+.table-aqua.table-bordered td{
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+.table-amber{
+	background-color: rgba(255, 193, 7, 0.2);
+}
+.table-amber thead{
+	background-color: rgba(255, 193, 7, 0.6);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+.table-amber td{
+	border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.table-amber.table-striped tbody tr:nth-of-type(odd){
+ 	background-color: rgba(255, 193, 7, 0.2);
+}
+
+.table-amber.table-hover tbody tr:hover{
+	background-color: rgba(255, 193, 7, 0.4);
+}
+
+.table-amber.table-bordered{
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.table-amber.table-bordered th,
+.table-amber.table-bordered td{
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - */
+
+.table-dark thead{
+	border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+.table-dark td{
+	border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+.table-dark a{
+	color: #84c3be;
+}
+
+.table-dark.table-striped tbody tr:nth-of-type(odd){
+ 	background-color: #212121;
+}
+
+.table-dark.table-hover tbody tr:hover{
+	background-color: rgba(100, 100, 100, 0.4);
+}
+
+.table-dark.table-bordered{
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.table-dark.table-bordered th,
+.table-dark.table-bordered td{
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}

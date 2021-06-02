@@ -18,6 +18,7 @@
 		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/forms-media.min.css' ) }}">
 
 		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/buttons.min.css' ) }}">
+		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/tables.min.css' ) }}">
 		<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/highlight.min.css' ) }}">
 
 		{% block links %}{% endblock %}
@@ -148,7 +149,7 @@
 			</aside>
 		{% endif %}
 
-		<main class="global__main">
+		<main class="{% if wide %} global__main-wide {% else %} global__main {% endif %}">
 			{% block content %}{% endblock %}
 		</main>
 

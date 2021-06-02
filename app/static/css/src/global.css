@@ -208,6 +208,11 @@
 
 	width: 1000px;
 }
+.global__main-wide{
+	grid-area: main;
+
+	width: 1200px;
+}
 
 .global__main-header{
 	font-family: Nunito, sans-serif;
