@@ -33,6 +33,14 @@
 .global__header-menu a{
 	color: #84c3be;
 }
+.global__header-menu-list-item{
+	border-bottom: 1px solid #e2be4d;
+	background-color: #333333;
+}
+.global__header-menu-sublist-item{
+	border-bottom: 1px solid #e2be4d;
+	background-color: #333333;
+}
 
 /* -------------------- aside -------------------- */
 
@@ -55,6 +63,9 @@
 }
 .global__menu-submenu-item-link{
 	color: #cccccc;
+}
+.global__header-menu-sublist-item:hover{
+	background-color: #444444;
 }
 
 /* -------------------- footer -------------------- */

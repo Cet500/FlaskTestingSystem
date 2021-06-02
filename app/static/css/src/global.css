@@ -77,9 +77,70 @@
 	text-decoration: none;
 }
 .global__header-menu{
+	min-width: 110px;
+
 	float: right;
 
-	margin: 10px 0 10px 10px;
+	padding: 0;
+	margin: 0;
+}
+.global__header-menu-list{
+	width: 100%;
+
+	padding-left: 0;
+}
+.global__header-menu-list-item{
+	display: inline-block;
+	position: relative;
+
+	width: 100%;
+
+	padding: 10px 20px;
+	margin: 0;
+
+	list-style: none;
+	border-radius: 10px;
+
+	border: 1px solid #ffc107;
+	background-color: #eeeeee;
+}
+.global__header-menu-list-item:hover{
+	border-radius: 10px 10px 0 0;
+}
+.global__header-menu-list-item-text{
+	margin: 0;
+}
+.global__header-menu-list-item:hover ul{
+	display: block;
+}
+.global__header-menu-sublist{
+	display: none;
+	position: absolute;
+	z-index: 2;
+
+	width: calc(100% + 2px);
+
+	padding: 0;
+	margin: 12px 0 0 -21px;
+}
+.global__header-menu-sublist-item{
+	padding: 10px;
+    margin-top: -1px;
+
+	list-style: none;
+
+	border: 1px solid #ffc107;
+    background-color: #eeeeee;
+}
+.global__header-menu-sublist-item:last-child{
+	border-radius: 0 0 10px 10px;
+}
+.global__header-menu-sublist-item-link{
+	display: block;
+
+	width: 100%;
+
+	text-decoration: none;
 }
 
 /* -------------------- aside -------------------- */

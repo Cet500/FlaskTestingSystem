@@ -44,21 +44,52 @@
 
 				<div class="global__header-menu">
 					{% if current_user.is_authenticated %}
-						{{ current_user.username }}
-						<br>
-						<a href="{{ url_for('logout') }}">{{ _('logout') }}</a>
 
-						{% if current_user.role == "A" %}
-							<br>
-							<a href="{{ url_for('add_group') }}">{{ _('add group') }}</a>
-							<br>
-							<a href="{{ url_for('add_test') }}">{{ _('add test') }}</a>
-						{% endif %}
+						<ul class="global__header-menu-list">
+							<li class="global__header-menu-list-item">
+								<p class="global__header-menu-list-item-text">
+									{{ current_user.username }}
+								</p>
+
+								<ul class="global__header-menu-sublist">
+									{% if current_user.role == "A" %}
+
+										<li class="global__header-menu-sublist-item">
+											<a class="global__header-menu-sublist-item-link"
+											   href="{{ url_for('add_group') }}">
+												{{ _('add group') }}
+											</a>
+										</li>
+
+										<li class="global__header-menu-sublist-item">
+											<a class="global__header-menu-sublist-item-link"
+											   href="{{ url_for('add_test') }}">
+												{{ _('add test') }}
+											</a>
+										</li>
+
+									{% endif %}
+
+									<li class="global__header-menu-sublist-item">
+										<a class="global__header-menu-sublist-item-link"
+										   href="{{ url_for('logout') }}">
+											{{ _('logout') }}
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
 
 					{% else %}
-						<a href="{{ url_for('login') }}">{{ _('login') }}</a>
-						<br>
-						<a href="{{ url_for('register') }}">{{ _('register') }}</a>
+
+						<li class="global__header-menu-sublist-item">
+							<a href="{{ url_for('login') }}">{{ _('login') }}</a>
+						</li>
+
+						<li class="global__header-menu-sublist-item">
+							<a href="{{ url_for('register') }}">{{ _('register') }}</a>
+						</li>
+
 					{% endif %}
 				</div>
 
