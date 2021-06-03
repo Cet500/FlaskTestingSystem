@@ -8,7 +8,7 @@ from wtforms import RadioField, TextAreaField
 from wtforms.validators import DataRequired, Length
 from app import app, db, moment
 from app.models import Class, User, Group, Test, Result, TestResume
-from app.forms import EmptyForm, LoginForm, RegisterForm, AddGroupForm, UpdateGroupForm, AddTestForm, UpdateTestForm
+from app.forms import EmptyForm, LoginForm, RegisterForm, AddGroupForm, UpdateGroupForm, AddTestForm, UpdateTestForm, UpdateProfileForm
 from app.spec_checks import check_test_9
 
 
@@ -137,7 +137,9 @@ def result(id):
 
 @app.route('/profile')
 def profile():
-	return render_template( "forms/profile.html", title = _( 'Profile' ) )
+	form = UpdateProfileForm(current_user.username)
+
+	return render_template( "forms/profile.html", title = _( 'Profile' ), form = form )
 
 
 # ------------------------ login system ------------------------ #

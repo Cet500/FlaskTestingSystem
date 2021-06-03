@@ -90,4 +90,26 @@ class UpdateTestForm(TestForm):
 
 
 class UpdateProfileForm(TestForm):
-	pass
+	name = StringField( _l( "Name" ), validators = [DataRequired(), Length( min = 2, max = 32 )] )
+	lastname = StringField( _l( "Lastname" ), validators = [DataRequired(), Length( min = 2, max = 32 )] )
+	username = StringField( _l( "Username" ), validators = [DataRequired(), Length( min = 3, max = 32 )] )
+	description = TextAreaField( _l( "Description" ), validators = [DataRequired(), Length( min = 0, max = 256 )] )
+	id_class = SelectField( _l( "Group" ), coerce = int, validators = [DataRequired()] )
+	role = SelectField( _l( "Role" ), choices = [("S", _l( "Student" )), ("T", _l( "Teacher" ))],
+	                    validators = [DataRequired()] )
+	sex = RadioField( _l( "Sex" ), choices = [("M", _l( "Male" )), ("F", _l( "Female" )), ("N", _l( "None" ))],
+	                               validators = [DataRequired()] )
+	submit = SubmitField( _l( "Apply" ) )
+
+	def __init__(self, orig_login, *args, **kwargs):
+		super( UpdateProfileForm, self ).__init__(*args, **kwargs)
+		self.orig_login = orig_login
+
+	def validate_login( self, login ):
+		if login.data != self.orig_login:
+			user = User.query.filter_by( login = login.data ).first()
+			if user is not None:
+				raise ValidationError( _l("Please use a different login") )
+
+			if re.search( '\W', login.data ):
+				raise ValidationError( _l("Use only A-Z, a-z, 0-9 and _") )
