@@ -15,6 +15,11 @@
 		<h1 class="global__main-header">{{ _("Tables") }}</h1>
 
 		<a class="admin__section-main-link-big"
+		   href="{{ url_for('admin_table_classes') }}">
+			{{ _("Table of study groups") }} ( {{ group.query.count() }} )
+		</a>
+
+		<a class="admin__section-main-link-big"
 		   href="{{ url_for('admin_table_users') }}">
 			{{ _("Table of users") }} ( {{ user.query.count() }} )
 		</a>

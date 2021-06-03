@@ -1,6 +1,5 @@
 import json
-
-from flask import render_template, url_for, redirect, request, send_from_directory, g
+from flask import render_template, url_for, redirect, request, send_from_directory, g, flash
 from flask_login import current_user, login_user, logout_user, login_required
 from flask_babel import _, get_locale
 from flask_babel import lazy_gettext as _l
@@ -10,6 +9,7 @@ from app import app, db, moment
 from app.models import Class, User, Group, Test, Result, TestResume
 from app.forms import EmptyForm, LoginForm, RegisterForm, AddGroupForm, UpdateGroupForm, AddTestForm, UpdateTestForm, UpdateProfileForm
 from app.spec_checks import check_test_9
+from datetime import datetime
 
 
 # ------------------------ main pages ------------------------ #
@@ -135,9 +135,37 @@ def result(id):
 	                                            test = test, user = user )
 
 
-@app.route('/profile')
+@app.route('/edit_profile', methods = [ 'GET', 'POST' ])
+# @login_required
 def profile():
 	form = UpdateProfileForm(current_user.username)
+
+	classes = Class.query.all()
+	classes_list = [(c.id, c.abbr) for c in classes]
+
+	form.id_class.choices = classes_list
+
+	if form.validate_on_submit():
+		current_user.username    = form.username.data
+		current_user.name        = form.name.data
+		current_user.lastname    = form.lastname.data
+		current_user.description = form.description.data
+		current_user.id_class    = form.id_class.data
+		current_user.role        = form.role.data
+		current_user.sex         = form.sex.data
+
+		db.session.commit()
+
+		return redirect( url_for( 'profile' ) )
+
+	elif request.method == 'GET':
+		form.username.data    = current_user.username
+		form.name.data        = current_user.name
+		form.lastname.data    = current_user.lastname
+		form.description.data = current_user.description
+		form.id_class.data    = current_user.id_class
+		form.role.data        = current_user.role
+		form.sex.data         = current_user.sex
 
 	return render_template( "forms/profile.html", title = _( 'Profile' ), form = form )
 
@@ -178,7 +206,7 @@ def register():
 
 	if form.validate_on_submit():
 		user = User( username = form.username.data, name = form.name.data, lastname = form.lastname.data,
-		             email = form.email.data, id_group = form.id_group.data, role = form.role.data )
+		             email = form.email.data, id_class = form.id_class.data, role = form.role.data )
 		user.set_password( password = form.password.data )
 
 		db.session.add( user )
@@ -324,12 +352,25 @@ def update_test(id):
 @app.route('/admin/tables')
 def admin_tables():
 	user   = User
+	class_ = Class
 	group  = Group
 	test   = Test
 	result = Result
 
 	return render_template( "admin/tables.html", title = _('Admin-panel') + ' / ' + _('Tables'),
-	                                             user = user, group = group, test = test, result = result )
+	                                             user = user, group = group, test = test, result = result, class_ = class_ )
+
+
+@app.route('/admin/table/users')
+def admin_table_classes():
+	classes = Class.query.all()
+
+	title = f"{_( 'Admin-panel' )} / {_( 'Tables' )} / {_( 'Classes' )}"
+
+	link0 = url_for( 'admin_tables' )
+	path  = f"{_('Admin-panel')} / <a href='{link0}'>{_('Tables')}</a> / {_('Classes')}"
+
+	return render_template( "admin/table-classes.html", title = title, path = path, classes = classes, wide = True )
 
 
 @app.route('/admin/table/users')
@@ -554,5 +595,9 @@ def error_500(e):
 
 @app.before_request
 def before_request():
+	if current_user.is_authenticated:
+		current_user.datetime_last = datetime.utcnow()
+		db.session.commit()
+
 	g.locale = str( get_locale() )
 	g.theme = 'dark'

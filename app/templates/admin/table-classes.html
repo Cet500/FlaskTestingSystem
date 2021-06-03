@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block links %}
+
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/admin.min.css' ) }}">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/admin-dark.min.css' ) }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+	<section class="global__section admin__section-main">
+		<h2 class="global__main-header">{{ _("Table of study groups") }}</h2>
+
+		<table class="table table-md table-full table-hover {% if g.theme == 'dark' %} table-dark {% endif %}">
+			<thead>
+				<tr>
+					<th>{{ _("id") }}</th>
+					<th>{{ _("abbr") }}</th>
+					<th>{{ _("name") }}</th>
+					<th>{{ _("course") }}</th>
+					<th>{{ _("number") }}</th>
+					<th>{{ _("added") }}</th>
+					<th>{{ _("updated") }}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for class_ in classes %}
+
+					<tr>
+						<td>{{ class_.id }}</td>
+						<td>{{ class_.abbr }}</td>
+						<td>{{ class_.name }}</td>
+						<td>{{ class_.course }}</td>
+						<td>{{ class_.number }}</td>
+						<td>{{ class_.datetime_reg }}</td>
+						<td>{{ class_.datetime_upd }}</td>
+					</tr>
+
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+
+{% endblock %}

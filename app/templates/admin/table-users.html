@@ -18,12 +18,16 @@
 			<thead>
 				<tr>
 					<th>{{ _("id") }}</th>
+					<th>{{ _("username") }}</th>
 					<th>{{ _("name") }}</th>
 					<th>{{ _("lastname") }}</th>
 					<th>{{ _("group") }}</th>
 					<th>{{ _("role") }}</th>
+					<th>{{ _("sex") }}</th>
+					<th>{{ _("email") }}</th>
 					<th>{{ _("registated") }}</th>
 					<th>{{ _("updated") }}</th>
+					<th>{{ _("last action") }}</th>
 				</tr>
 			</thead>
 
@@ -32,6 +36,7 @@
 
 					<tr>
 						<td>{{ user.id }}</td>
+						<td>{{ user.username }}</td>
 						<td>{{ user.name }}</td>
 						<td>{{ user.lastname }}</td>
 						<td>{{ user.get_class() }}</td>
@@ -40,10 +45,25 @@
 								{{ _("student") }}
 							{% elif user.role == 'A' %}
 								{{ _("admin") }}
+							{% elif user.role == 'T' %}
+								{{ _("teacher") }}
 							{% endif %}
 						</td>
+						<td>
+							{% if user.sex == "M" %}
+								{{ _("male") }}
+							{% elif user.sex == "F" %}
+								{{ _("female") }}
+							{% elif user.sex == "N" %}
+								{{ _("n/a") }}
+							{% else %}
+								{{ _("None") }}
+							{% endif %}
+						</td>
+						<td>{{ user.email }}</td>
 						<td>{{ user.datetime_reg }}</td>
 						<td>{{ user.datetime_upd }}</td>
+						<td>{{ user.datetime_last }}</td>
 					</tr>
 
 				{% endfor %}
