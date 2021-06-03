@@ -1,4 +1,5 @@
 from app import db, login
+from app.tokens import Tokens
 from flask_login import UserMixin
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -137,15 +138,19 @@ class Class(db.Model):
 
 
 class User(UserMixin, db.Model):
-	id           = db.Column( db.Integer, primary_key = True )
-	id_group     = db.Column( db.Integer, db.ForeignKey( 'class.id' ), nullable = False )
-	username     = db.Column( db.String(32), index = True, unique = True, nullable = False )
-	name         = db.Column( db.String(32), nullable = False )
-	lastname     = db.Column( db.String(32) )
-	pass_hash    = db.Column( db.String(128), nullable = False )
-	role         = db.Column( db.String(1) )
-	datetime_reg = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
-	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
+	id            = db.Column( db.Integer, primary_key = True )
+	id_class      = db.Column( db.Integer, db.ForeignKey( 'class.id' ), nullable = False )
+	username      = db.Column( db.String(32), index = True, unique = True, nullable = False )
+	name          = db.Column( db.String(32), nullable = False )
+	lastname      = db.Column( db.String(32) )
+	email         = db.Column( db.String(64), index = True, unique = True, nullable = False )
+	pass_hash     = db.Column( db.String(128), nullable = False )
+	description   = db.Column( db.String(256) )
+	sex           = db.Column( db.String(1), default = 'N' )
+	role          = db.Column( db.String(1) )
+	datetime_last = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
+	datetime_reg  = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
+	datetime_upd  = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
 
 	solved_tests = db.relationship( 'Result', backref = "solved_tests", lazy = "dynamic" )
 
@@ -157,6 +162,22 @@ class User(UserMixin, db.Model):
 
 	def check_password( self, password ):
 		return check_password_hash( self.pass_hash, password )
+
+	def get_class( self ):
+		return Class.query.get( self.id_class ).abbr
+
+	def get_reset_password_token( self ):
+		t = Tokens()
+		return t.encode( { "task": "reset_password", "id": self.id  } )
+
+	@staticmethod
+	def verify_reset_password_token( token ):
+		t = Tokens()
+		data = t.decode( token )
+
+		if data["task"] == "reset_password":
+			return User.query.get( data["id"] )
+
 
 
 @login.user_loader
