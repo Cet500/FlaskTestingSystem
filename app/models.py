@@ -6,6 +6,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from sqlalchemy import func
 
 
+# ------------------------ Tests block ------------------------ #
+
+
 class Group(db.Model):
 	id           = db.Column( db.Integer, primary_key = True )
 	title        = db.Column( db.String(32), index = True, unique = True, nullable = False )
@@ -122,6 +125,9 @@ class Answer(db.Model):
 		return f'<answer {self.text}>'
 
 
+# ------------------------ Users block ------------------------ #
+
+
 class Class(db.Model):
 	id     = db.Column( db.Integer, primary_key = True )
 	abbr   = db.Column( db.String(7), nullable = False )
@@ -203,3 +209,37 @@ class Result(db.Model):
 
 	def get_int_mark( self, index ):
 		return int( str( self.mark )[ index ] )
+
+
+# ------------------------ Logs block ------------------------ #
+
+
+class LogRequest(db.Model):
+	id              = db.Column( db.Integer, primary_key = True )
+	ip              = db.Column( db.String(15) )
+	port            = db.Column( db.Integer )
+	url             = db.Column( db.String(100) )
+	datetime        = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
+	browser_family  = db.Column( db.String(50) )
+	browser_name    = db.Column( db.String(50) )
+	browser_version = db.Column( db.String(50) )
+	device_type     = db.Column( db.String(50) )
+	device_family   = db.Column( db.String(50) )
+	device_name     = db.Column( db.String(50) )
+	device_manufact = db.Column( db.String(50) )
+	os_family       = db.Column( db.String(50) )
+	os_name         = db.Column( db.String(50) )
+	os_version      = db.Column( db.String(50) )
+	os_platform     = db.Column( db.String(20) )
+	screen_width    = db.Column( db.Integer )
+	screen_height   = db.Column( db.Integer )
+	screen_depth    = db.Column( db.Integer )
+
+
+class LogClick(db.Model):
+	id       = db.Column( db.Integer, primary_key = True )
+	ip       = db.Column( db.String(15) )
+	url      = db.Column( db.String(100) )
+	click_x  = db.Column( db.Integer )
+	click_y  = db.Column( db.Integer )
+	datetime = db.Column( db.DateTime )
