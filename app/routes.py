@@ -7,7 +7,7 @@ from flask_babel import lazy_gettext as _l
 from wtforms import RadioField, TextAreaField
 from wtforms.validators import DataRequired, Length
 from app import app, db, moment
-from app.models import User, Group, Test, Result, TestResume
+from app.models import Class, User, Group, Test, Result, TestResume
 from app.forms import EmptyForm, LoginForm, RegisterForm, AddGroupForm, UpdateGroupForm, AddTestForm, UpdateTestForm
 from app.spec_checks import check_test_9
 
@@ -135,6 +135,11 @@ def result(id):
 	                                            test = test, user = user )
 
 
+@app.route('/profile')
+def profile():
+	return render_template( "forms/profile.html", title = _( 'Profile' ) )
+
+
 # ------------------------ login system ------------------------ #
 
 
@@ -163,11 +168,15 @@ def register():
 	if current_user.is_authenticated:
 		return redirect( url_for("index") )
 
+	classes = Class.query.all()
+	classes_list = [ ( c.id, c.abbr ) for c in classes ]
+
 	form = RegisterForm()
+	form.id_class.choices = classes_list
 
 	if form.validate_on_submit():
 		user = User( username = form.username.data, name = form.name.data, lastname = form.lastname.data,
-		             group = form.group.data, role = form.role.data )
+		             email = form.email.data, id_group = form.id_group.data, role = form.role.data )
 		user.set_password( password = form.password.data )
 
 		db.session.add( user )

@@ -59,6 +59,13 @@
 								</p>
 
 								<ul class="global__header-menu-sublist">
+									<li class="global__header-menu-sublist-item">
+										<a class="global__header-menu-sublist-item-link"
+										   href="{{ url_for('profile') }}">
+											{{ _('profile') }}
+										</a>
+									</li>
+
 									{% if current_user.role == "A" %}
 
 										<li class="global__header-menu-sublist-item">

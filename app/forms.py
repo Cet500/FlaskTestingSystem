@@ -23,7 +23,8 @@ class RegisterForm(FlaskForm):
 	name      = StringField( _l("Name"), validators = [ DataRequired(), Length( min = 2, max = 32 ) ] )
 	lastname  = StringField( _l("Lastname"), validators = [ DataRequired(), Length( min = 2, max = 32 ) ] )
 	username  = StringField( _l("Username"), validators = [ DataRequired(), Length( min = 3, max = 32 ) ] )
-	group     = StringField( _l("Group"), validators = [ Length( max = 8 ) ] )
+	email     = StringField( _l("Email"), validators = [ DataRequired(), Email(), Length( min = 7, max = 64  ) ] )
+	id_class  = SelectField( _l("Group"), coerce = int,  validators = [ DataRequired() ] )
 	role      = SelectField( _l("Role"), choices = [ ( "S", _l("Student") ), ( "T", _l("Teacher") ) ],
 	                                     validators = [ DataRequired() ] )
 	password  = PasswordField( _l("Password"), validators = [ DataRequired(), Length( min = 8, max = 64 ) ] )
@@ -38,6 +39,11 @@ class RegisterForm(FlaskForm):
 
 		if re.search( '\W', username.data ):
 			raise ValidationError( _l("Use only A-Z, a-z, 0-9 and _") )
+
+	def validate_email( self, email ):
+		user = User.query.filter_by( email = email.data ).first()
+		if user is not None:
+			raise ValidationError( _l("Please use a different email") )
 
 	def validate_password( self, password ):
 		if re.search('[a-z]', password.data) is None:
@@ -81,3 +87,7 @@ class UpdateTestForm(TestForm):
 	# test_resume_3 = TextAreaField( _l( "Test resume for mark '3'" ), validators = [ DataRequired(), Length( min = 32, max = 512 ) ] )
 	# test_resume_2 = TextAreaField( _l( "Test resume for mark '2'" ), validators = [ DataRequired(), Length( min = 32, max = 512 ) ] )
 	submit        = SubmitField( _l( "Update test" ) )
+
+
+class UpdateProfileForm(TestForm):
+	pass
