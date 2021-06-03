@@ -6,7 +6,7 @@ from flask_babel import lazy_gettext as _l
 from wtforms import RadioField, TextAreaField
 from wtforms.validators import DataRequired, Length
 from app import app, db, moment
-from app.models import Class, User, Group, Test, Result, TestResume
+from app.models import Class, User, Group, Test, Result, TestResume, LogRequest, LogClick
 from app.forms import EmptyForm, LoginForm, RegisterForm, AddGroupForm, UpdateGroupForm, AddTestForm, UpdateTestForm, UpdateProfileForm
 from app.spec_checks import check_test_9
 from datetime import datetime
@@ -423,7 +423,11 @@ def admin_table_results():
 
 @app.route('/admin/statistic')
 def admin_statistic():
-	return render_template( "admin/statistic.html", title = _('Admin-panel') + ' / ' + _('Statistic') )
+	clicks   = LogClick.query
+	requests = LogRequest.query
+
+	return render_template( "admin/statistic.html", title = _('Admin-panel') + ' / ' + _('Statistic'),
+	                                                clicks = clicks, requests = requests )
 
 
 # ------------------------ API pages ------------------------ #
