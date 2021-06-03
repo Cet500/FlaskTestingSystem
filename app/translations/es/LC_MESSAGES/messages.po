@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-03 18:27+1000\n"
+"POT-Creation-Date: 2021-06-03 21:56+1000\n"
 "PO-Revision-Date: 2021-05-18 18:05+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Submit"
 msgstr "Aceptar"
 
-#: app/forms.py:16 app/forms.py:25
+#: app/forms.py:16 app/forms.py:25 app/forms.py:95
 msgid "Username"
 msgstr "Acceso"
 
@@ -36,15 +36,15 @@ msgstr "Contraseña"
 msgid "Remember me"
 msgstr "Recuérdame"
 
-#: app/forms.py:19 app/routes.py:163 app/templates/login.html:10
+#: app/forms.py:19 app/routes.py:193 app/templates/login.html:10
 msgid "Sign in"
 msgstr "Registrarse"
 
-#: app/forms.py:23
+#: app/forms.py:23 app/forms.py:93
 msgid "Name"
 msgstr "Nombre"
 
-#: app/forms.py:24
+#: app/forms.py:24 app/forms.py:94
 msgid "Lastname"
 msgstr "Apellido"
 
@@ -52,19 +52,19 @@ msgstr "Apellido"
 msgid "Email"
 msgstr ""
 
-#: app/forms.py:27 app/forms.py:73
+#: app/forms.py:27 app/forms.py:73 app/forms.py:97
 msgid "Group"
 msgstr "Grupo"
 
-#: app/forms.py:28
+#: app/forms.py:28 app/forms.py:98
 msgid "Role"
 msgstr "Papel"
 
-#: app/forms.py:28
+#: app/forms.py:28 app/forms.py:98
 msgid "Student"
 msgstr "Estudiante"
 
-#: app/forms.py:28
+#: app/forms.py:28 app/forms.py:98
 msgid "Teacher"
 msgstr "Profesor"
 
@@ -72,15 +72,15 @@ msgstr "Profesor"
 msgid "Repeat password"
 msgstr "repite la contraseña"
 
-#: app/forms.py:32 app/routes.py:187 app/templates/register.html:10
+#: app/forms.py:32 app/routes.py:217 app/templates/register.html:10
 msgid "Register"
 msgstr "registrarse"
 
-#: app/forms.py:38
+#: app/forms.py:38 app/forms.py:112
 msgid "Please use a different login"
 msgstr "Utilice una contraseña diferente"
 
-#: app/forms.py:41
+#: app/forms.py:41 app/forms.py:115
 msgid "Use only A-Z, a-z, 0-9 and _"
 msgstr "Use solo letras y números"
 
@@ -105,11 +105,11 @@ msgstr "Usar números"
 msgid "Title"
 msgstr "Bóveda"
 
-#: app/forms.py:61
+#: app/forms.py:61 app/forms.py:96
 msgid "Description"
 msgstr "Descripción"
 
-#: app/forms.py:65 app/routes.py:214 app/templates/forms/group-add.html:10
+#: app/forms.py:65 app/routes.py:244 app/templates/forms/group-add.html:10
 msgid "Add group"
 msgstr "Añadir grupo"
 
@@ -130,7 +130,7 @@ msgstr "Resumen de prueba"
 msgid "Description of test"
 msgstr "Descripción de la prueba"
 
-#: app/forms.py:80 app/routes.py:257 app/templates/forms/test-add.html:10
+#: app/forms.py:80 app/routes.py:287 app/templates/forms/test-add.html:10
 msgid "Add test"
 msgstr "Agregar prueba"
 
@@ -142,6 +142,26 @@ msgstr "Prueba de dificultad"
 #: app/templates/test-base.html:55
 msgid "Update test"
 msgstr "Prueba de actualización"
+
+#: app/forms.py:100
+msgid "Sex"
+msgstr ""
+
+#: app/forms.py:100
+msgid "Male"
+msgstr ""
+
+#: app/forms.py:100
+msgid "Female"
+msgstr ""
+
+#: app/forms.py:100 app/templates/admin/table-users.html:60
+msgid "None"
+msgstr ""
+
+#: app/forms.py:102
+msgid "Apply"
+msgstr ""
 
 #: app/routes.py:23
 msgid "All tests"
@@ -163,75 +183,75 @@ msgstr "Pruebas"
 msgid "Result"
 msgstr "Resultado"
 
-#: app/routes.py:140
+#: app/routes.py:170
 #, fuzzy
 msgid "Profile"
 msgstr "Papel"
 
-#: app/routes.py:234
+#: app/routes.py:264
 msgid "Change of group"
 msgstr "Cambiar de grupo"
 
-#: app/routes.py:277
+#: app/routes.py:307
 msgid "Test resume for mark "
 msgstr "Conclusión de la prueba al evaluar"
 
-#: app/routes.py:282
+#: app/routes.py:312
 msgid "Test resume for key "
 msgstr "Conclusión de la prueba de la llave"
 
-#: app/routes.py:315
+#: app/routes.py:345
 msgid "Change of test"
 msgstr "Prueba de cambio"
 
-#: app/routes.py:329 app/routes.py:361 app/routes.py:373 app/routes.py:383
+#: app/routes.py:360 app/routes.py:404 app/routes.py:416 app/routes.py:426
 msgid "Admin-panel"
 msgstr ""
 
-#: app/routes.py:329 app/routes.py:361 app/routes.py:373
+#: app/routes.py:360 app/routes.py:404 app/routes.py:416
 #: app/templates/admin/tables.html:15
 msgid "Tables"
 msgstr ""
 
-#: app/routes.py:361
+#: app/routes.py:404
 #, fuzzy
 msgid "Tests"
 msgstr "Todas las pruebas"
 
-#: app/routes.py:373
+#: app/routes.py:416
 #, fuzzy
 msgid "Results"
 msgstr "Resultado"
 
-#: app/routes.py:383
+#: app/routes.py:426
 msgid "Statistic"
 msgstr ""
 
-#: app/routes.py:391
+#: app/routes.py:434
 msgid "API methods list"
 msgstr ""
 
-#: app/routes.py:509 app/templates/base.html:166
+#: app/routes.py:552 app/templates/base.html:166
 msgid "About TeSi"
 msgstr "Sobre TeSi"
 
-#: app/routes.py:514 app/templates/base.html:170
+#: app/routes.py:557 app/templates/base.html:170
 msgid "About us"
 msgstr "Sobre nosotros"
 
-#: app/routes.py:534 app/routes.py:541 app/routes.py:548
+#: app/routes.py:577 app/routes.py:584 app/routes.py:591
 msgid "Errors"
 msgstr "Errores"
 
-#: app/routes.py:534 app/routes.py:536
+#: app/routes.py:577 app/routes.py:579
 msgid "Error 404"
 msgstr "error 404"
 
-#: app/routes.py:541 app/routes.py:543
+#: app/routes.py:584 app/routes.py:586
 msgid "Error 405"
 msgstr "Error 405"
 
-#: app/routes.py:548 app/routes.py:550
+#: app/routes.py:591 app/routes.py:593
 msgid "Error 500"
 msgstr "Error 500"
 
@@ -639,17 +659,54 @@ msgstr "Vuelve a la página inicial"
 msgid "Solve test again"
 msgstr "Resuelve la prueba de nuevo"
 
-#: app/templates/admin/table-groups.html:15 app/templates/admin/tables.html:24
+#: app/templates/admin/table-classes.html:15 app/templates/admin/tables.html:19
 #, fuzzy
-msgid "Table of groups"
+msgid "Table of study groups"
 msgstr "Cambiar de grupo"
 
+#: app/templates/admin/table-classes.html:20
 #: app/templates/admin/table-groups.html:20
 #: app/templates/admin/table-results.html:20
 #: app/templates/admin/table-tests.html:20
 #: app/templates/admin/table-users.html:20
 msgid "id"
 msgstr ""
+
+#: app/templates/admin/table-classes.html:21
+msgid "abbr"
+msgstr ""
+
+#: app/templates/admin/table-classes.html:22
+#: app/templates/admin/table-tests.html:22
+#: app/templates/admin/table-users.html:22
+#, fuzzy
+msgid "name"
+msgstr "Nombre"
+
+#: app/templates/admin/table-classes.html:23
+msgid "course"
+msgstr ""
+
+#: app/templates/admin/table-classes.html:24
+#, fuzzy
+msgid "number"
+msgstr "Nombre"
+
+#: app/templates/admin/table-classes.html:25
+#, fuzzy
+msgid "added"
+msgstr "agregar prueba"
+
+#: app/templates/admin/table-classes.html:26
+#: app/templates/admin/table-users.html:29
+#, fuzzy
+msgid "updated"
+msgstr "Actualizar"
+
+#: app/templates/admin/table-groups.html:15 app/templates/admin/tables.html:29
+#, fuzzy
+msgid "Table of groups"
+msgstr "Cambiar de grupo"
 
 #: app/templates/admin/table-groups.html:21
 #, fuzzy
@@ -672,7 +729,7 @@ msgstr ""
 msgid "datetime_upd"
 msgstr ""
 
-#: app/templates/admin/table-results.html:15 app/templates/admin/tables.html:34
+#: app/templates/admin/table-results.html:15 app/templates/admin/tables.html:39
 #, fuzzy
 msgid "Table of results"
 msgstr "Nombre de la prueba"
@@ -698,22 +755,16 @@ msgstr ""
 msgid "percent"
 msgstr ""
 
-#: app/templates/admin/table-tests.html:15 app/templates/admin/tables.html:29
+#: app/templates/admin/table-tests.html:15 app/templates/admin/tables.html:34
 #, fuzzy
 msgid "Table of tests"
 msgstr "Nombre de la prueba"
 
 #: app/templates/admin/table-tests.html:21
-#: app/templates/admin/table-users.html:23
+#: app/templates/admin/table-users.html:24
 #, fuzzy
 msgid "group"
 msgstr "Grupo"
-
-#: app/templates/admin/table-tests.html:22
-#: app/templates/admin/table-users.html:21
-#, fuzzy
-msgid "name"
-msgstr "Nombre"
 
 #: app/templates/admin/table-tests.html:23
 #, fuzzy
@@ -729,38 +780,68 @@ msgstr ""
 msgid "results"
 msgstr "Resultado"
 
-#: app/templates/admin/table-users.html:15 app/templates/admin/tables.html:19
+#: app/templates/admin/table-users.html:15 app/templates/admin/tables.html:24
 #, fuzzy
 msgid "Table of users"
 msgstr "Nombre de la prueba"
 
-#: app/templates/admin/table-users.html:22
+#: app/templates/admin/table-users.html:21
+#, fuzzy
+msgid "username"
+msgstr "Acceso"
+
+#: app/templates/admin/table-users.html:23
 #, fuzzy
 msgid "lastname"
 msgstr "Apellido"
 
-#: app/templates/admin/table-users.html:24
+#: app/templates/admin/table-users.html:25
 #, fuzzy
 msgid "role"
 msgstr "Papel"
 
-#: app/templates/admin/table-users.html:25
+#: app/templates/admin/table-users.html:26
+msgid "sex"
+msgstr ""
+
+#: app/templates/admin/table-users.html:27
+msgid "email"
+msgstr ""
+
+#: app/templates/admin/table-users.html:28
 #, fuzzy
 msgid "registated"
 msgstr "registrarse"
 
-#: app/templates/admin/table-users.html:26
+#: app/templates/admin/table-users.html:30
 #, fuzzy
-msgid "updated"
-msgstr "Actualizar"
+msgid "last action"
+msgstr "edificio"
 
-#: app/templates/admin/table-users.html:40
+#: app/templates/admin/table-users.html:45
 #, fuzzy
 msgid "student"
 msgstr "Estudiante"
 
-#: app/templates/admin/table-users.html:42
+#: app/templates/admin/table-users.html:47
 msgid "admin"
+msgstr ""
+
+#: app/templates/admin/table-users.html:49
+#, fuzzy
+msgid "teacher"
+msgstr "Profesor"
+
+#: app/templates/admin/table-users.html:54
+msgid "male"
+msgstr ""
+
+#: app/templates/admin/table-users.html:56
+msgid "female"
+msgstr ""
+
+#: app/templates/admin/table-users.html:58
+msgid "n/a"
 msgstr ""
 
 #: app/templates/errors/404.html:6
@@ -804,7 +885,7 @@ msgstr ""
 "Este es un error del lado del servidor. Ya conocemos el problema, muy "
 "pronto\"todo debería estar bien. Vuelve a intentarlo o"
 
-#: app/templates/forms/profile.html:17
+#: app/templates/forms/profile.html:10
 #, fuzzy
 msgid "Update profile"
 msgstr "Actualizar grupo"
