@@ -121,12 +121,27 @@ class Answer(db.Model):
 		return f'<answer {self.text}>'
 
 
+class Class(db.Model):
+	id     = db.Column( db.Integer, primary_key = True )
+	abbr   = db.Column( db.String(7), nullable = False )
+	name   = db.Column( db.String(4) )
+	course = db.Column( db.SmallInteger )
+	number = db.Column( db.SmallInteger )
+	datetime_reg = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
+	datetime_upd = db.Column( db.DateTime, default = datetime.utcnow(), onupdate = datetime.utcnow() )
+
+	students = db.relationship( 'User', backref = "students", lazy = "dynamic" )
+
+	def __repr__( self ):
+		return f'<study class {self.abbr}>'
+
+
 class User(UserMixin, db.Model):
 	id           = db.Column( db.Integer, primary_key = True )
+	id_group     = db.Column( db.Integer, db.ForeignKey( 'class.id' ), nullable = False )
 	username     = db.Column( db.String(32), index = True, unique = True, nullable = False )
 	name         = db.Column( db.String(32), nullable = False )
 	lastname     = db.Column( db.String(32) )
-	group        = db.Column( db.String(16) )
 	pass_hash    = db.Column( db.String(128), nullable = False )
 	role         = db.Column( db.String(1) )
 	datetime_reg = db.Column( db.DateTime, index = True, default = datetime.utcnow() )
