@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-03 02:55+1000\n"
+"POT-Creation-Date: 2021-06-03 11:53+1000\n"
 "PO-Revision-Date: 2021-05-18 18:05+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
@@ -170,43 +170,64 @@ msgstr "Conclusión de la prueba de la llave"
 msgid "Change of test"
 msgstr "Prueba de cambio"
 
-#: app/routes.py:319 app/routes.py:324
+#: app/routes.py:320 app/routes.py:328 app/routes.py:336 app/routes.py:344
+#: app/routes.py:352 app/routes.py:358
 msgid "Admin-panel"
 msgstr ""
 
-#: app/routes.py:319
+#: app/routes.py:320 app/routes.py:328 app/routes.py:336 app/routes.py:344
+#: app/routes.py:352 app/templates/admin/tables.html:15
 msgid "Tables"
 msgstr ""
 
-#: app/routes.py:324
+#: app/routes.py:328
+msgid "Users"
+msgstr ""
+
+#: app/routes.py:336
+#, fuzzy
+msgid "Groups"
+msgstr "Grupo"
+
+#: app/routes.py:344
+#, fuzzy
+msgid "Tests"
+msgstr "Todas las pruebas"
+
+#: app/routes.py:352
+#, fuzzy
+msgid "Results"
+msgstr "Resultado"
+
+#: app/routes.py:358
 msgid "Statistic"
 msgstr ""
 
-#: app/routes.py:332
+#: app/routes.py:366
 msgid "API methods list"
 msgstr ""
 
-#: app/routes.py:450 app/templates/base.html:159
+#: app/routes.py:484 app/templates/base.html:159
 msgid "About TeSi"
 msgstr "Sobre TeSi"
 
-#: app/routes.py:455 app/templates/base.html:163
+#: app/routes.py:489 app/templates/base.html:163
 msgid "About us"
 msgstr "Sobre nosotros"
 
-#: app/routes.py:475 app/routes.py:482 app/routes.py:489
+#: app/routes.py:509 app/routes.py:516 app/routes.py:523
 msgid "Errors"
 msgstr "Errores"
 
-#: app/routes.py:475 app/routes.py:477
+#: app/routes.py:509 app/routes.py:511
 msgid "Error 404"
 msgstr "error 404"
 
-#: app/routes.py:482 app/routes.py:484
+#: app/routes.py:516 app/routes.py:518
 msgid "Error 405"
 msgstr "Error 405"
 
-#: app/routes.py:489 app/routes.py:491
+#: app/routes.py:523 app/routes.py:525
 msgid "Error 500"
 msgstr "Error 500"
 
@@ -609,96 +630,129 @@ msgstr "Vuelve a la página inicial"
 msgid "Solve test again"
 msgstr "Resuelve la prueba de nuevo"
 
-#: app/templates/admin/tables.html:15
-#, fuzzy
-msgid "Table of users"
-msgstr "Nombre de la prueba"
-
-#: app/templates/admin/tables.html:20 app/templates/admin/tables.html:58
-#: app/templates/admin/tables.html:88
-msgid "id"
-msgstr ""
-
-#: app/templates/admin/tables.html:21 app/templates/admin/tables.html:90
-#, fuzzy
-msgid "name"
-msgstr "Nombre"
-
-#: app/templates/admin/tables.html:22
-#, fuzzy
-msgid "lastname"
-msgstr "Apellido"
-
-#: app/templates/admin/tables.html:23 app/templates/admin/tables.html:89
-#, fuzzy
-msgid "group"
-msgstr "Grupo"
-
-#: app/templates/admin/tables.html:24
-#, fuzzy
-msgid "role"
-msgstr "Papel"
-
-#: app/templates/admin/tables.html:25
-#, fuzzy
-msgid "registated"
-msgstr "registrarse"
-
-#: app/templates/admin/tables.html:26
-#, fuzzy
-msgid "updated"
-msgstr "Actualizar"
-
-#: app/templates/admin/tables.html:40
-#, fuzzy
-msgid "student"
-msgstr "Estudiante"
-
-#: app/templates/admin/tables.html:42
-msgid "admin"
-msgstr ""
-
-#: app/templates/admin/tables.html:53
+#: app/templates/admin/table-groups.html:15 app/templates/admin/tables.html:24
 #, fuzzy
 msgid "Table of groups"
 msgstr "Cambiar de grupo"
 
-#: app/templates/admin/tables.html:59
+#: app/templates/admin/table-groups.html:20
+#: app/templates/admin/table-results.html:20
+#: app/templates/admin/table-tests.html:20
+#: app/templates/admin/table-users.html:20
+msgid "id"
+msgstr ""
+
+#: app/templates/admin/table-groups.html:21
 #, fuzzy
 msgid "title"
 msgstr "Bóveda"
 
-#: app/templates/admin/tables.html:60
+#: app/templates/admin/table-groups.html:22
 #, fuzzy
 msgid "tests"
 msgstr "Todas las pruebas"
 
-#: app/templates/admin/tables.html:61 app/templates/admin/tables.html:94
+#: app/templates/admin/table-groups.html:23
+#: app/templates/admin/table-results.html:26
+#: app/templates/admin/table-tests.html:26
 msgid "datetime_add"
 msgstr ""
 
-#: app/templates/admin/tables.html:62 app/templates/admin/tables.html:95
+#: app/templates/admin/table-groups.html:24
+#: app/templates/admin/table-tests.html:27
 msgid "datetime_upd"
 msgstr ""
 
-#: app/templates/admin/tables.html:83
+#: app/templates/admin/table-results.html:15 app/templates/admin/tables.html:34
+#, fuzzy
+msgid "Table of results"
+msgstr "Nombre de la prueba"
+
+#: app/templates/admin/table-results.html:21
+msgid "user"
+msgstr ""
+
+#: app/templates/admin/table-results.html:22
+#, fuzzy
+msgid "test"
+msgstr "Todas las pruebas"
+
+#: app/templates/admin/table-results.html:23
+msgid "mark"
+msgstr ""
+
+#: app/templates/admin/table-results.html:24
+msgid "score"
+msgstr ""
+
+#: app/templates/admin/table-results.html:25
+msgid "percent"
+msgstr ""
+
+#: app/templates/admin/table-tests.html:15 app/templates/admin/tables.html:29
 #, fuzzy
 msgid "Table of tests"
 msgstr "Nombre de la prueba"
 
-#: app/templates/admin/tables.html:91
+#: app/templates/admin/table-tests.html:21
+#: app/templates/admin/table-users.html:23
+#, fuzzy
+msgid "group"
+msgstr "Grupo"
+
+#: app/templates/admin/table-tests.html:22
+#: app/templates/admin/table-users.html:21
+#, fuzzy
+msgid "name"
+msgstr "Nombre"
+
+#: app/templates/admin/table-tests.html:23
 #, fuzzy
 msgid "difficult"
 msgstr "Complejidad:"
 
-#: app/templates/admin/tables.html:92
+#: app/templates/admin/table-tests.html:24
 msgid "quests"
 msgstr ""
 
-#: app/templates/admin/tables.html:93
+#: app/templates/admin/table-tests.html:25
 #, fuzzy
 msgid "results"
 msgstr "Resultado"
+
+#: app/templates/admin/table-users.html:15 app/templates/admin/tables.html:19
+#, fuzzy
+msgid "Table of users"
+msgstr "Nombre de la prueba"
+
+#: app/templates/admin/table-users.html:22
+#, fuzzy
+msgid "lastname"
+msgstr "Apellido"
+
+#: app/templates/admin/table-users.html:24
+#, fuzzy
+msgid "role"
+msgstr "Papel"
+
+#: app/templates/admin/table-users.html:25
+#, fuzzy
+msgid "registated"
+msgstr "registrarse"
+
+#: app/templates/admin/table-users.html:26
+#, fuzzy
+msgid "updated"
+msgstr "Actualizar"
+
+#: app/templates/admin/table-users.html:40
+#, fuzzy
+msgid "student"
+msgstr "Estudiante"
+
+#: app/templates/admin/table-users.html:42
+msgid "admin"
+msgstr ""
 
 #: app/templates/errors/404.html:6
 msgid "Error 404: Not Found"

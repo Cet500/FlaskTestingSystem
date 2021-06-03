@@ -8,17 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2021-06-03 02:55+1000\n"
-"PO-Revision-Date: 2021-06-03 02:47+1000\n"
+"POT-Creation-Date: 2021-06-03 11:53+1000\n"
+"PO-Revision-Date: 2021-06-03 11:54+1000\n"
 "Last-Translator: Sergo <codeoon@mail.ru>\n"
 "Language: ru\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.0\n"
+"X-Generator: Lokalize 21.04.1\n"
 
 #: app/forms.py:12
 msgid "Submit"
@@ -170,43 +171,61 @@ msgstr "Заключение теста для ключа "
 msgid "Change of test"
 msgstr "Изменить тест"
 
-#: app/routes.py:319 app/routes.py:324
+#: app/routes.py:320 app/routes.py:328 app/routes.py:336 app/routes.py:344
+#: app/routes.py:352 app/routes.py:358
 msgid "Admin-panel"
 msgstr "Админ-панель"
 
-#: app/routes.py:319
+#: app/routes.py:320 app/routes.py:328 app/routes.py:336 app/routes.py:344
+#: app/routes.py:352 app/templates/admin/tables.html:15
 msgid "Tables"
 msgstr "Таблицы"
 
-#: app/routes.py:324
+#: app/routes.py:328
+msgid "Users"
+msgstr "Пользователи"
+
+#: app/routes.py:336
+msgid "Groups"
+msgstr "Группы"
+
+#: app/routes.py:344
+msgid "Tests"
+msgstr "Тесты"
+
+#: app/routes.py:352
+msgid "Results"
+msgstr "Результаты"
+
+#: app/routes.py:358
 msgid "Statistic"
 msgstr "Статистика"
 
-#: app/routes.py:332
+#: app/routes.py:366
 msgid "API methods list"
 msgstr "Список методов API"
 
-#: app/routes.py:450 app/templates/base.html:159
+#: app/routes.py:484 app/templates/base.html:159
 msgid "About TeSi"
 msgstr "О ТеСи"
 
-#: app/routes.py:455 app/templates/base.html:163
+#: app/routes.py:489 app/templates/base.html:163
 msgid "About us"
 msgstr "О нас"
 
-#: app/routes.py:475 app/routes.py:482 app/routes.py:489
+#: app/routes.py:509 app/routes.py:516 app/routes.py:523
 msgid "Errors"
 msgstr "Ошибки"
 
-#: app/routes.py:475 app/routes.py:477
+#: app/routes.py:509 app/routes.py:511
 msgid "Error 404"
 msgstr "Ошибка 404"
 
-#: app/routes.py:482 app/routes.py:484
+#: app/routes.py:516 app/routes.py:518
 msgid "Error 405"
 msgstr "Ошибка 405"
 
-#: app/routes.py:489 app/routes.py:491
+#: app/routes.py:523 app/routes.py:525
 msgid "Error 500"
 msgstr "Ошибка 500"
 
@@ -600,82 +619,113 @@ msgstr "Вернуться на главную страницу"
 msgid "Solve test again"
 msgstr "Решить тест опять"
 
-#: app/templates/admin/tables.html:15
-msgid "Table of users"
-msgstr "Таблица пользователей"
-
-#: app/templates/admin/tables.html:20 app/templates/admin/tables.html:58
-#: app/templates/admin/tables.html:88
-msgid "id"
-msgstr "id"
-
-#: app/templates/admin/tables.html:21 app/templates/admin/tables.html:90
-msgid "name"
-msgstr "имя"
-
-#: app/templates/admin/tables.html:22
-msgid "lastname"
-msgstr "фамилия"
-
-#: app/templates/admin/tables.html:23 app/templates/admin/tables.html:89
-msgid "group"
-msgstr "группа"
-
-#: app/templates/admin/tables.html:24
-msgid "role"
-msgstr "роль"
-
-#: app/templates/admin/tables.html:25
-msgid "registated"
-msgstr "регистрация"
-
-#: app/templates/admin/tables.html:26
-msgid "updated"
-msgstr "обновлено"
-
-#: app/templates/admin/tables.html:40
-msgid "student"
-msgstr "студент"
-
-#: app/templates/admin/tables.html:42
-msgid "admin"
-msgstr "админ"
-
-#: app/templates/admin/tables.html:53
+#: app/templates/admin/table-groups.html:15 app/templates/admin/tables.html:24
 msgid "Table of groups"
 msgstr "Таблица групп"
 
-#: app/templates/admin/tables.html:59
+#: app/templates/admin/table-groups.html:20
+#: app/templates/admin/table-results.html:20
+#: app/templates/admin/table-tests.html:20
+#: app/templates/admin/table-users.html:20
+msgid "id"
+msgstr "id"
+
+#: app/templates/admin/table-groups.html:21
 msgid "title"
 msgstr "имя"
 
-#: app/templates/admin/tables.html:60
+#: app/templates/admin/table-groups.html:22
 msgid "tests"
 msgstr "тестов"
 
-#: app/templates/admin/tables.html:61 app/templates/admin/tables.html:94
+#: app/templates/admin/table-groups.html:23
+#: app/templates/admin/table-results.html:26
+#: app/templates/admin/table-tests.html:26
 msgid "datetime_add"
 msgstr "дата/время созд."
 
-#: app/templates/admin/tables.html:62 app/templates/admin/tables.html:95
+#: app/templates/admin/table-groups.html:24
+#: app/templates/admin/table-tests.html:27
 msgid "datetime_upd"
 msgstr "дата/время обн."
 
-#: app/templates/admin/tables.html:83
+#: app/templates/admin/table-results.html:15 app/templates/admin/tables.html:34
+msgid "Table of results"
+msgstr "Таблица результатов"
+
+#: app/templates/admin/table-results.html:21
+msgid "user"
+msgstr "пользователь"
+
+#: app/templates/admin/table-results.html:22
+msgid "test"
+msgstr "тест"
+
+#: app/templates/admin/table-results.html:23
+msgid "mark"
+msgstr "оценка"
+
+#: app/templates/admin/table-results.html:24
+msgid "score"
+msgstr "счёт"
+
+#: app/templates/admin/table-results.html:25
+msgid "percent"
+msgstr "процент"
+
+#: app/templates/admin/table-tests.html:15 app/templates/admin/tables.html:29
 msgid "Table of tests"
 msgstr "Таблица тестов"
 
-#: app/templates/admin/tables.html:91
+#: app/templates/admin/table-tests.html:21
+#: app/templates/admin/table-users.html:23
+msgid "group"
+msgstr "группа"
+
+#: app/templates/admin/table-tests.html:22
+#: app/templates/admin/table-users.html:21
+msgid "name"
+msgstr "имя"
+
+#: app/templates/admin/table-tests.html:23
 msgid "difficult"
 msgstr "сложность"
 
-#: app/templates/admin/tables.html:92
+#: app/templates/admin/table-tests.html:24
 msgid "quests"
 msgstr "вопросов"
 
-#: app/templates/admin/tables.html:93
+#: app/templates/admin/table-tests.html:25
 msgid "results"
 msgstr "пройдено"
+
+#: app/templates/admin/table-users.html:15 app/templates/admin/tables.html:19
+msgid "Table of users"
+msgstr "Таблица пользователей"
+
+#: app/templates/admin/table-users.html:22
+msgid "lastname"
+msgstr "фамилия"
+
+#: app/templates/admin/table-users.html:24
+msgid "role"
+msgstr "роль"
+
+#: app/templates/admin/table-users.html:25
+msgid "registated"
+msgstr "регистрация"
+
+#: app/templates/admin/table-users.html:26
+msgid "updated"
+msgstr "обновлено"
+
+#: app/templates/admin/table-users.html:40
+msgid "student"
+msgstr "студент"
+
+#: app/templates/admin/table-users.html:42
+msgid "admin"
+msgstr "админ"
 
 #: app/templates/errors/404.html:6
 msgid "Error 404: Not Found"
