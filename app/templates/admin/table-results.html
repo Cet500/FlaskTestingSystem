@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block links %}
+
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/admin.min.css' ) }}">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/admin-dark.min.css' ) }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+	<section class="global__section admin__section-main">
+		<h2 class="global__main-header">{{ _("Table of results") }}</h2>
+
+		<table class="table table-md table-full table-hover {% if g.theme == 'dark' %} table-dark {% endif %}">
+			<thead>
+				<tr>
+					<th>{{ _("id") }}</th>
+					<th>{{ _("user") }}</th>
+					<th>{{ _("test") }}</th>
+					<th>{{ _("mark") }}</th>
+					<th>{{ _("score") }}</th>
+					<th>{{ _("percent") }}</th>
+					<th>{{ _("datetime_add") }}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for result in results %}
+
+					<tr>
+						<td>{{ result.id }}</td>
+						<td>{{ result.id_user }}</td>
+						<td>{{ result.id_test }}</td>
+						<td>{{ result.mark }}</td>
+						<td>{{ result.score }} / {{ result.quests }} </td>
+						<td>{{ result.percent }}</td>
+						<td>{{ result.datetime_add }}</td>
+					</tr>
+
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+
+{% endblock %}

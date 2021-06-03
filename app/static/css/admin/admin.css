@@ -6,3 +6,13 @@
 	margin: 20px 0;
     padding: 0 20px
 }
+.admin__section-main-link-big{
+	display: block;
+
+	margin-bottom: 1em;
+
+	font-size: 1.15em;
+	text-decoration: none;
+
+	color: #333333;
+}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block links %}
+
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/admin.min.css' ) }}">
+	<link rel="stylesheet" href="{{ url_for( 'static', filename = 'css/min/admin-dark.min.css' ) }}">
+
+{% endblock %}
+
+
+{% block content %}
+
+	<section class="global__section admin__section-main">
+		<h2 class="global__main-header">{{ _("Table of users") }}</h2>
+
+		<table class="table table-md table-full table-hover {% if g.theme == 'dark' %} table-dark {% endif %}">
+			<thead>
+				<tr>
+					<th>{{ _("id") }}</th>
+					<th>{{ _("name") }}</th>
+					<th>{{ _("lastname") }}</th>
+					<th>{{ _("group") }}</th>
+					<th>{{ _("role") }}</th>
+					<th>{{ _("registated") }}</th>
+					<th>{{ _("updated") }}</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for user in users %}
+
+					<tr>
+						<td>{{ user.id }}</td>
+						<td>{{ user.name }}</td>
+						<td>{{ user.lastname }}</td>
+						<td>{{ user.group }}</td>
+						<td>
+							{% if user.role == 'S' %}
+								{{ _("student") }}
+							{% elif user.role == 'A' %}
+								{{ _("admin") }}
+							{% endif %}
+						</td>
+						<td>{{ user.datetime_reg }}</td>
+						<td>{{ user.datetime_upd }}</td>
+					</tr>
+
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+
+{% endblock %}

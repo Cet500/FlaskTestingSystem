@@ -28,7 +28,7 @@ def group(id):
 	group = Group.query.get(id)
 
 	link = url_for( 'index' )
-	path = f"<a href='{link}'>Все тесты</a> / {group.title}"
+	path = f"<a href='{link}'>{_('All tests')}</a> / {group.title}"
 
 	return  render_template( "group.html", title = f"{group.title}", path = path, menu = "Тесты в группе", group = group )
 
@@ -40,7 +40,7 @@ def test(id):
 
 	link0 = url_for( 'index' )
 	link1 = url_for( 'group', id = group.id )
-	path  = f"<a href={link0}>Все тесты</a> / <a href={link1}>{group.title}</a> / {test.name}"
+	path  = f"<a href={link0}>{_('All tests')}</a> / <a href={link1}>{group.title}</a> / {test.name}"
 
 	return render_template( "test-base.html", title = test.name + " / " + _("Info"), path = path, test = test )
 
@@ -52,7 +52,7 @@ def testing(id):
 
 	link0 = url_for( 'index' )
 	link1 = url_for( 'group', id = group.id )
-	path  = f"<a href={link0}>Все тесты</a> / <a href={link1}>{group.title}</a> / {test.name}"
+	path  = f"<a href={link0}>{_('All tests')}</a> / <a href={link1}>{group.title}</a> / {test.name}"
 
 	class TestingForm(EmptyForm):
 		pass
@@ -129,7 +129,7 @@ def result(id):
 
 	link0 = url_for( 'index' )
 	link1 = url_for( 'group', id = group.id )
-	path  = f"<a href={link0}>Все тесты</a> / <a href={link1}>{group.title}</a> / {test.name}"
+	path  = f"<a href={link0}>{_('All tests')}</a> / <a href={link1}>{group.title}</a> / {test.name}"
 
 	return render_template( "test-result.html", title = test.name + " / " + _("Result"), path = path, result = result,
 	                                            test = test, user = user )
@@ -312,11 +312,61 @@ def update_test(id):
 
 @app.route('/admin/tables')
 def admin_tables():
+	user   = User
+	group  = Group
+	test   = Test
+	result = Result
+
+	return render_template( "admin/tables.html", title = _('Admin-panel') + ' / ' + _('Tables'),
+	                                             user = user, group = group, test = test, result = result )
+
+
+@app.route('/admin/table/users')
+def admin_table_users():
 	users  = User.query.all()
-	groups = Group.query.all()
+
+	title = f"{_( 'Admin-panel' )} / {_( 'Tables' )} / {_( 'Users' )}"
+
+	link0 = url_for( 'admin_tables' )
+	path  = f"{_('Admin-panel')} / <a href='{link0}'>{_('Tables')}</a> / {_('Users')}"
+
+	return render_template( "admin/table-users.html", title = title, path = path, users = users, wide = True )
+
+
+@app.route('/admin/table/groups')
+def admin_table_groups():
+	groups  = Group.query.all()
+
+	title = f"{_( 'Admin-panel' )} / {_( 'Tables' )} / {_( 'Groups' )}"
+
+	link0 = url_for( 'admin_tables' )
+	path = f"{_( 'Admin-panel' )} / <a href='{link0}'>{_( 'Tables' )}</a> / {_( 'Groups' )}"
+
+	return render_template( "admin/table-groups.html", title = title, path = path, groups = groups, wide = True )
+
+
+@app.route('/admin/table/tests')
+def admin_table_tests():
 	tests  = Test.query.all()
 
-	return render_template( "admin/tables.html", title = _('Admin-panel') + ' / ' + _('Tables'), users = users, groups = groups, tests = tests, wide = True )
+	title = _( 'Admin-panel' ) + ' / ' + _( 'Tables' ) + ' / ' + _( 'Tests' )
+
+	link0 = url_for( 'admin_tables' )
+	path = f"{_( 'Admin-panel' )} / <a href='{link0}'>{_( 'Tables' )}</a> / {_( 'Tests' )}"
+
+	return render_template( "admin/table-tests.html", title = title, path = path, tests = tests, wide = True )
+
+
+@app.route('/admin/table/results')
+def admin_table_results():
+	results  = Result.query.all()
+
+	title = _( 'Admin-panel' ) + ' / ' + _( 'Tables' ) + ' / ' + _( 'Results' )
+
+	link0 = url_for( 'admin_tables' )
+	path = f"{_( 'Admin-panel' )} / <a href='{link0}'>{_( 'Tables' )}</a> / {_( 'Results' )}"
+
+	return render_template( "admin/table-results.html", title = title, path = path, results = results, wide = True )
 
 
 @app.route('/admin/statistic')
