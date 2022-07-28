@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TeSi | Про API</title>
+
+        <link rel="stylesheet" href="css/min/global.min.css">
+        <link rel="stylesheet" href="css/min/text.min.css">
+    </head>
+
+    <body class="global__body">
+        <header class="global__header">
+            <div class="global__inner">
+                <nav class="global__nav global__header-nav">
+                    <ul class="global__nav-list text">
+                        <li  class="global__nav-list-item">
+                            <a href="index.html" class="global__nav-list-item-link">Главная</a>
+                        </li>
+
+                        <li  class="global__nav-list-item">
+                            <a href="" class="global__nav-list-item-link">Все тесты</a>
+                        </li>
+
+                        <li  class="global__nav-list-item">
+                            <a href="leaderboards.html" class="global__nav-list-item-link">Таблица лидеров</a>
+                        </li>
+
+                        <li  class="global__nav-list-item">
+                            <a href="api.html" class="global__nav-list-item-link">О системе</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <h1 class="h1">TeSi</h1>
+            </div>
+        </header>
+
+        <main class="global__main">
+            <div class="global__inner">
+                <section>
+                    <h2 class="h2">Открытые методы API</h2>
+
+                    <p class="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <h3 class="h3">Методы пользователей</h3>
+
+                    <h4 class="h4">Получить количество пользователей</h4>
+
+                    <p class="text">Возвращает количество пользователей, зарегистрированных в системе</p>
+
+                    <code class="code">
+                        Path:   api/get_users_count<br>
+                        Input:  none<br>
+                        Output: integer
+                    </code>
+
+                    <h3 class="h3">Методы тестов</h3>
+
+                    <h4 class="h4">Получить количество тестов</h4>
+
+                    <p class="text">Возвращает количество открытых тестов в системе</p>
+
+                    <code class="code">
+                        Path:   api/get_tests_count<br>
+                        Input:  none<br>
+                        Output: integer
+                    </code>
+
+                    <h4 class="h4">Получить список тестовв</h4>
+
+                    <p class="text">Возвращает список всех открытых тестов формате JSON</p>
+
+                    <code class="code">
+                        Path:   api/get_tests_list<br>
+                        Input:  none<br>
+                        Output: json
+                    </code>
+
+                    <h4 class="h4">Получить количество тестов в группе</h4>
+
+                    <p class="text">Возвращает количество открытых тестов в одной группе</p>
+
+                    <code class="code">
+                        Path:   api/get_tests_count_by_group/int:id_group<br>
+                        Input:  integer<br>
+                        Output: integer / null
+                    </code>
+
+                    <h4 class="h4">Получить список тестов в группе</h4>
+
+                    <p class="text">Возвращает список открытых тестов в одной группе в формате JSON</p>
+
+                    <code class="code">
+                        Path:   api/get_tests_list_by_group/int:id_group<br>
+                        Input:  integer<br>
+                        Output: json / null
+                    </code>
+
+                    <h3 class="h3">Методы прохождений</h3>
+
+                    <h4 class="h4">Получить количество прохождений</h4>
+
+                    <p class="text">Возвращает количество прохождений всех тестов в системе</p>
+
+                    <code class="code">
+                        Path:   api/get_results_count<br>
+                        Input:  none<br>
+                        Output: integer
+                    </code>
+
+                    <h4 class="h4">Получить список прохождений</h4>
+
+                    <p class="text">Возвращает список прохождений всех тестов в системе в формате JSON</p>
+
+                    <code class="code">
+                        Path:   api/get_results_list<br>
+                        Input:  none<br>
+                        Output: json
+                    </code>
+
+                    <h4 class="h4">Получить количество прохождений одного теста</h4>
+
+                    <p class="text">Возвращает количество прохождений одного определённого теста в системе</p>
+
+                    <code class="code">
+                        Path:   api/get_tests_count_by_test/int:id_test<br>
+                        Input:  integer<br>
+                        Output: integer / null
+                    </code>
+                </section>
+            </div>
+        </main>
+
+        <footer class="global__footer">
+            <div class="global__inner">
+                <nav class="global__nav global__footer-nav">
+                    <ul class="global__nav-list text">
+                        <li  class="global__nav-list-item">
+                            <a href="" class="global__nav-list-item-link">Главная</a>
+                        </li>
+
+                        <li  class="global__nav-list-item">
+                            <a href="" class="global__nav-list-item-link">Все тесты</a>
+                        </li>
+
+                        <li  class="global__nav-list-item">
+                            <a href="" class="global__nav-list-item-link">Таблица лидеров</a>
+                        </li>
+
+                        <li  class="global__nav-list-item">
+                            <a href="" class="global__nav-list-item-link">О системе</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </body>
+</html>
