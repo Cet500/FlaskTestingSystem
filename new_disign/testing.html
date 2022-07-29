@@ -3,10 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TeSi | Главная</title>
+        <title>TeSi | Все тесты</title>
 
         <link rel="stylesheet" href="css/min/global.min.css">
         <link rel="stylesheet" href="css/min/texts.min.css">
+        <link rel="stylesheet" href="css/min/buttons.min.css">
+        <link rel="stylesheet" href="css/min/elements.min.css">
     </head>
 
     <body class="global__body">
@@ -42,7 +44,43 @@
 
         <main class="global__main">
             <div class="global__inner">
+                <section>
+                    <h2 class="h2">Тест по Web-разработке</h2>
 
+                    <div class="elem-bar">
+                        <div class="elem-bar-inner" style="width: 20%"></div>
+
+                        <span class="elem-bar-text">1 / 5</span>
+                    </div>
+
+                    <h3 class="h3">Вопрос №1</h3>
+
+                    <p class="text text-lg">Какая из перечисленных аббравиатур обозначает язык гипертекстовой разметки?</p>
+
+                    <ul class="list-empty">
+                        <li>
+                            <input id="1-1" name="1" type="radio" value="1">
+                            <label for="1-1" class="text text-bg">HTML</label>
+                        </li>
+
+                        <li>
+                            <input id="1-2" name="1" type="radio" value="2">
+                            <label for="1-2" class="text text-bg">XML</label>
+                        </li>
+
+                        <li>
+                            <input id="1-3" name="1" type="radio" value="3">
+                            <label for="1-3" class="text text-bg">YAML</label>
+                        </li>
+
+                        <li>
+                            <input id="1-4" name="1" type="radio" value="4">
+                            <label for="1-4" class="text text-bg">PHP</label>
+                        </li>
+                    </ul>
+
+                    <a href="result.html" class="btn btn-primary btn-round">СЛЕДУЮЩИЙ ВОПРОС</a>
+                </section>
             </div>
         </main>
 

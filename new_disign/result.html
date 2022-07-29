@@ -3,11 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>TeSi | Таблица лидеров</title>
+        <title>TeSi | Все тесты</title>
 
         <link rel="stylesheet" href="css/min/global.min.css">
         <link rel="stylesheet" href="css/min/texts.min.css">
         <link rel="stylesheet" href="css/min/tables.min.css">
+        <link rel="stylesheet" href="css/min/buttons.min.css">
+        <link rel="stylesheet" href="css/min/elements.min.css">
     </head>
 
     <body class="global__body">
@@ -44,53 +46,65 @@
         <main class="global__main">
             <div class="global__inner">
                 <section>
-                    <h2 class="h2">Таблица лидеров</h2>
+                    <h2 class="h2">Тест по Web-разработке</h2>
 
-                    <p class="text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <div class="elem-multi-bar">
+                        <div class="elem-multi-bar-inner" style="width: 20%; background-color: #25c32a"></div>
+                        <div class="elem-multi-bar-inner" style="width: 20%; background-color: #e9473e"></div>
+                        <div class="elem-multi-bar-inner" style="width: 20%; background-color: #25c32a"></div>
+                        <div class="elem-multi-bar-inner" style="width: 20%; background-color: #25c32a"></div>
+                        <div class="elem-multi-bar-inner" style="width: 20%; background-color: #25c32a"></div>
+                    </div>
+
+                    <h3 class="h3">Результаты решения</h3>
 
                     <table class="table table-dark table-bordered table-lg table-wide table-hover text">
                         <thead>
                             <tr>
                                 <td>№</td>
-                                <td>Логин</td>
-                                <td>Очков набрано</td>
-                                <td>Тестов решено</td>
+                                <td>Вопрос</td>
+                                <td>Данный ответ</td>
+                                <td>Правильность</td>
                             </tr>
                         </thead>
 
                         <tbody>
                             <tr>
                                 <td>1</td>
-                                <td>Cet500</td>
-                                <td>10000</td>
-                                <td>100</td>
+                                <td>Какая из перечисленных аббревиатур обозначает язык гипертекстовой разметки?</td>
+                                <td>HTML</td>
+                                <td style="background-color: #25c32a">Верно</td>
                             </tr>
                             <tr>
                                 <td>2</td>
-                                <td>Elatria</td>
-                                <td>9000</td>
-                                <td>25</td>
+                                <td>Каскадные таблицы стилей это...</td>
+                                <td>XML</td>
+                                <td style="background-color: #e9473e">Неверно</td>
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>Язык программирования, использующийся в браузерах?</td>
+                                <td>JavaScript</td>
+                                <td style="background-color: #25c32a">Верно</td>
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>Язык сериализации данных, используемый в браузерах?</td>
+                                <td>JSON</td>
+                                <td style="background-color: #25c32a">Верно</td>
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td>Технология асинхронных запросов к серверу из браузера?</td>
+                                <td>AJAX</td>
+                                <td style="background-color: #25c32a">Верно</td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <p class="text text-lg">4 верных из 5 ( 80% )</p>
+
+                    <h4 class="h4">Итоговая оценка: 4 ( хорошо )</h4>
                 </section>
             </div>
         </main>

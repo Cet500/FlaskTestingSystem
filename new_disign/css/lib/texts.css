@@ -1,0 +1,90 @@
+/* ------------------------------- lib of texts ------------------------------- */
+
+/* ------------------------------- base ------------------------------- */
+
+.text{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+.text-cursive{
+	font-style: italic;
+}
+.text-md{
+	font-size: 16px;
+}
+.text-bg{
+	font-size: 18px;
+}
+.text-lg{
+	font-size: 20px;
+}
+
+.code{
+	font-family: 'Consolas', monospace;
+	font-size: 16px;
+}
+
+/* ------------------------------- titles ------------------------------- */
+
+.h1{
+	font-family: Comfortaa, cursive;
+	font-weight: 400;
+
+	color: #478ac9;
+
+	font-size: 30px;
+}
+.h2{
+	font-family: Comfortaa, cursive;
+	font-weight: 400;
+
+	color: #478ac9;
+
+	font-size: 36px;
+}
+.h3{
+	font-family: Comfortaa, cursive;
+	font-weight: 400;
+
+	font-size: 30px;
+}
+.h4{
+	font-family: Comfortaa, cursive;
+	font-weight: 400;
+
+	font-size: 24px;
+}
+.h5{
+	font-family: Comfortaa, cursive;
+	font-weight: 400;
+
+	font-size: 20px;
+}
+.h6{
+	font-family: Comfortaa, cursive;
+	font-weight: 400;
+
+	font-size: 18px;
+}
+
+/* ------------------------------- colors ------------------------------- */
+
+.text-white{
+	color: #ffffff;
+}
+.text-blue{
+	color: #478ac9;
+}
+.text-black{
+	color: #000000;
+}
+
+/* ------------------------------- lists ------------------------------- */
+
+.list{
+
+}
+.list-empty{
+	list-style: none;
+	padding: 0;
+}

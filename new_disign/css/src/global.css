@@ -3,31 +3,31 @@
 /* -------------------- base -------------------- */
 
 .global__body{
-    display: grid;
+	display: grid;
 
-    grid-template-areas: "header"
+	grid-template-areas: "header"
                          "main"
                          "footer";
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-columns: 1fr;
 
-    min-height: 100vh;
+	min-height: 100vh;
 
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 
-    background-color: #292e33;
-    color: #ffffff;
+	background-color: #292e33;
+	color: #ffffff;
 }
 .global__inner{
-    width: 1140px;
-    margin: 0 auto;
+	width: 1140px;
+	margin: 0 auto;
 }
 
 /* -------------------- header -------------------- */
 
 .global__header{
-    grid-area: header;
+	grid-area: header;
 }
 
 /* -------------------- nav -------------------- */
@@ -36,43 +36,74 @@
 
 }
 .global__nav-list{
-    width: 100%;
-    padding: 0;
-    margin: 10px 0;
+	width: 100%;
+	padding: 0;
+	margin: 10px 0;
 
-    list-style: none;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: nowrap;
+	list-style: none;
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: nowrap;
 }
 .global__nav-list-item{
-    flex-grow: 1;
-    text-align: center;
+	flex-grow: 1;
+	text-align: center;
 
 }
 .global__nav-list-item-link{
-    text-decoration: none;
-    color: #ffffff;
+	text-decoration: none;
+	color: #ffffff;
 }
 
 /* -------- mixins -------- */
 
 .global__header-nav{
-    width: 100%;
+	width: 100%;
 }
 .global__footer-nav{
-    width: 40%;
+	width: 40%;
 }
 
 /* -------------------- main -------------------- */
 
 .global__main{
-    grid-area: main;
+	grid-area: main;
+}
+
+/* -------------------- sections -------------------- */
+
+.global__section-two{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.global__section-tests{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+/* -------------------- tests -------------------- */
+
+.global__test-preview{
+	display: block;
+
+	width: 29.5%;
+
+	padding: 15px;
+	margin: 10px 0;
+
+	border: 2px solid #478ac9;
+}
+.global__test-preview .h4{
+	margin: 0 0 16px 0;
+}
+.global__test-preview .btn{
+	margin: 0;
 }
 
 /* -------------------- footer -------------------- */
 
 .global__footer{
-    grid-area: footer;
-    padding-top: 50px;
+	grid-area: footer;
+	padding-top: 50px;
 }
